@@ -1,7 +1,4 @@
-li, a {
-  list-style: none;
-  text-decoration: none;
-}
+
 .container{
   min-width: 1150px;
   padding: 0 0 0;
@@ -37,9 +34,8 @@ li, a {
     }
   }
   .product{
-    width: 1300px;
     .prd-list{
-      width: 100%;
+      // width: 100%;
       text-align: center;
       padding: 10px 0 0 ;
       display: flex;
