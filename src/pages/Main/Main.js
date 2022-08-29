@@ -5,8 +5,6 @@ import MainSection2 from './MainComponents/MainSection2';
 import MainSlideImg from './MainComponents/MainSlideImg';
 import MainBanner1 from './MainComponents/MainBanner1';
 import Section3 from './MainComponents/Section3';
-import Section4 from './MainComponents/Section4';
-
 
 function Main() {
   return (
@@ -20,13 +18,7 @@ function Main() {
         <Section3 />
       </div>
       <MainBanner1 />
-      <div >
-      </div>
-      <div >
-      </div>
-      <div >
-      </div>
-      
+      <Section3 />
     </div>
   );
 }
