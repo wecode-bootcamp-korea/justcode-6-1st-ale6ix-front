@@ -5,6 +5,7 @@ import MainSection2 from './MainComponents/MainSection2';
 import MainSlideImg from './MainComponents/MainSlideImg';
 import MainBanner1 from './MainComponents/MainBanner1';
 import Section3 from './MainComponents/Section3';
+import MainBanner2 from './MainComponents/MainBanner2';
 
 function Main() {
   return (
@@ -19,6 +20,7 @@ function Main() {
       </div>
       <MainBanner1 />
       <Section3 />
+      <MainBanner2 />
     </div>
   );
 }
