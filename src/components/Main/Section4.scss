@@ -1,0 +1,106 @@
+li, a {
+  list-style: none;
+  text-decoration: none;
+}
+.container{
+  min-width: 1150px;
+  padding: 0 0 0;
+  margin: 0 auto 0;
+  zoom: 1;
+  position: relative;
+}
+.section4-box{
+  width: 100%;
+  padding: 0 5% 0;
+  margin: 0 auto;
+  text-align: center;
+  .title{
+    padding: 80px 0 30px;
+    .h2{
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+    p{
+      margin: 20px auto 15px;
+      width: 35px;
+      height: 2px;
+      background-color: #111;
+    }
+    .text{
+      display: block;
+      padding: 5px 0 0;
+      font-size: 14px;
+      color: #aaa;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+  }
+  .product{
+    width: 1300px;
+    .prd-list{
+      width: 100%;
+      text-align: center;
+      padding: 10px 0 0 ;
+      display: flex;
+      flex-wrap: wrap;
+      .prd-box{
+        width: 224px;
+        position: relative;
+        margin: 0 0 35px 0;
+        vertical-align: top;
+        .item-list{
+          position: relative;
+          margin: 0 5px;
+          .icon-btn{
+            width: 100%;
+            position: absolute;
+            bottom: 30%; left: 10%;
+            z-index: 2;
+            text-align: center;
+            ul{
+              display: flex;
+              align-items: center;
+              li{
+                width: 32px; height: 30px;
+                padding: 5px 5px 5px;
+                border-top: 1px solid #e1e1e1;
+                border-bottom: 1px solid #e1e1e1;
+                border-left: 1px solid #e1e1e1;
+                background-color: #fff;
+                &:nth-child(3){
+                  border-right: 1px solid #e1e1e1;
+                }
+              }
+            }
+          }
+          .item-img{
+            img{
+            width: 224px;
+            }
+          }
+          figcaption{
+            cursor: pointer;
+            text-align: center;
+            dl{
+              font-size: 16px;
+              color: #222;
+              dt{
+                padding: 5px 0 12px;
+                margin: 0 0 2px;
+                border-bottom: 1px solid #ececec;
+                font-weight: 400;
+              }
+              dd{
+                font-size: 13px;
+                font-weight: 700;
+                padding: 8px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
