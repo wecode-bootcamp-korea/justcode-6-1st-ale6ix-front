@@ -1,13 +1,16 @@
 import React from "react";
 import Title from "./Title";
+import "./Magazine.scss";
+import MagazineImg from "./MagazineImg";
 
 function Magazine() {
   const title = "MAGAZINE";
   const color = "#000";
   return (
-    <div>
+    <section className="Magazine-container">
       <Title title={title} color={color} />
-    </div>
+      <MagazineImg />
+    </section>
   );
 }
 
