@@ -1,5 +1,5 @@
-import React from 'react';
-import './MainSection1.scss';
+import React from "react";
+import "./MainSection1.scss";
 
 function MainSection1() {
   return (

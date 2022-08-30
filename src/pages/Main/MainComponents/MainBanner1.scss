@@ -9,7 +9,7 @@ $h: 350px;
     // margin: 0 auto;
     .video {
       iframe {
-        width: 630px;
+        width: 550px;
         height: $h;
       }
     }
@@ -21,8 +21,9 @@ $h: 350px;
       }
       .list-img-container {
         display: flex;
-        justify-content: space-around;
+
         .list-img {
+          margin-right: 10px;
           display: flex;
           flex-direction: column;
           img {
@@ -38,7 +39,6 @@ $h: 350px;
               font-size: 11px;
               color: #777;
               padding-bottom: 20px;
-              // letter-spacing: -0.06em;
             }
             .list-price {
               font-size: 11px;

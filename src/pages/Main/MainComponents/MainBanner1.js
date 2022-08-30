@@ -1,5 +1,5 @@
-import React from 'react';
-import './MainBanner1.scss';
+import React from "react";
+import "./MainBanner1.scss";
 
 function MainBanner1() {
   return (
@@ -39,7 +39,7 @@ function MainBanner1() {
               />
               <div className="list-title-container">
                 <span className="list-img-title">
-                  [Allesi] 알레시 미러 칵테일 쉐이커
+                  [Allesi] 알레시 미러 칵테일 쉐
                 </span>
                 <span className="list-price">277,000 won</span>
               </div>
