@@ -5,6 +5,8 @@
   object-fit: cover;
 
   .banner2-inner {
+    position: relative;
+    z-index: 100;
     .banner2-list-container {
       width: 1200px;
       display: flex;

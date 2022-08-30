@@ -10,7 +10,7 @@ function MainBanner1() {
             src="https://www.youtube.com/embed//S3drOrLN_1o?vq=hd720&autoplay=0&controls=0&showinfo=0&rel=0"
             allowFullScreen
             title="allesiFrame"
-          />
+          ></iframe>
         </div>
         <div className="list">
           <p className="list-title">

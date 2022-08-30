@@ -23,9 +23,10 @@ function Main() {
       <div className="main-banner">
         <Section3 />
       </div>
-
       <MainBanner2 />
-      <Magazine />
+      <div className="Magazine-background">
+        <Magazine />
+      </div>
     </div>
   );
 }
