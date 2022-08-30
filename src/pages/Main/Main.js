@@ -19,7 +19,10 @@ function Main() {
         <Section3 />
       </div>
       <MainBanner1 />
-      <Section3 />
+      <div className="main-banner">
+        <Section3 />
+      </div>
+
       <MainBanner2 />
     </div>
   );

@@ -1,0 +1,55 @@
+.banner2-container {
+  background-image: url('http://alessi.co.kr/_dj/img/story_back.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  object-fit: cover;
+
+  .banner2-inner {
+    .banner2-title {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      margin-left: 50%;
+      color: #fff;
+      h2 {
+      }
+      .bar {
+        height: 2px;
+        width: 35px;
+        display: block;
+        background: #fff;
+        margin-top: 20px;
+        margin-left: 65px;
+      }
+    }
+    .banner2-list-container {
+      width: 1300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      .banner2-img {
+      }
+      .banner2-description {
+        height: 430px;
+        width: 650px;
+        padding: 50px;
+        line-height: 1.8;
+        background-color: #fff;
+        h2 {
+          padding-top: 50px;
+          padding-bottom: 20px;
+        }
+        p {
+          padding-bottom: 30px;
+        }
+        .allesi-button {
+          width: 100px;
+          height: 45px;
+          border: 1px solid #ddd;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
