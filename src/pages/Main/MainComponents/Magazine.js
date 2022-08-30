@@ -9,7 +9,12 @@ function Magazine() {
   return (
     <section className="Magazine-container">
       <Title title={title} color={color} />
-      <MagazineImg />
+      <div className="Magazine-list-container">
+        <MagazineImg />
+        <MagazineImg />
+        <MagazineImg />
+        <MagazineImg />
+      </div>
     </section>
   );
 }
