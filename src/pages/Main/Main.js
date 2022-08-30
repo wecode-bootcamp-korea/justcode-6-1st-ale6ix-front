@@ -1,11 +1,12 @@
-import React from 'react';
-import './Main.scss';
-import MainSection1 from './MainComponents/MainSection1';
-import MainSection2 from './MainComponents/MainSection2';
-import MainSlideImg from './MainComponents/MainSlideImg';
-import MainBanner1 from './MainComponents/MainBanner1';
-import Section3 from './MainComponents/Section3';
-import MainBanner2 from './MainComponents/MainBanner2';
+import React from "react";
+import "./Main.scss";
+import MainSection1 from "./MainComponents/MainSection1";
+import MainSection2 from "./MainComponents/MainSection2";
+import MainSlideImg from "./MainComponents/MainSlideImg";
+import MainBanner1 from "./MainComponents/MainBanner1";
+import Section3 from "./MainComponents/Section3";
+import MainBanner2 from "./MainComponents/MainBanner2";
+import Magazine from "./MainComponents/Magazine";
 
 function Main() {
   return (
@@ -24,6 +25,7 @@ function Main() {
       </div>
 
       <MainBanner2 />
+      <Magazine />
     </div>
   );
 }

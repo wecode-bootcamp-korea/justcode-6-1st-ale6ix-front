@@ -1,14 +1,14 @@
 import React from "react";
 import "./MainBanner2.scss";
+import Title from "./Title";
 
 function MainBanner2() {
+  const title = "ABOUT ALESSI";
+  const color = "#fff";
   return (
     <div className="banner2-container">
       <div className="banner2-inner">
-        <div className="banner2-title">
-          <h2>ABOUT ALESSI</h2>
-          <p className="bar"></p>
-        </div>
+        <Title title={title} color={color} />
         <ul className="banner2-list-container">
           <li className="banner2-img">
             <img src="http://alessi.co.kr/_dj/img/storyimg1.jpg" />
