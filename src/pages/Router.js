@@ -1,10 +1,10 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from './Home/Home';
-import Login from './Login/Login';
-import Main from './Main/Main';
-import Signup from './Signup/Signup';
+import Home from "./Home/Home";
+import Login from "./Login/Login";
+import Main from "./Main/Main";
+import Signup from "./Signup/Signup";
 
 function Router() {
   return (

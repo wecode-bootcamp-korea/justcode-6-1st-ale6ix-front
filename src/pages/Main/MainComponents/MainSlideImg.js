@@ -1,19 +1,21 @@
-import React from 'react';
-import './MainSlideImg.scss';
+import React from "react";
+import "./MainSlideImg.scss";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.scss";
+import "swiper/components/navigation/navigation.scss";
+import "swiper/components/pagination/pagination.scss";
 
 function MainSlideImg() {
   return (
     <Swiper
-      effect={'coverflow'}
+      effect={"coverflow"}
       grabCursor={true}
       centeredSlides={true}
-      slidesPerView={'auto'}
+      slidesPerView={"auto"}
       navigation={true}
+      autoplay={true}
+      loop={true}
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -21,7 +23,7 @@ function MainSlideImg() {
         modifier: 1,
         slideShadows: false,
       }}
-      pagination={true}
+      pagination={{ clickable: true }}
       className="mySwiper"
     >
       <SwiperSlide>
