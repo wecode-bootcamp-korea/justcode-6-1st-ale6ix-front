@@ -1,0 +1,25 @@
+.Cart-list-container {
+  padding: 0 10%;
+  .bottom-container {
+    display: flex;
+    p {
+      width: 150px;
+      height: 40px;
+      border: 1px solid gray;
+      border-bottom: 1px solid white;
+      text-align: center;
+      z-index: 100;
+      padding: 13px;
+    }
+    .border-bottom {
+      display: inline-block;
+      width: 100%;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid black;
+    }
+  }
+  .Cart-list {
+  }
+}
