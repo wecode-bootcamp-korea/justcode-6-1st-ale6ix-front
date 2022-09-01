@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./CartProductTitle.scss";
 import Price from "./Price";
 import Product from "./Product";
 
 function CartProductTitle() {
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setProduct(data.cart));
+  }, []);
+  console.log(product);
   return (
     <div className="Cart-product-container">
       <div className="Cart-product-title">
@@ -19,8 +26,10 @@ function CartProductTitle() {
         <p className="price">합계</p>
         <p className="choice">선택</p>
       </div>
-      <Product />
-      <Product />
+      {product?.map((item, idx) => {
+        return <Product item={item} />;
+      })}
+
       <Price />
     </div>
   );

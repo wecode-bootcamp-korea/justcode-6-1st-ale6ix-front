@@ -1,0 +1,16 @@
+{
+  "cart": [
+    {
+      "id": 1,
+      "productImg": "http://alessi.co.kr/web/product/tiny/202111/002235f9e60213d4c7b4a95b8cb30367.jpg",
+      "productTitle": "[Alessi]알레시 안나G 와인오프너 핑크 / AM01 P",
+      "price": "113000"
+    },
+    {
+      "id": 2,
+      "productImg": "http://alessi.co.kr/web/product/medium/202111/eb4fca1f491902e6bb2dc1fbb05da6bc.jpg",
+      "productTitle": "[Alessi]알레시 안나G 와인오프너 딥 블루 / AM01 DAZ ",
+      "price": "222000"
+    }
+  ]
+}

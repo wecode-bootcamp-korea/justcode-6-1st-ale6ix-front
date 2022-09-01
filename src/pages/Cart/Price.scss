@@ -5,3 +5,32 @@
   align-items: center;
   border-bottom: 1px solid lightgray;
 }
+.choice-button {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3%;
+}
+
+.full-price-container {
+  padding-top: 3%;
+  .f-width {
+    height: 50px;
+    display: flex;
+
+    border: 1px solid lightgray;
+    text-align: center;
+    p {
+      width: 20%;
+      height: 100%;
+      padding-top: 1.5%;
+      border-right: 1px solid lightgray;
+    }
+    .total {
+      width: 60%;
+    }
+  }
+}
+.price-btn {
+  padding-top: 5%;
+  margin-left: 50%;
+}
