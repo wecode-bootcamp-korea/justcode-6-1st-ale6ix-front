@@ -1,0 +1,19 @@
+.sub-nav{
+  position: absolute;
+  top: 10%; 
+  display: flex;
+  .sub-menu{
+    width: 100px;
+    text-align: center;
+    li{
+      color: #999;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+  }
+  .sub-menu-img img{
+    width: 300px;
+    height: 300px;
+  }
+}
