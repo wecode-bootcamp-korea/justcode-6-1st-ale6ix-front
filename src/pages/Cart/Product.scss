@@ -1,0 +1,111 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid lightgray;
+  .product-list {
+    display: flex;
+    align-items: center;
+
+    .checkbox {
+      width: 3%;
+    }
+    img {
+      width: 10%;
+      height: 80px;
+    }
+    .product {
+      width: 37%;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .price {
+      width: 9%;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .display-flex {
+      width: 6%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 15px;
+
+        margin: 10px;
+
+        .count {
+          input {
+            width: 24px;
+            height: 22.7px;
+            border: 1px solid #d4d8d9;
+            border-radius: 3px 0 0 3px;
+            padding-left: 30%;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+        .count-btn {
+          display: flex;
+          flex-direction: column;
+          button {
+            width: 17px;
+            height: 11.8px;
+            border: none;
+            background-color: #fff;
+            padding: 0;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      .button {
+        width: 40px;
+        border: 1px solid lightgray;
+        background-color: lightgrey;
+        cursor: pointer;
+      }
+    }
+    .display-width {
+      width: 6%;
+      justify-content: space-around;
+      display: flex;
+      .point {
+        width: 11px;
+        height: 11px;
+      }
+      p {
+        font-size: 7px;
+      }
+    }
+    .common {
+      width: 6%;
+      text-align: center;
+      font-size: 10px;
+    }
+    .display-button {
+      display: flex;
+      flex-direction: column;
+      button {
+        width: 80px;
+        height: 20px;
+
+        background-color: #fff;
+        border: 1px solid lightgray;
+        margin-bottom: 3px;
+        font-size: 8px;
+      }
+    }
+  }
+}
