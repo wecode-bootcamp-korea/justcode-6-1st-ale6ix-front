@@ -1,0 +1,12 @@
+.Magazine-container {
+  padding: 100px 50px 0;
+  position: relative;
+  top: -100px;
+  background-color: #efecec;
+
+  .Magazine-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
