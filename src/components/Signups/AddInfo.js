@@ -1,0 +1,28 @@
+import React from 'react';
+import './AddInfo.scss';
+
+function AddInfo() {
+  return (
+    <div className="signup-birth">
+      <span className="width">생년월일</span>
+      <input alt="생년월일" className="join-birth-year" type="text" />
+      <span className="birth">&nbsp;년 </span>
+      <input alt="생년월일" className="join-birth-month" type="text" />
+      <span className="birth">&nbsp;월 </span>
+      <input alt="생년월일" className="join-birth-day" type="text" />
+      <span className="birth">&nbsp;일 </span>
+      <span>
+        &nbsp;&nbsp;&nbsp;
+        <input alt="양력" type="radio" />
+        양력
+      </span>
+      <span>
+        &nbsp;&nbsp;
+        <input alt="음력" type="radio" />
+        음력
+      </span>
+    </div>
+  );
+}
+
+export default AddInfo;
