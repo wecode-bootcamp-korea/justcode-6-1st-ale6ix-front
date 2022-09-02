@@ -1,0 +1,31 @@
+.product-list-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 80px 20px;
+  margin: 0 10% 7.5% 10%;
+}
+
+.product-list {
+  span {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .product-image {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .product-title {
+    padding: 10px 0;
+  }
+
+  .product-price {
+    border-top: 0.5px solid gainsboro;
+    padding-top: 10px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "groupProductList": {
+    "groupProductList": [
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "쇼파",
+        "detail_code_id": 1,
+        "price": "28000",
+        "product_name": "소파1",
+        "main_image_url": "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2009&q=80"
+      },
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "쇼파",
+        "detail_code_id": 1,
+        "price": "29000",
+        "product_name": "소파2",
+        "main_image_url": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80"
+      },
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "테이블",
+        "detail_code_id": 2,
+        "price": "300000",
+        "product_name": "테이블",
+        "main_image_url": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
+      },
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "커튼",
+        "detail_code_id": 3,
+        "price": "41500",
+        "product_name": "커튼",
+        "main_image_url": "https://images.unsplash.com/photo-1528822855841-e8bf3134cdc9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3VydGFpbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+      },
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "커튼",
+        "detail_code_id": 3,
+        "price": "310000",
+        "product_name": "커튼2",
+        "main_image_url": "https://images.unsplash.com/photo-1573507811472-909cd17e834d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+      },
+      {
+        "group_code_name": "거실 ",
+        "group_code_id": 1,
+        "detail_code_name": "조화",
+        "detail_code_id": 4,
+        "price": "15000",
+        "product_name": "조화",
+        "main_image_url": "https://unsplash.com/photos/Ebwp2-6BG8E"
+      }
+    ],
+    "ByGroupcode": {
+      "id": 1,
+      "group_code_name": "거실 ",
+      "detailCode": [
+        {
+          "detailCodeId": 1,
+          "detailCodeName": "쇼파"
+        },
+        {
+          "detailCodeId": 2,
+          "detailCodeName": "테이블"
+        },
+        {
+          "detailCodeId": 3,
+          "detailCodeName": "커튼"
+        },
+        {
+          "detailCodeId": 4,
+          "detailCodeName": "조화"
+        }
+      ]
+    }
+  },
+  "message": "success_groupProductList"
+}
