@@ -9,6 +9,22 @@
   display: flex;
   justify-content: space-between;
   padding-top: 3%;
+  .delete {
+    button {
+      width: 100px;
+      height: 30px;
+      background-color: #fff;
+      border: 1px solid lightgray;
+    }
+  }
+  .delete2 {
+    button {
+      width: 120px;
+      height: 30px;
+      background-color: #fff;
+      border: 1px solid lightgray;
+    }
+  }
 }
 
 .full-price-container {
@@ -32,5 +48,18 @@
 }
 .price-btn {
   padding-top: 5%;
-  margin-left: 50%;
+  margin-left: 45%;
+  button {
+    width: 120px;
+    height: 45px;
+    color: #fff;
+    background-color: #222;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      background-color: rgb(66, 65, 65);
+      transition: 0.5s;
+    }
+  }
 }
