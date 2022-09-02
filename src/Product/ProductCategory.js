@@ -18,3 +18,5 @@ function ProductCategory(props) {
     </div>
   );
 }
+
+export default ProductCategory;
