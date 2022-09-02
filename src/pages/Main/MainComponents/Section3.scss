@@ -1,0 +1,113 @@
+
+.container{
+  min-width: 1150px;
+  padding: 0 0 0;
+  margin: 0 auto 0;
+  zoom: 1;
+  position: relative;
+}
+.section4-box{
+  width: 100%;
+  padding: 0 5% 0;
+  margin: 0 auto;
+  text-align: center;
+  .title{
+    padding: 80px 0 30px;
+    .h2{
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+    p{
+      margin: 20px auto 15px;
+      width: 35px;
+      height: 2px;
+      background-color: #111;
+    }
+    .text{
+      display: block;
+      padding: 5px 0 0;
+      font-size: 14px;
+      color: #aaa;
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+  }
+  .product{
+    .prd-list{
+      // width: 100%;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
+      .prd-box{
+        width: 250px;
+        margin-bottom: 30px;
+        position: relative;
+        text-align: center;
+        vertical-align: top;
+        .item-list{
+          width: 100%;
+          text-align: center;
+          // padding: 0 10px;
+          // margin: 0 5px;
+          .item-img{
+            &:hover .icon-btn{
+              opacity: 1;
+            }
+            .item-size{
+            width: 224px; height: 224px;
+            }
+            .icon-btn{
+              position: absolute;
+              bottom: 30%; left: 35%;
+              opacity: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #fff;
+              // &:hover{
+              //   opacity: 1;
+              // }
+              .icon{
+                width: 30px;
+                height: 30px;
+                border-top: 1px solid #ececec;
+                border-bottom: 1px solid #ececec;
+                border-left: 1px solid #ececec;
+                &:nth-child(3){
+                  border-right: 1px solid #ececec;
+                }
+                img{
+                  width: 24px;
+                  padding: 3px;
+                }
+              }
+            }
+          }
+          figcaption{
+            cursor: pointer;
+            text-align: center;
+            dl{
+              font-size: 16px;
+              color: #222;
+              dt{
+                padding: 5px 0 12px;
+                margin: 0 0 2px;
+                border-bottom: 1px solid #ececec;
+                font-weight: 400;
+              }
+              dd{
+                font-size: 13px;
+                font-weight: 700;
+                padding: 8px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
