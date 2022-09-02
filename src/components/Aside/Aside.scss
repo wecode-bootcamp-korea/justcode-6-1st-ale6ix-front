@@ -1,0 +1,25 @@
+.aside-container{
+  position: fixed;
+  bottom: 80px; right: 30px;
+ 
+  .scroll-btn{
+    .scroll-btn-top, .scroll-btn-bottom{
+    width: 40px; height: 45px;
+    margin-bottom: 1px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding-top: 40%;
+    .aside-btn{
+    }
+    }
+    .scroll-btn-top{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .scroll-btn-bottom{
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+}
