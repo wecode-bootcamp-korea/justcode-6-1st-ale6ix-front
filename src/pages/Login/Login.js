@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
-import LoginInput from "../../components/Logins/LoginInput";
-import GoToSignup from "../../components/Logins/GoToSignup";
+import LoginInput from "./LoginComponents/LoginInput";
+import GoToSignup from "./LoginComponents/GoToSignup";
 
 function Login() {
   const navigate = useNavigate();
