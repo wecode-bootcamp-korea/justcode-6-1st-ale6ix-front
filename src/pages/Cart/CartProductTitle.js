@@ -5,15 +5,7 @@ import "./CartProductTitle.scss";
 import Price from "./Price";
 import Product from "./Product";
 
-function CartProductTitle() {
-  const [item, setItem] = useState([]);
-
-  useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) => setItem(data.cart));
-  }, []);
-
+function CartProductTitle({ item, onChangeProps }) {
   return (
     <div className="Cart-product-container">
       <div className="Cart-product-title">
@@ -28,8 +20,8 @@ function CartProductTitle() {
         <p className="price">합계</p>
         <p className="choice">선택</p>
       </div>
-      {item?.map((item) => {
-        return <Product item={item} />;
+      {item?.map((product) => {
+        return <Product item={product} onChangeProps={onChangeProps} />;
       })}
       <Price />
     </div>

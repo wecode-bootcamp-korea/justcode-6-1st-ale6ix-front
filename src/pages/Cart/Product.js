@@ -3,18 +3,26 @@ import Price from "./Price";
 
 import "./Product.scss";
 
-function Product({ item }) {
-  // const handleUpBtn = () => {
-  //   setCount(++item.amount);
-  // };
+function Product({ item, onChangeProps }) {
+  const [btnValid, setBtnValid] = useState(false);
 
-  // const handleDownBtn = () => {
-  //   if (count > 0) {
-  //     setCount(--item.amount);
-  //     setPrice(Number(item.price) * count).toLocaleString("en");
-  //   }
-  // };
+  const handleUpBtn = (e) => {
+    e.preventDefault();
+    onChangeProps(item.id, "amount", item.amount + 1);
+  };
 
+  const handleDownBtn = (e) => {
+    e.preventDefault();
+    onChangeProps(item.id, "amount", item.amount - 1);
+  };
+
+  const handleInputHandler = (e) => {
+    onChangeProps(item.id, "amount", +e.target.value);
+  };
+
+  useEffect(() => {
+    item.amount > 1 ? setBtnValid(false) : setBtnValid(true);
+  }, [item.amount]);
   return (
     <>
       <div className="product-container">
@@ -22,20 +30,24 @@ function Product({ item }) {
           <input className="checkbox" type="checkbox" />
           <img src={item.productImg} />
           <p className="product">{item.productTitle}</p>
-          <p className="price">{Number(item.price).toLocaleString("en")} won</p>
+          <p className="price">{item.price.toLocaleString("en")} won</p>
           <div className="display-flex">
             <div className="button-container">
               <div className="count">
-                <input value={item.amount} type="text" />
+                <input
+                  onChange={handleInputHandler}
+                  value={item.amount}
+                  type="text"
+                />
               </div>
               <div className="count-btn">
-                <button>
+                <button onClick={handleUpBtn}>
                   <img
                     src="http://img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_up.gif"
                     alt="upBtn"
                   />
                 </button>
-                <button>
+                <button onClick={handleDownBtn} disabled={btnValid}>
                   <img
                     src="http://img.echosting.cafe24.com/skin/base_ko_KR/product/btn_count_down.gif"
                     alt="downBtn"
@@ -55,7 +67,9 @@ function Product({ item }) {
           </div>
           <p className="common">기본배송</p>
           <p className="common">무료</p>
-          <p className="price">{item.price}won</p>
+          <p className="price">
+            {(item.price * item.amount).toLocaleString("en")}won
+          </p>
           <div className="display-button">
             <button>주문하기</button>
             <button>관심상품등록</button>
