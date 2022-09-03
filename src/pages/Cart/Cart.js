@@ -91,7 +91,12 @@ function Cart() {
     setItem([]);
   };
 
-  console.log(item);
+  // 체크된 상품 삭제하기
+  const checkedDelete = () => {
+    setItem((prev) => {
+      return prev.filter((product) => product.checked !== totalChecked);
+    });
+  };
 
   return (
     <div className="Cart-container">
@@ -105,6 +110,7 @@ function Cart() {
         totalChecked={totalChecked}
         deleteCart={deleteCart}
         deleteAllCart={deleteAllCart}
+        checkedDelete={checkedDelete}
       />
     </div>
   );

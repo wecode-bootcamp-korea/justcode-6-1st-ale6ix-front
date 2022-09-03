@@ -15,6 +15,9 @@ function Product({
   const handleUpBtn = (e) => {
     e.preventDefault();
     onChangeProps(item.id, "amount", item.amount + 1);
+    if (item.amount >= item.stock) {
+      alert("상품의 수량이 재고수량 보다 많습니다.");
+    }
   };
 
   const handleDownBtn = (e) => {

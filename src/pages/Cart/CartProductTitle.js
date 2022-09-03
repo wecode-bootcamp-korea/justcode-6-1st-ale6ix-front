@@ -13,6 +13,7 @@ function CartProductTitle({
   totalChecked,
   deleteCart,
   deleteAllCart,
+  checkedDelete,
 }) {
   return (
     <div className="Cart-product-container">
@@ -49,7 +50,11 @@ function CartProductTitle({
       ) : (
         <div className="empty-cart">장바구니에 상품이 없습니다.</div>
       )}
-      <Price item={item} deleteAllCart={deleteAllCart} />
+      <Price
+        item={item}
+        deleteAllCart={deleteAllCart}
+        checkedDelete={checkedDelete}
+      />
     </div>
   );
 }

@@ -22,7 +22,7 @@
       "price": "99000",
       "product_name": "서커스 키친박스 1.5L",
       "main_image_url": "http://alessi.co.kr/web/product/medium/202107/1feffcf7a0d004cbb02d88968ca37673.jpg",
-      "stock": 10
+      "stock": 5
     },
     {
       "user_order_id": 3,
@@ -34,7 +34,7 @@
       "price": "144000",
       "product_name": "서커스 양철보관함 3P 세트 소",
       "main_image_url": "http://alessi.co.kr/web/product/medium/202108/26b6abc012c3d3a82b6e6a5ce4abab6b.jpg",
-      "stock": 10
+      "stock": 2
     },
     {
       "user_order_id": 4,
