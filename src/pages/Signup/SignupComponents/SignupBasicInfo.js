@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import './SignupBasicInfo.scss';
-import CertifiedNumber from './CertifiedNumber';
+import React, { useState } from "react";
+import "./SignupBasicInfo.scss";
+import CertifiedNumber from "./CertifiedNumber";
 
 function SignupBasicInfo({ data, optionValue }) {
-  const [phone1, setPhone1] = useState('');
-  const [phone2, setPhone2] = useState('');
+  const [phone1, setPhone1] = useState("");
+  const [phone2, setPhone2] = useState("");
   const [btnOn, setBtnOn] = useState(false);
 
-  const handleNum1 = e => {
+  const handleNum1 = (e) => {
     const num1 = e.target.value;
     setPhone1(num1);
   };
 
-  const handleNum2 = e => {
+  const handleNum2 = (e) => {
     const num2 = e.target.value;
     setPhone2(num2);
   };
@@ -27,7 +27,7 @@ function SignupBasicInfo({ data, optionValue }) {
 
   return (
     <div className="basic-info-box">
-      {data.map(input => {
+      {data.map((input) => {
         return (
           <div key={input.id} className={input.class}>
             <span className="width">{input.spanAlt}</span>
@@ -36,11 +36,6 @@ function SignupBasicInfo({ data, optionValue }) {
               className={input.inputClass}
               type={input.type}
             ></input>
-            {input.duplication && (
-              <button className="id-duplication" type="button">
-                {input.duplication}
-              </button>
-            )}
             {input.terms && <span className="id-terms">{input.terms}</span>}
           </div>
         );
@@ -48,7 +43,7 @@ function SignupBasicInfo({ data, optionValue }) {
       <div className="signup-phone">
         <span className="width">휴대전화</span>
         <select className="join-phone-input">
-          {optionValue.map(value => {
+          {optionValue.map((value) => {
             return (
               <option key={value.id} value={value.option}>
                 {value.option}
@@ -60,7 +55,7 @@ function SignupBasicInfo({ data, optionValue }) {
         <input
           alt="휴대전화"
           className="join-phone-input"
-          type="text"
+          type="number"
           maxLength={4}
           onChange={handleNum1}
         />
@@ -68,7 +63,7 @@ function SignupBasicInfo({ data, optionValue }) {
         <input
           alt="휴대전화"
           className="join-phone-input"
-          type="text"
+          type="number"
           maxLength={4}
           onChange={handleNum2}
         />
