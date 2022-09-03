@@ -5,12 +5,13 @@ import MainSection2 from "./MainComponents/MainSection2";
 import MainBanner1 from "./MainComponents/MainBanner1";
 import MainBanner2 from "./MainComponents/MainBanner2";
 import Magazine from "./MainComponents/Magazine";
+import Slider from "./MainSlide/Slider";
 
 function Main() {
   return (
     <div className="main-container">
       <div className="main-container-slide-img">
-       
+       <Slider />
       </div>
       <div className="main-section">
         <MainSection1 />
