@@ -19,7 +19,7 @@ function Cart() {
         return {
           id: el.user_order_id,
           productId: el.product_id,
-          amount: el.quantity,
+          amount: +el.quantity,
           price: +el.price,
           productImg: el.main_image_url,
           productTitle: el.product_name,

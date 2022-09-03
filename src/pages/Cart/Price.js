@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Price.scss";
 
 function Price({ item, deleteAllCart }) {
-  console.log(item.id);
+  // 전체상품 가격
+  const price = item.map((el) => {
+    return el.amount * el.price;
+  });
+
   return (
     <>
       <div className="price-container">
@@ -11,9 +15,13 @@ function Price({ item, deleteAllCart }) {
         </div>
         <div>
           <span>상품구매금액</span>
-          <strong>1,260,000</strong>
+          <strong>
+            {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
+          </strong>
           <span>+ 배송비 0 (무료) = 합계 :</span>
-          <strong>1,260,000</strong>
+          <strong>
+            {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
+          </strong>
         </div>
       </div>
       <div className="choice-button">
@@ -40,10 +48,13 @@ function Price({ item, deleteAllCart }) {
         <div>
           <div className="f-width">
             <p>
-              369,000<span>won</span>
+              {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
+              <span>won</span>
             </p>
             <p>+ 0 won</p>
-            <p className="total">= 369,000 won</p>
+            <p className="total">
+              = {price.reduce((a, b) => a + b, 0).toLocaleString("en")} won
+            </p>
           </div>
         </div>
       </div>
