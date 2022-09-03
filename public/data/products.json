@@ -2,82 +2,238 @@
   "groupProductList": {
     "groupProductList": [
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "쇼파",
+        "detail_code_name": "보관용기",
         "detail_code_id": 1,
-        "price": "28000",
-        "product_name": "소파1",
-        "main_image_url": "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2009&q=80"
+        "price": "95000",
+        "id": 1,
+        "product_name": "서커스 키친박스 1L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/36906963286122ecaf76dd6f1361280a.jpg"
       },
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "쇼파",
+        "detail_code_name": "보관용기",
         "detail_code_id": 1,
-        "price": "29000",
-        "product_name": "소파2",
-        "main_image_url": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80"
+        "price": "99000",
+        "id": 2,
+        "product_name": "서커스 키친박스 1.5L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/1feffcf7a0d004cbb02d88968ca37673.jpg"
       },
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "테이블",
-        "detail_code_id": 2,
-        "price": "300000",
-        "product_name": "테이블",
-        "main_image_url": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "144000",
+        "id": 3,
+        "product_name": "서커스 양철보관함 3P 세트 소",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202108/26b6abc012c3d3a82b6e6a5ce4abab6b.jpg"
       },
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "커튼",
-        "detail_code_id": 3,
-        "price": "41500",
-        "product_name": "커튼",
-        "main_image_url": "https://images.unsplash.com/photo-1528822855841-e8bf3134cdc9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y3VydGFpbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "90000",
+        "id": 4,
+        "product_name": "서커스 양념통 2P 세트",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/d0097fe3b7800148553a8559a9204d8a.jpg"
       },
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "커튼",
-        "detail_code_id": 3,
-        "price": "310000",
-        "product_name": "커튼2",
-        "main_image_url": "https://images.unsplash.com/photo-1573507811472-909cd17e834d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "272000",
+        "id": 5,
+        "product_name": "마티나 빵통 레드",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202108/cfcf3dc85aa919872383e071c42b9c0e.jpg"
       },
       {
-        "group_code_name": "거실 ",
+        "group_code_name": "KITCHEN",
         "group_code_id": 1,
-        "detail_code_name": "조화",
-        "detail_code_id": 4,
-        "price": "15000",
-        "product_name": "조화",
-        "main_image_url": "https://unsplash.com/photos/Ebwp2-6BG8E"
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "90000",
+        "id": 6,
+        "product_name": "줄리에타 키친박스 0.5L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/4ff61c2afec04b1bf495806682649508.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "95000",
+        "id": 7,
+        "product_name": "줄리에타 키친박스 0.75L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/4ff61c2afec04b1bf495806682649508.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "100000",
+        "id": 8,
+        "product_name": "줄리에타 키친박스 1L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/d41e48b179e834de80e5a807739a92d2.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "106000",
+        "id": 9,
+        "product_name": "줄리에타 키친박스 1.5L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/bc28e9f2f58e1d26e6a460b2f4098cdb.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "95000",
+        "id": 10,
+        "product_name": "드레스트 키친박스 0.74L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/1fd5da3db6c27a4d59ccf6dc26e7b10b.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "100000",
+        "id": 11,
+        "product_name": "드레스트 키친박스 1L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/2903a4e179a370a62bb0e77b592bf5af.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "106000",
+        "id": 12,
+        "product_name": "드레스트 키친박스 1.5L",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/d4e1ad18e74e0d84afa767a66d7430d3.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "134000",
+        "id": 13,
+        "product_name": "모빠렐라 치즈통&국자 세트",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/112f781ff8d8ded9c0a6dac2390b3c47.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "114000",
+        "id": 14,
+        "product_name": "에토레 키친박스 0.75L 레드,옐로우,블랙",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202106/d5aadd3c5cdc7d714e6216d9bede31f2.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "114000",
+        "id": 15,
+        "product_name": "에토레 키친박스 0.75L 옐로우,블랙,화이트",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202106/5ee02d9af9c17d095f8b29a9f8b7453d.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "114000",
+        "id": 16,
+        "product_name": "에토레 키친박스 0.75L 핑크,레드,옐로우",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202106/5ee02d9af9c17d095f8b29a9f8b7453d.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "125000",
+        "id": 17,
+        "product_name": "에토레 키친박스 1L 옐로우,블랙,화이트",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202106/390c2b4ccdf008c690db8e93c036c928.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "125000",
+        "id": 18,
+        "product_name": "에토레 키친박스 1L 핑크,레드,옐로우",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202106/44d512b2c47c82ba179e97fc0d2dcc38.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "276000",
+        "id": 19,
+        "product_name": "칼리스토 키친박스 1",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/a28a0d61360629bcfc95ba49cf96f6a1.jpg"
+      },
+      {
+        "group_code_name": "KITCHEN",
+        "group_code_id": 1,
+        "detail_code_name": "보관용기",
+        "detail_code_id": 1,
+        "price": "276000",
+        "id": 20,
+        "product_name": "칼리스토 키친박스 2",
+        "main_image_url": "http://alessi.co.kr/web/product/medium/202107/bfd6eba23dcc3df74ae0b2e79f670e94.jpg"
       }
     ],
     "ByGroupcode": {
       "id": 1,
-      "group_code_name": "거실 ",
+      "group_code_name": "KITCHEN",
       "detailCode": [
         {
           "detailCodeId": 1,
-          "detailCodeName": "쇼파"
+          "detailCodeName": "보관용기"
         },
         {
           "detailCodeId": 2,
-          "detailCodeName": "테이블"
+          "detailCodeName": "커피메이커"
         },
         {
           "detailCodeId": 3,
-          "detailCodeName": "커튼"
+          "detailCodeName": "주전자"
         },
         {
           "detailCodeId": 4,
-          "detailCodeName": "조화"
+          "detailCodeName": "냄비&팬"
+        },
+        {
+          "detailCodeId": 5,
+          "detailCodeName": "전자제품"
+        },
+        {
+          "detailCodeId": 6,
+          "detailCodeName": "주방소품"
         }
       ]
-    }
+    },
+    "tatalCount": "38",
+    "currentPage": 1
   },
   "message": "success_groupProductList"
 }
