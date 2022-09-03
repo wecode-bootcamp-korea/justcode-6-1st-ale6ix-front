@@ -8,8 +8,10 @@ import Product from "./Product";
 function CartProductTitle({
   item,
   onChangeProps,
+  handleSingleCheck,
   totalCheckboxHandler,
   totalChecked,
+  deleteCart,
 }) {
   return (
     <div className="Cart-product-container">
@@ -18,6 +20,7 @@ function CartProductTitle({
           onChange={(e) => {
             totalCheckboxHandler(e.target.value);
           }}
+          checked={totalChecked.length === item.length ? true : false}
           type="checkbox"
         />
         <p className="img">이미지</p>
@@ -34,8 +37,10 @@ function CartProductTitle({
         return (
           <Product
             item={product}
+            handleSingleCheck={handleSingleCheck}
             onChangeProps={onChangeProps}
             totalChecked={totalChecked}
+            deleteCart={deleteCart}
           />
         );
       })}

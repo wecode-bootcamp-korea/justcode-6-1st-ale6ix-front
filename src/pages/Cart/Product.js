@@ -3,7 +3,13 @@ import Price from "./Price";
 
 import "./Product.scss";
 
-function Product({ item, onChangeProps, totalChecked }) {
+function Product({
+  item,
+  onChangeProps,
+  totalChecked,
+  handleSingleCheck,
+  deleteCart,
+}) {
   const [btnValid, setBtnValid] = useState(false);
 
   const handleUpBtn = (e) => {
@@ -27,7 +33,14 @@ function Product({ item, onChangeProps, totalChecked }) {
     <>
       <div className="product-container">
         <div className="product-list">
-          <input checked={totalChecked} className="checkbox" type="checkbox" />
+          <input
+            onChange={(e) => {
+              handleSingleCheck(e.target.value, item.id);
+            }}
+            checked={totalChecked.includes(item.id) ? true : false}
+            className="checkbox"
+            type="checkbox"
+          />
           <img src={item.productImg} />
           <p className="product">{item.productTitle}</p>
           <p className="price">{item.price.toLocaleString("en")} won</p>
@@ -73,7 +86,13 @@ function Product({ item, onChangeProps, totalChecked }) {
           <div className="display-button">
             <button>주문하기</button>
             <button>관심상품등록</button>
-            <button>삭제</button>
+            <button
+              onClick={() => {
+                deleteCart(item.id, item.productTitle);
+              }}
+            >
+              삭제
+            </button>
           </div>
         </div>
       </div>
