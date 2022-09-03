@@ -3,7 +3,7 @@ import Price from "./Price";
 
 import "./Product.scss";
 
-function Product({ item, onChangeProps }) {
+function Product({ item, onChangeProps, totalChecked }) {
   const [btnValid, setBtnValid] = useState(false);
 
   const handleUpBtn = (e) => {
@@ -27,7 +27,7 @@ function Product({ item, onChangeProps }) {
     <>
       <div className="product-container">
         <div className="product-list">
-          <input className="checkbox" type="checkbox" />
+          <input checked={totalChecked} className="checkbox" type="checkbox" />
           <img src={item.productImg} />
           <p className="product">{item.productTitle}</p>
           <p className="price">{item.price.toLocaleString("en")} won</p>

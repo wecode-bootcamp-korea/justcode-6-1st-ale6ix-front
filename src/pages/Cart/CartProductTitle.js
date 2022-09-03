@@ -5,11 +5,21 @@ import "./CartProductTitle.scss";
 import Price from "./Price";
 import Product from "./Product";
 
-function CartProductTitle({ item, onChangeProps }) {
+function CartProductTitle({
+  item,
+  onChangeProps,
+  totalCheckboxHandler,
+  totalChecked,
+}) {
   return (
     <div className="Cart-product-container">
       <div className="Cart-product-title">
-        <input type="checkbox" />
+        <input
+          onChange={(e) => {
+            totalCheckboxHandler(e.target.value);
+          }}
+          type="checkbox"
+        />
         <p className="img">이미지</p>
         <p className="product">상품정보</p>
         <p className="price">판매가</p>
@@ -21,7 +31,13 @@ function CartProductTitle({ item, onChangeProps }) {
         <p className="choice">선택</p>
       </div>
       {item?.map((product) => {
-        return <Product item={product} onChangeProps={onChangeProps} />;
+        return (
+          <Product
+            item={product}
+            onChangeProps={onChangeProps}
+            totalChecked={totalChecked}
+          />
+        );
       })}
       <Price />
     </div>

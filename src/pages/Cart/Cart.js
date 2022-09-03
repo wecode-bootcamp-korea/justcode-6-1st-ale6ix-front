@@ -6,7 +6,9 @@ import CartProductTitle from "./CartProductTitle";
 
 function Cart() {
   const [item, setItem] = useState([]);
+  const [totalChecked, setTotalChecked] = useState();
 
+  // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
     try {
       const response = await fetch("/data/cart.json");
@@ -32,6 +34,7 @@ function Cart() {
     getFetchItem();
   }, [getFetchItem]);
 
+  // 수량 +- 구현 로직
   const onChangeProps = (id, key, value) => {
     setItem((prevState) => {
       return prevState.map((obj) => {
@@ -44,11 +47,25 @@ function Cart() {
     });
   };
 
+  const totalCheckboxHandler = (value) => {
+    setItem((prevState) => {
+      return prevState.map((el) => {
+        return { ...el, isChecked: value };
+      });
+    });
+    setTotalChecked(value);
+  };
+
   return (
     <div className="Cart-container">
       <CartHeading />
       <CartList item={item} />
-      <CartProductTitle item={item} onChangeProps={onChangeProps} />
+      <CartProductTitle
+        item={item}
+        onChangeProps={onChangeProps}
+        totalCheckboxHandler={totalCheckboxHandler}
+        totalChecked={totalChecked}
+      />
     </div>
   );
 }
