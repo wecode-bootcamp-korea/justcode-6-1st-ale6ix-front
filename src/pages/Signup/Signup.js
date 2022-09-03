@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Signup.scss";
-import InputForm from "../../components/Signups/InputForm";
-import Terms from "../../components/Signups/Terms";
-import AddInfo from "../../components/Signups/AddInfo";
+import InputForm from "./SignupComponents/InputForm";
+import Terms from "./SignupComponents/Terms";
+import AddInfo from "./SignupComponents/AddInfo";
 
 function Signup() {
   return (
