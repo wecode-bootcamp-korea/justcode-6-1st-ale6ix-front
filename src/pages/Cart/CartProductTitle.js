@@ -34,17 +34,21 @@ function CartProductTitle({
         <p className="price">합계</p>
         <p className="choice">선택</p>
       </div>
-      {item?.map((product) => {
-        return (
-          <Product
-            item={product}
-            handleSingleCheck={handleSingleCheck}
-            onChangeProps={onChangeProps}
-            totalChecked={totalChecked}
-            deleteCart={deleteCart}
-          />
-        );
-      })}
+      {item.length !== 0 ? (
+        item?.map((product) => {
+          return (
+            <Product
+              item={product}
+              handleSingleCheck={handleSingleCheck}
+              onChangeProps={onChangeProps}
+              totalChecked={totalChecked}
+              deleteCart={deleteCart}
+            />
+          );
+        })
+      ) : (
+        <div className="empty-cart">장바구니에 상품이 없습니다.</div>
+      )}
       <Price item={item} deleteAllCart={deleteAllCart} />
     </div>
   );
