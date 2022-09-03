@@ -29,15 +29,22 @@ function Product({
   useEffect(() => {
     item.amount > 1 ? setBtnValid(false) : setBtnValid(true);
   }, [item.amount]);
+
+  //개별 전체 가격
+  const price = (item.amount * item.price).toLocaleString("en");
+
+  // 적립금
+  const reserve = (item.price * 0.03).toLocaleString("en");
+
   return (
     <>
       <div className="product-container">
         <div className="product-list">
           <input
             onChange={(e) => {
-              handleSingleCheck(e.target.value, item.id);
+              handleSingleCheck(e, item.id);
             }}
-            checked={totalChecked.includes(item.id) ? true : false}
+            checked={item.checked}
             className="checkbox"
             type="checkbox"
           />
@@ -76,13 +83,11 @@ function Product({
               className="point"
               src="http://img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_point.gif"
             />
-            <p>3,000원</p>
+            <p>{reserve}</p>
           </div>
           <p className="common">기본배송</p>
           <p className="common">무료</p>
-          <p className="price">
-            {(item.price * item.amount).toLocaleString("en")}won
-          </p>
+          <p className="price">{price}won</p>
           <div className="display-button">
             <button>주문하기</button>
             <button>관심상품등록</button>

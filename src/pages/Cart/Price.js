@@ -9,6 +9,10 @@ function Price({ item, deleteAllCart }) {
 
   const totalPrice = price.reduce((a, b) => a + b, 0).toLocaleString("en");
 
+  const handlePaymentBtn = () => {
+    alert(`총 ${item.length}개의 상품을 결제 하시겠습니까?`);
+  };
+
   return (
     <>
       <div className="price-container">
@@ -55,7 +59,7 @@ function Price({ item, deleteAllCart }) {
         </div>
       </div>
       <div className="price-btn">
-        <button>결제하기</button>
+        <button onClick={handlePaymentBtn}>결제하기</button>
       </div>
     </>
   );

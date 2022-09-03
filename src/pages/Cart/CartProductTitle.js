@@ -19,9 +19,9 @@ function CartProductTitle({
       <div className="Cart-product-title">
         <input
           onChange={(e) => {
-            totalCheckboxHandler(e.target.value);
+            totalCheckboxHandler(e.target.checked);
           }}
-          checked={totalChecked.length === item.length ? true : false}
+          checked={item.id}
           type="checkbox"
         />
         <p className="img">이미지</p>

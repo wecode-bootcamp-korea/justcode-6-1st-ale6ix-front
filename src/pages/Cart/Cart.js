@@ -6,7 +6,7 @@ import CartProductTitle from "./CartProductTitle";
 
 function Cart() {
   const [item, setItem] = useState([]);
-  const [totalChecked, setTotalChecked] = useState([]);
+  const [totalChecked, setTotalChecked] = useState(false);
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
@@ -43,29 +43,32 @@ function Cart() {
     });
   };
 
-  // 체크박스 전체 단일 개체 선택
-  const handleSingleCheck = (checked, id) => {
-    if (checked) {
-      setTotalChecked((prev) => [...prev, id]);
-    } else {
-      // 체크 해제
-      setTotalChecked(totalChecked.filter((el) => el !== id));
-    }
-  };
-
+  // 체크박스 전체 개체 선택
   const totalCheckboxHandler = (checked) => {
-    if (checked) {
-      const idArray = [];
-      // 전체 체크 박스가 체크 되면 id를 가진 모든 elements를 배열에 넣어주어서,
-      // 전체 체크 박스 체크
-      item.forEach((el) => idArray.push(el.id));
-      setTotalChecked(idArray);
-    }
+    setTotalChecked(checked);
+    setItem((prev) => {
+      return prev.map((list) => {
+        list.checked = checked;
+        return list;
+      });
+    });
+  };
+  // 체크박스 단일 개체 선택
+  const handleSingleCheck = (e, id) => {
+    const { checked } = e.target;
+    let allCheck = true;
+    setItem((prev) => {
+      const result = prev.map((list) => {
+        if (list.id === id) {
+          list.checked = checked;
+        }
+        if (list.checked === false) allCheck = false;
+        return list;
+      });
 
-    // 반대의 경우 전체 체크 박스 체크 삭제
-    else {
-      setTotalChecked([]);
-    }
+      setTotalChecked(allCheck);
+      return result;
+    });
   };
 
   useEffect(() => {
@@ -87,6 +90,8 @@ function Cart() {
     alert("장바구니를 비우시겠습니까?");
     setItem([]);
   };
+
+  console.log(item);
 
   return (
     <div className="Cart-container">
