@@ -1,0 +1,93 @@
+{
+  "categoryData": [
+    {
+      "LargeCategoryId": 1,
+      "LargeCategoryName": "KICHEN",
+      "smallCategories": [
+        {
+          "smallCategoryId": 1,
+          "smallCategoryName": "쇼파"
+        },
+        {
+          "smallCategoryId": 2,
+          "smallCategoryName": "테이블"
+        },
+        {
+          "smallCategoryId": 3,
+          "smallCategoryName": "커튼"
+        },
+        {
+          "smallCategoryId": 4,
+          "smallCategoryName": "조화"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 2,
+      "LargeCategoryName": "TABLE",
+      "smallCategories": [
+        {
+          "smallCategoryId": 5,
+          "smallCategoryName": "칼/도마"
+        },
+        {
+          "smallCategoryId": 6,
+          "smallCategoryName": "식기도구"
+        },
+        {
+          "smallCategoryId": 7,
+          "smallCategoryName": "커피/차"
+        },
+        {
+          "smallCategoryId": 8,
+          "smallCategoryName": "제빵도구"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 3,
+      "LargeCategoryName": "BAR&WINE",
+      "smallCategories": [
+        {
+          "smallCategoryId": 9,
+          "smallCategoryName": "거울"
+        },
+        {
+          "smallCategoryId": 10,
+          "smallCategoryName": "세면기"
+        },
+        {
+          "smallCategoryId": 11,
+          "smallCategoryName": "샤워기"
+        },
+        {
+          "smallCategoryId": 12,
+          "smallCategoryName": "수도꼭지"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 4,
+      "LargeCategoryName": "HOME",
+      "smallCategories": [
+        {
+          "smallCategoryId": 13,
+          "smallCategoryName": "침대"
+        },
+        {
+          "smallCategoryId": 14,
+          "smallCategoryName": "책장"
+        },
+        {
+          "smallCategoryId": 15,
+          "smallCategoryName": "옷장"
+        },
+        {
+          "smallCategoryId": 16,
+          "smallCategoryName": "스탠드조명"
+        }
+      ]
+    }
+  
+  ]
+}

@@ -9,7 +9,9 @@ import Magazine from "./MainComponents/Magazine";
 function Main() {
   return (
     <div className="main-container">
-      <div className="main-container-slide-img"></div>
+      <div className="main-container-slide-img">
+       
+      </div>
       <div className="main-section">
         <MainSection1 />
         <MainSection2 />
