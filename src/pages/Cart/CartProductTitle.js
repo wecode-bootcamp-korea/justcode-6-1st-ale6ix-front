@@ -12,6 +12,7 @@ function CartProductTitle({
   totalCheckboxHandler,
   totalChecked,
   deleteCart,
+  deleteAllCart,
 }) {
   return (
     <div className="Cart-product-container">
@@ -44,7 +45,7 @@ function CartProductTitle({
           />
         );
       })}
-      <Price />
+      <Price item={item} deleteAllCart={deleteAllCart} />
     </div>
   );
 }

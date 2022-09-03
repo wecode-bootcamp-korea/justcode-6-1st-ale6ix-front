@@ -1,7 +1,8 @@
 import React from "react";
 import "./Price.scss";
 
-function Price() {
+function Price({ item, deleteAllCart }) {
+  console.log(item.id);
   return (
     <>
       <div className="price-container">
@@ -21,7 +22,13 @@ function Price() {
           <button>삭제하기</button>
         </div>
         <div className="delete2">
-          <button>장바구니 비우기</button>
+          <button
+            onClick={() => {
+              deleteAllCart();
+            }}
+          >
+            장바구니 비우기
+          </button>
         </div>
       </div>
       <div className="full-price-container">

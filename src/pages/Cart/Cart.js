@@ -72,7 +72,7 @@ function Cart() {
     getFetchItem();
   }, [getFetchItem]);
 
-  // 장바구니 하나 삭제구현
+  // 장바구니 개별 삭제구현
   const deleteCart = (target, targetName) => {
     alert(`${targetName}상품을 정말 삭제하시겠습니까?`);
     setItem((prev) => {
@@ -80,6 +80,12 @@ function Cart() {
         return el.id !== target;
       });
     });
+  };
+
+  // 장바구니 전체 삭제
+  const deleteAllCart = () => {
+    alert("장바구니를 비우시겠습니까?");
+    setItem([]);
   };
 
   return (
@@ -93,6 +99,7 @@ function Cart() {
         totalCheckboxHandler={totalCheckboxHandler}
         totalChecked={totalChecked}
         deleteCart={deleteCart}
+        deleteAllCart={deleteAllCart}
       />
     </div>
   );
