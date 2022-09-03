@@ -7,6 +7,8 @@ function Price({ item, deleteAllCart }) {
     return el.amount * el.price;
   });
 
+  const totalPrice = price.reduce((a, b) => a + b, 0).toLocaleString("en");
+
   return (
     <>
       <div className="price-container">
@@ -15,13 +17,9 @@ function Price({ item, deleteAllCart }) {
         </div>
         <div>
           <span>상품구매금액</span>
-          <strong>
-            {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
-          </strong>
+          <strong>{totalPrice}</strong>
           <span>+ 배송비 0 (무료) = 합계 :</span>
-          <strong>
-            {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
-          </strong>
+          <strong>{totalPrice}</strong>
         </div>
       </div>
       <div className="choice-button">
@@ -48,13 +46,11 @@ function Price({ item, deleteAllCart }) {
         <div>
           <div className="f-width">
             <p>
-              {price.reduce((a, b) => a + b, 0).toLocaleString("en")}
+              {totalPrice}
               <span>won</span>
             </p>
             <p>+ 0 won</p>
-            <p className="total">
-              = {price.reduce((a, b) => a + b, 0).toLocaleString("en")} won
-            </p>
+            <p className="total">= {totalPrice} won</p>
           </div>
         </div>
       </div>
