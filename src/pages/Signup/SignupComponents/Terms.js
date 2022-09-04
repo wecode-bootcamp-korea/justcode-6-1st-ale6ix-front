@@ -1,11 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Terms.scss";
 
 function Terms() {
+  const [allCheck, setAllCheck] = useState(false);
+  const [firstCheck, setfirstCheck] = useState(false);
+  const [secondCheck, setSecondCheck] = useState(false);
+
+  const allBtnClick = () => {
+    if (allCheck === false) {
+      setAllCheck(true);
+      setfirstCheck(true);
+      setSecondCheck(true);
+    } else {
+      setAllCheck(false);
+      setfirstCheck(false);
+      setSecondCheck(false);
+    }
+  };
+
+  const firstBtnClick = () => {
+    if (firstCheck === false) {
+      setfirstCheck(true);
+    } else {
+      setfirstCheck(false);
+    }
+  };
+
+  const secondBtnClick = () => {
+    if (secondCheck === false) {
+      setSecondCheck(true);
+    } else {
+      setSecondCheck(false);
+    }
+  };
+
+  useEffect(() => {
+    if (firstCheck === true && secondCheck === true) {
+      setAllCheck(true);
+    } else {
+      setAllCheck(false);
+    }
+  }, [firstCheck, secondCheck]);
+
   return (
     <div className="terms-wrap">
       <div className="whole-agreement-box">
-        <input alt="전체동의" className="whole-agreement-btn" type="checkbox" />
+        <input
+          alt="전체동의"
+          className="whole-agreement-btn"
+          type="checkbox"
+          checked={allCheck}
+          onChange={allBtnClick}
+        />
 
         <span>
           &nbsp;이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에
@@ -41,7 +87,13 @@ function Terms() {
         </div>
         <p className="agreement">
           <span>이용약관에 동의하십니까?&nbsp;&nbsp;</span>
-          <input alt="동의" className="areement-btn" type="checkbox" />
+          <input
+            alt="동의"
+            className="areement-btn"
+            type="checkbox"
+            checked={firstCheck}
+            onChange={firstBtnClick}
+          />
           <label>&nbsp;동의함</label>
         </p>
       </div>
@@ -69,7 +121,13 @@ function Terms() {
         </div>
         <p className="agreement">
           <span>이용약관에 동의하십니까?&nbsp;&nbsp;</span>
-          <input alt="동의" className="areement-btn" type="checkbox" />
+          <input
+            alt="동의"
+            className="areement-btn"
+            type="checkbox"
+            checked={secondCheck}
+            onChange={secondBtnClick}
+          />
           <label>&nbsp;동의함</label>
         </p>
       </div>
