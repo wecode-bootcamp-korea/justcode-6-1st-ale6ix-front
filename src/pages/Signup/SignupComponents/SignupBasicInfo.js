@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SignupBasicInfo.scss";
 import CertifiedNumber from "./CertifiedNumber";
 
@@ -17,11 +17,10 @@ function SignupBasicInfo({ data, optionValue }) {
     setPhone2(num2);
   };
 
-  const useAlert = () => {
-    alert("인증번호는 2321 입니다.");
-  };
-
   const runBtn = () => {
+    const useAlert = () => {
+      alert("인증번호는 2321 입니다.");
+    };
     if (phone1.length > 3 && phone2.length > 3) {
       return setBtnOn(true), setTimeout(useAlert, 1000);
     } else {
