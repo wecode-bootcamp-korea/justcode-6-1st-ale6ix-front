@@ -2,26 +2,39 @@ import React, { useState } from "react";
 import "./SignupBasicInfo.scss";
 import CertifiedNumber from "./CertifiedNumber";
 
-function SignupBasicInfo({ data, optionValue }) {
-  const [phone1, setPhone1] = useState("");
-  const [phone2, setPhone2] = useState("");
+function SignupBasicInfo({ optionValue }) {
+  const [signupId, setSignupId] = useState("");
+  const [signupPw, setSignupPw] = useState("");
+  const [signupName, setSignupName] = useState("");
+  const [signupEmail, setSignupEmail] = useState("");
+  const [signupPhone, setSignupPhone] = useState("");
   const [btnOn, setBtnOn] = useState(false);
 
-  const handleNum1 = (e) => {
-    const num1 = e.target.value;
-    setPhone1(num1);
+  const handleId = (e) => {
+    setSignupId(e.target.value);
   };
 
-  const handleNum2 = (e) => {
-    const num2 = e.target.value;
-    setPhone2(num2);
+  const handlePw = (e) => {
+    setSignupPw(e.target.value);
+  };
+
+  const handleName = (e) => {
+    setSignupName(e.target.value);
+  };
+
+  const handleEmail = (e) => {
+    setSignupEmail(e.target.value);
+  };
+
+  const handlePhone = (e) => {
+    setSignupPhone(e.target.value);
   };
 
   const runBtn = () => {
     const useAlert = () => {
       alert("인증번호는 2321 입니다.");
     };
-    if (phone1.length > 3 && phone2.length > 3) {
+    if (signupPhone.length > 3) {
       return setBtnOn(true), setTimeout(useAlert, 1000);
     } else {
       return setBtnOn(false);
@@ -30,19 +43,48 @@ function SignupBasicInfo({ data, optionValue }) {
 
   return (
     <div className="basic-info-box">
-      {data.map((input) => {
-        return (
-          <div key={input.id} className={input.class}>
-            <span className="width">{input.spanAlt}</span>
-            <input
-              alt={input.spanAlt}
-              className={input.inputClass}
-              type={input.type}
-            ></input>
-            {input.terms && <span className="id-terms">{input.terms}</span>}
-          </div>
-        );
-      })}
+      <div className="signup-id">
+        <span className="width">아이디</span>
+        <input
+          alt="아이디"
+          className="join-id-input"
+          type="text"
+          value={signupId}
+          onChange={handleId}
+        />
+        <span className="id-terms">(영문소문자/숫자, 4~16자)</span>
+      </div>
+      <div className="signup-pw">
+        <span className="width">비밀번호</span>
+        <input
+          alt="비밀번호"
+          className="join-pw-input"
+          type="password"
+          value={signupPw}
+          onChange={handlePw}
+        />
+        <span className="id-terms">(영문 대소문자/숫자, 4~16자)</span>
+      </div>
+      <div className="signup-name">
+        <span className="width">이름</span>
+        <input
+          alt="이름"
+          className="join-name-input"
+          type="text"
+          value={signupName}
+          onChange={handleName}
+        />
+      </div>
+      <div className="signup-email">
+        <span className="width">이메일</span>
+        <input
+          alt="이메일"
+          className="join-email-input"
+          type="text"
+          value={signupEmail}
+          onChange={handleEmail}
+        />
+      </div>
       <div className="signup-phone">
         <span className="width">휴대전화</span>
         <select className="join-phone-input">
@@ -59,14 +101,16 @@ function SignupBasicInfo({ data, optionValue }) {
           alt="휴대전화"
           className="join-phone-input"
           type="number"
-          onChange={handleNum1}
+          value={signupPhone}
+          onChange={handlePhone}
         />
         <span> - </span>
         <input
           alt="휴대전화"
           className="join-phone-input"
           type="number"
-          onChange={handleNum2}
+          value={signupPhone}
+          onChange={handlePhone}
         />
         <button
           alt="인증번호"
