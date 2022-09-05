@@ -14,6 +14,7 @@ function CartProductTitle({
   deleteCart,
   deleteAllCart,
   checkedDelete,
+  changeQuantity,
 }) {
   return (
     <div className="Cart-product-container">
@@ -44,6 +45,7 @@ function CartProductTitle({
               onChangeProps={onChangeProps}
               totalChecked={totalChecked}
               deleteCart={deleteCart}
+              changeQuantity={changeQuantity}
             />
           );
         })

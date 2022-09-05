@@ -40,8 +40,7 @@ function Price({ item, deleteAllCart, checkedDelete, deleteCart }) {
         <div className="delete2">
           <button
             onClick={() => {
-              console.log(item);
-              checkedDelete();
+              deleteAllCart();
             }}
           >
             장바구니 비우기

@@ -51,6 +51,24 @@ function Cart() {
     });
   };
 
+  // 변경 버튼 눌렀을때 수량 변경
+  const changeQuantity = (useerId, id, amount) => {
+    const quantity = {
+      cart_id: useerId,
+      product_id: id,
+      quantity: amount,
+    };
+    fetch("http://localhost:8000/products/cart", {
+      method: "PATCH",
+      headers: {
+        "content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(quantity),
+    }).then((res) => res.json());
+    // .then((data) => console.log(data.groupProductList));
+  };
+
   // 체크박스 전체 개체 선택
   const totalCheckboxHandler = (checked) => {
     setTotalChecked(checked);
@@ -192,6 +210,7 @@ function Cart() {
         deleteCart={deleteCart}
         deleteAllCart={deleteAllCart}
         checkedDelete={checkedDelete}
+        changeQuantity={changeQuantity}
       />
     </div>
   );

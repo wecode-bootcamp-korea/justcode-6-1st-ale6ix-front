@@ -9,15 +9,16 @@ function Product({
   totalChecked,
   handleSingleCheck,
   deleteCart,
+  changeQuantity,
 }) {
   const [btnValid, setBtnValid] = useState(false);
 
   const handleUpBtn = (e) => {
     e.preventDefault();
+    // tkdvna
+    if (item.amount >= item.stock)
+      return alert("상품의 수량이 재고수량 보다 많습니다.");
     onChangeProps(item.id, "amount", item.amount + 1);
-    if (item.amount >= item.stock) {
-      alert("상품의 수량이 재고수량 보다 많습니다.");
-    }
   };
 
   const handleDownBtn = (e) => {
@@ -79,7 +80,14 @@ function Product({
               </div>
             </div>
 
-            <button className="button">변경</button>
+            <button
+              className="button"
+              onClick={() => {
+                changeQuantity(item.id, item.productId, item.amount);
+              }}
+            >
+              변경
+            </button>
           </div>
           <div className="display-width">
             <img
