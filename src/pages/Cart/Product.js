@@ -96,7 +96,7 @@ function Product({
             <button>관심상품등록</button>
             <button
               onClick={() => {
-                deleteCart(item.id, item.productTitle);
+                deleteCart(item.id, item.productId, item.productTitle);
               }}
             >
               삭제

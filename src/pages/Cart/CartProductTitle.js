@@ -54,6 +54,7 @@ function CartProductTitle({
         item={item}
         deleteAllCart={deleteAllCart}
         checkedDelete={checkedDelete}
+        deleteCart={deleteCart}
       />
     </div>
   );

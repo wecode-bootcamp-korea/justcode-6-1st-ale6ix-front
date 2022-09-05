@@ -11,7 +11,13 @@ function Cart() {
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
     try {
-      const response = await fetch("/data/cart.json");
+      const response = await fetch("http://localhost:8000/products/cart", {
+        method: "GET",
+        headers: {
+          Authorization:
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
+        },
+      });
       if (!response.ok) {
       }
       const data = await response.json();
@@ -76,13 +82,45 @@ function Cart() {
   }, [getFetchItem]);
 
   // 장바구니 개별 삭제구현
-  const deleteCart = (target, targetName) => {
+  const deleteCart = (target, targetId, targetName) => {
     alert(`${targetName}상품을 정말 삭제하시겠습니까?`);
-    setItem((prev) => {
-      return prev.filter((el) => {
-        return el.id !== target;
-      });
-    });
+    const data = {
+      data: [
+        {
+          cart_id: target,
+          product_id: targetId,
+        },
+      ],
+    };
+
+    // setItem((prev) => {
+    //   return prev.map((product) => {
+    //     if (product.checked === totalChecked) {
+    //       return data.push({
+    //         cart_id: product.id,
+    //         product_id: product.productId,
+    //       });
+    //     }
+    //   });
+    // });
+
+    fetch("http://localhost:8000/products/cart", {
+      method: "DELETE",
+      headers: {
+        "content-Type": "application/json",
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => setItem(data));
+
+    // setItem((prev) => {
+    //   return prev.filter((el) => {
+    //     return el.id !== target;
+    //   });
+    // });
   };
 
   // 장바구니 전체 삭제
@@ -93,9 +131,26 @@ function Cart() {
 
   // 체크된 상품 삭제하기
   const checkedDelete = () => {
-    setItem((prev) => {
-      return prev.filter((product) => product.checked !== totalChecked);
-    });
+    let ppp = item.filter((product) => product.checked === totalChecked);
+
+    fetch("http://localhost:8000/products/cart", {
+      method: "DELETE",
+      headers: {
+        "content-Type": "application/json",
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
+      },
+      body: JSON.stringify({
+        data: ppp.map((list) => {
+          return { cart_id: list.id, product_id: list.productId };
+        }),
+      }),
+    })
+      .then((res) => console.log(res))
+      .then((data) => console.log(data));
+    // setItem((prev) => {
+    //   return prev.filter((product) => product.checked !== totalChecked);
+    // });
   };
 
   return (

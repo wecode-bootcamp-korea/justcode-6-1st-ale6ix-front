@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Price.scss";
 
-function Price({ item, deleteAllCart, checkedDelete }) {
+function Price({ item, deleteAllCart, checkedDelete, deleteCart }) {
   // 전체상품 가격
   const price = item.map((el) => {
     return el.amount * el.price;
@@ -40,7 +40,8 @@ function Price({ item, deleteAllCart, checkedDelete }) {
         <div className="delete2">
           <button
             onClick={() => {
-              deleteAllCart();
+              console.log(item);
+              checkedDelete();
             }}
           >
             장바구니 비우기
