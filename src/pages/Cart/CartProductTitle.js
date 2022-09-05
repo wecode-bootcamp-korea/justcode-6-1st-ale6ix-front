@@ -40,6 +40,7 @@ function CartProductTitle({
         item?.map((product) => {
           return (
             <Product
+              key={product.id}
               item={product}
               handleSingleCheck={handleSingleCheck}
               onChangeProps={onChangeProps}

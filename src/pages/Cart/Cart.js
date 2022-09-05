@@ -9,7 +9,7 @@ function Cart() {
   const [totalChecked, setTotalChecked] = useState(false);
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM1MDU3OSwiZXhwIjoxNjYyMzYxMzc5fQ.a_2XUD5xIK4skQqg_LY8E6yiZJy4U9H7Dr4_WqIrJeE";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM3ODExMSwiZXhwIjoxNjYyMzg4OTExfQ.N1eX369SL47u-ctl8X3n7Obl1uruzNer3-xP_-_CTLo";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
@@ -53,6 +53,7 @@ function Cart() {
 
   // 변경 버튼 눌렀을때 수량 변경
   const changeQuantity = (useerId, id, amount) => {
+    alert(`${amount}개로 변경 하시겠습니까?`);
     const quantity = {
       cart_id: useerId,
       product_id: id,
@@ -149,11 +150,20 @@ function Cart() {
   // 장바구니 전체 삭제
   const deleteAllCart = () => {
     alert("장바구니를 비우시겠습니까?");
+
+    fetch("http://localhost:8000/products/cart/all", {
+      method: "DELETE",
+      headers: {
+        // "content-Type": "application/json",
+        authorization: token,
+      },
+    });
     setItem([]);
   };
 
   // 체크된 상품 삭제하기
   const checkedDelete = () => {
+    alert("선택하신 상품을 삭제하시겠습니까?");
     let checkProduct = item.filter(
       (product) => product.checked === totalChecked
     );

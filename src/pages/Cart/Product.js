@@ -15,7 +15,7 @@ function Product({
 
   const handleUpBtn = (e) => {
     e.preventDefault();
-    // tkdvna
+    // 상품재고 알림창 조건문으로 구현 onChangeProps보다 위에 있어야 적용됨
     if (item.amount >= item.stock)
       return alert("상품의 수량이 재고수량 보다 많습니다.");
     onChangeProps(item.id, "amount", item.amount + 1);
