@@ -1,4 +1,5 @@
 import React from "react";
+import './SliderContent.scss'
 
 function SliderContent({activeIndex,imgSlider}){
   return(

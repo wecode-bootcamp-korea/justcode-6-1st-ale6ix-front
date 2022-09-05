@@ -20,6 +20,9 @@ function ProductList(props) {
           );
         })}
       </div>
+      <div className="product-bottom">
+        
+      </div>
     </>
   );
 }

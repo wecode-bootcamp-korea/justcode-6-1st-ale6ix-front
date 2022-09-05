@@ -9,6 +9,7 @@ import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Main from "./Main/Main";
 import Signup from "./Signup/Signup";
+import ProductBottom from "./Product/ProductBottom";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/main" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/carts" element={<Cart />} />
+        <Route path="/product-bottom" element={<ProductBottom/>} />
       </Routes>
       <Aside />
       <Footer />

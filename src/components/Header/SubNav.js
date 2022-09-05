@@ -4,8 +4,10 @@ function SubNav({sublist}){
   return(
     <div className="sub-nav">
       <ul className="sub-menu">
-        {sublist.map((subNav)=>{
-          return <li>{subNav.smallCategoryName}</li>
+        {sublist.map((subNav,index)=>{
+          return <li
+          key={index}
+          >{subNav.smallCategoryName}</li>
         })}
         
       </ul>

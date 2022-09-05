@@ -1,0 +1,38 @@
+.bottom-container{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5%;
+  .bottom-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    // border-bottom: 1px solid #ececec;
+    
+    li{
+      width: 100%; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:nth-child(3){
+        border-left: 0px;
+      }
+    }
+    .border{
+      border: 1px solid #ececec;
+    }
+    .border-ative{
+      border-bottom: 0px;
+    }
+    .border-bottom{
+      border-bottom: 1px solid #ececec;
+    }
+
+  }
+  .modal-container{
+    margin: 5%;
+    // background-color: aquamarine;
+    text-align: center;
+  }
+}

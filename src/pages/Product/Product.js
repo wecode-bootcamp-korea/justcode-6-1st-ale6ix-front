@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Product.scss";
+import ProductBottom from "./ProductBottom";
 
 function Product() {
   const [data, setData] = useState([]);
