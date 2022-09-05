@@ -8,14 +8,16 @@ function Cart() {
   const [item, setItem] = useState([]);
   const [totalChecked, setTotalChecked] = useState(false);
 
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM1MDU3OSwiZXhwIjoxNjYyMzYxMzc5fQ.a_2XUD5xIK4skQqg_LY8E6yiZJy4U9H7Dr4_WqIrJeE";
+
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
     try {
       const response = await fetch("http://localhost:8000/products/cart", {
         method: "GET",
         headers: {
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
+          Authorization: token,
         },
       });
       if (!response.ok) {
@@ -81,8 +83,8 @@ function Cart() {
     getFetchItem();
   }, [getFetchItem]);
 
-  // 장바구니 개별 삭제구현
-  const deleteCart = (target, targetId, targetName) => {
+  // 개별 상품 삭제하기 버튼
+  const deleteCart = useCallback(async (target, targetId, targetName) => {
     alert(`${targetName}상품을 정말 삭제하시겠습니까?`);
     const data = {
       data: [
@@ -92,36 +94,39 @@ function Cart() {
         },
       ],
     };
-
-    // setItem((prev) => {
-    //   return prev.map((product) => {
-    //     if (product.checked === totalChecked) {
-    //       return data.push({
-    //         cart_id: product.id,
-    //         product_id: product.productId,
-    //       });
-    //     }
-    //   });
-    // });
-
-    fetch("http://localhost:8000/products/cart", {
-      method: "DELETE",
-      headers: {
-        "content-Type": "application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => setItem(data));
-
-    // setItem((prev) => {
-    //   return prev.filter((el) => {
-    //     return el.id !== target;
-    //   });
-    // });
-  };
+    try {
+      const response = await fetch("http://localhost:8000/products/cart", {
+        method: "DELETE",
+        headers: {
+          "content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        const response1 = await fetch("http://localhost:8000/products/cart", {
+          method: "GET",
+          headers: {
+            "content-Type": "application/json",
+            Authorization: token,
+          },
+        });
+        const data = await response1.json();
+        const list = data.groupProductList.map((el) => {
+          return {
+            id: el.user_order_id,
+            productId: el.product_id,
+            amount: +el.quantity,
+            price: +el.price,
+            productImg: el.main_image_url,
+            productTitle: el.product_name,
+            stock: +el.stock,
+          };
+        });
+        setItem(list);
+      }
+    } catch {}
+  }, []);
 
   // 장바구니 전체 삭제
   const deleteAllCart = () => {
@@ -131,26 +136,47 @@ function Cart() {
 
   // 체크된 상품 삭제하기
   const checkedDelete = () => {
-    let ppp = item.filter((product) => product.checked === totalChecked);
+    let checkProduct = item.filter(
+      (product) => product.checked === totalChecked
+    );
 
     fetch("http://localhost:8000/products/cart", {
       method: "DELETE",
       headers: {
         "content-Type": "application/json",
-        Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM0MDU0MywiZXhwIjoxNjYyMzQ0MTQzfQ.1H5LnH6jerSQPvvmpL7aj3CfAYgqTYv0MUOLHpJ1sG4",
+        Authorization: token,
       },
       body: JSON.stringify({
-        data: ppp.map((list) => {
+        data: checkProduct.map((list) => {
           return { cart_id: list.id, product_id: list.productId };
         }),
       }),
-    })
-      .then((res) => console.log(res))
-      .then((data) => console.log(data));
-    // setItem((prev) => {
-    //   return prev.filter((product) => product.checked !== totalChecked);
-    // });
+    }).then((res) => {
+      if (res.ok) {
+        fetch("http://localhost:8000/products/cart", {
+          method: "GET",
+          headers: {
+            "content-Type": "application/json",
+            Authorization: token,
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const list = data.groupProductList.map((el) => {
+              return {
+                id: el.user_order_id,
+                productId: el.product_id,
+                amount: +el.quantity,
+                price: +el.price,
+                productImg: el.main_image_url,
+                productTitle: el.product_name,
+                stock: +el.stock,
+              };
+            });
+            setItem(list);
+          });
+      }
+    });
   };
 
   return (
