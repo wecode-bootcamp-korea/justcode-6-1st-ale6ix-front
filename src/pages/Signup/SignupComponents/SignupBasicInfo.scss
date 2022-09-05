@@ -8,35 +8,7 @@
     font-size: 70%;
   }
 
-  .signup-id,
-  .signup-pw,
-  .signup-name,
-  .signup-phone,
-  .signup-email {
-    margin-bottom: 30px;
-  }
-
-  .id-terms,
-  .pw-terms {
-    margin-left: 10px;
-    font-size: small;
-  }
-
-  .join-phone-input {
-    width: 60px;
-    height: 40px;
-
-    input::-webkit-inner-spin-button {
-      appearance: none;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-    }
-  }
-
-  .join-id-input,
-  .join-pw-input,
-  .join-name-input,
-  .join-email-input {
+  @mixin inputStyle {
     width: 215px;
     height: 30px;
     padding-left: 10px;
@@ -45,13 +17,39 @@
     line-height: 30px;
   }
 
-  .join-phone-input {
-    height: 30px;
-    padding-left: 10px;
-    border: 1px solid #d0d0d0;
-    border-radius: 3px;
-    line-height: 30px;
+  .signup-id,
+  .signup-pw,
+  .signup-name,
+  .signup-email {
+    margin-bottom: 30px;
   }
+
+  .signup-phone {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .id-terms,
+  .pw-terms {
+    margin-left: 10px;
+    font-size: small;
+  }
+
+  input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .join-id-input,
+  .join-pw-input,
+  .join-name-input,
+  .join-email-input,
+  .join-phone-input {
+    @include inputStyle;
+  }
+
+
 
   .id-duplication,
   .join-phone-certify {

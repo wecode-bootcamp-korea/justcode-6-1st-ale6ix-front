@@ -1,8 +1,28 @@
-import React, { useState } from "react";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 import "./SignupBasicInfo.scss";
 import CertifiedNumber from "./CertifiedNumber";
+import { useNavigate } from "react-router-dom";
 
-function SignupBasicInfo({ optionValue }) {
+const SignupBasicInfo = forwardRef((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    register,
+  }));
+  const navigate = useNavigate();
+
+  const accountCheck = () => {
+    fetch(`http://localhost:4000/users/signup?account=${signupId}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        result.message !== "signUp available"
+          ? setMessage(`${signupId}는 사용이 불가능합니다`)
+          : setMessage(`${signupId}는 사용이 가능합니다`);
+      });
+  };
+
+  const [message, setMessage] = useState();
   const [signupId, setSignupId] = useState("");
   const [signupPw, setSignupPw] = useState("");
   const [signupName, setSignupName] = useState("");
@@ -30,11 +50,37 @@ function SignupBasicInfo({ optionValue }) {
     setSignupPhone(e.target.value);
   };
 
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
+  const register = () => {
+    fetch("http://localhost:4000/users/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        account: signupId,
+        password: signupPw,
+        name: signupName,
+        email: signupEmail,
+        phone_number: signupPhone,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        result.message === "userCreated"
+          ? navigate("/login")
+          : alert("회원가입 실패");
+      });
+  };
+
   const runBtn = () => {
     const useAlert = () => {
       alert("인증번호는 2321 입니다.");
     };
-    if (signupPhone.length > 3) {
+    if (signupPhone.length > 10) {
       return setBtnOn(true), setTimeout(useAlert, 1000);
     } else {
       return setBtnOn(false);
@@ -51,7 +97,9 @@ function SignupBasicInfo({ optionValue }) {
           type="text"
           value={signupId}
           onChange={handleId}
+          onBlur={accountCheck}
         />
+        <span>{message}</span>
         <span className="id-terms">(영문소문자/숫자, 4~16자)</span>
       </div>
       <div className="signup-pw">
@@ -87,44 +135,26 @@ function SignupBasicInfo({ optionValue }) {
       </div>
       <div className="signup-phone">
         <span className="width">휴대전화</span>
-        <select className="join-phone-input">
-          {optionValue.map((value) => {
-            return (
-              <option key={value.id} value={value.option}>
-                {value.option}
-              </option>
-            );
-          })}
-        </select>
-        <span> - </span>
         <input
           alt="휴대전화"
           className="join-phone-input"
-          type="number"
+          type="text"
           value={signupPhone}
           onChange={handlePhone}
         />
-        <span> - </span>
-        <input
-          alt="휴대전화"
-          className="join-phone-input"
-          type="number"
-          value={signupPhone}
-          onChange={handlePhone}
-        />
-        <button
-          alt="인증번호"
-          className="join-phone-certify"
-          type="button"
-          value={btnOn}
-          onClick={runBtn}
-        >
-          인증번호받기
-        </button>
-        {btnOn === true && <CertifiedNumber />}
       </div>
+      <button
+        alt="인증번호"
+        className="join-phone-certify"
+        type="button"
+        value={btnOn}
+        onClick={runBtn}
+      >
+        인증번호받기
+      </button>
+      {btnOn === true && <CertifiedNumber />}
     </div>
   );
-}
+});
 
 export default SignupBasicInfo;
