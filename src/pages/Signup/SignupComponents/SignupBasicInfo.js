@@ -1,5 +1,6 @@
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 import "./SignupBasicInfo.scss";
+import SignupComplete from './SignupComplete';
 import CertifiedNumber from "./CertifiedNumber";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +8,10 @@ const SignupBasicInfo = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     register,
   }));
+  
   const navigate = useNavigate();
+
+  
 
   const accountCheck = () => {
     fetch(`http://localhost:4000/users/signup?account=${signupId}`, {
@@ -17,8 +21,8 @@ const SignupBasicInfo = forwardRef((props, ref) => {
       .then((res) => res.json())
       .then((result) => {
         result.message !== "signUp available"
-          ? setMessage(`${signupId}는 사용이 불가능합니다`)
-          : setMessage(`${signupId}는 사용이 가능합니다`);
+          ? setMessage(`${signupId}는 이미 사용중인 아이디입니다.`)
+          : setMessage(`${signupId}는 사용이 가능한 아이디입니다.`);
       });
   };
 
@@ -48,10 +52,6 @@ const SignupBasicInfo = forwardRef((props, ref) => {
 
   const handlePhone = (e) => {
     setSignupPhone(e.target.value);
-  };
-
-  const goToLogin = () => {
-    navigate("/login");
   };
 
   const register = () => {
@@ -99,7 +99,7 @@ const SignupBasicInfo = forwardRef((props, ref) => {
           onChange={handleId}
           onBlur={accountCheck}
         />
-        <span>{message}</span>
+        <span className="message-box">{message}</span>
         <span className="id-terms">(영문소문자/숫자, 4~16자)</span>
       </div>
       <div className="signup-pw">
