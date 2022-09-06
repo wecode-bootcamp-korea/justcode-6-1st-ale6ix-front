@@ -7,8 +7,8 @@ import Cart from "./Cart/Cart";
 import Login from "./Login/Login";
 import Main from "./Main/Main";
 import Signup from "./Signup/Signup";
-import ProductBigCate from "./Product/ProductBigCate";
-import ProductSmallCate from "./Product/ProductSmallCate";
+import ProductBigCategory from "./Product/ProductBigCategory";
+import ProductSmallCategory from "./Product/ProductSmallCategory";
 import ProductDetail from "./Product/ProductDetail";
 
 function Router() {
@@ -21,8 +21,11 @@ function Router() {
         <Route path="/main" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/carts" element={<Cart />} />
-        <Route path="/product/:bigId" element={<ProductBigCate />} />
-        <Route path="/product/:bigId/:smallId" element={<ProductSmallCate />} />
+        <Route path="/product/:bigId" element={<ProductBigCategory />} />
+        <Route
+          path="/product/:bigId/:smallId"
+          element={<ProductSmallCategory />}
+        />
         <Route
           exact
           path="/product/detail/:productId"
