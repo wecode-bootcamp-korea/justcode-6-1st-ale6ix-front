@@ -1,11 +1,9 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./SignupComplete.scss";
 
-function SignupComplete({ completeId, completeName, completeEmail }) {
-  const goToLoginBtn = () => {
-    Navigate("/login");
-  };
+function SignupComplete({ completeValue }) {
+  const navigate = useNavigate();
 
   return (
     <div className="complete-wrap">
@@ -42,7 +40,9 @@ function SignupComplete({ completeId, completeName, completeEmail }) {
                   src="/images/right-arrow.png"
                 />
                 <span className="signup-user-content">아이디</span>
-                <span className="singup-user-account">{completeId}</span>
+                <span className="singup-user-account">
+                  {completeValue.account}
+                </span>
               </div>
               <div>
                 <img
@@ -51,7 +51,9 @@ function SignupComplete({ completeId, completeName, completeEmail }) {
                   src="/images/right-arrow.png"
                 />
                 <span className="signup-user-content">이름</span>
-                <span className="signup-user-name">{completeName}</span>
+                <span className="signup-user-name">
+                  {completeValue.user_name}
+                </span>
               </div>
               <div>
                 <img
@@ -60,7 +62,7 @@ function SignupComplete({ completeId, completeName, completeEmail }) {
                   src="/images/right-arrow.png"
                 />
                 <span className="signup-user-content">이메일</span>
-                <span className="singup-user-email">{completeEmail}</span>
+                <span className="singup-user-email">{completeValue.email}</span>
               </div>
             </div>
           </div>
@@ -68,10 +70,15 @@ function SignupComplete({ completeId, completeName, completeEmail }) {
         {/* 유저정보 박스 끝 */}
         <div className="bottom-section">
           <div className="signup-complete-check">
-            <span className="name-thick">{completeName}</span>님은 [일반회원/
-            배송비 무료] 회원이십니다.
+            <span className="name-thick">{completeValue.user_name}</span>님은
+            [일반회원/ 배송비 무료] 회원이십니다.
           </div>
-          <button className="go-to-main" onClick={goToLoginBtn}>
+          <button
+            className="go-to-main"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
             로그인으로 이동
           </button>
         </div>
