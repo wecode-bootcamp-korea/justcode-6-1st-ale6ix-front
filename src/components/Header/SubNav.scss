@@ -1,19 +1,26 @@
-.sub-nav{
+.sub-nav {
   position: absolute;
-  top: 10%; 
+  top: 10%;
   display: flex;
-  .sub-menu{
+  .sub-menu {
     width: 100px;
-    text-align: center;
-    li{
+    margin-left: 5%;
+    li {
       color: #999;
       font-size: 13px;
       font-weight: 500;
       line-height: 28px;
+
+      &:hover {
+        color: #222;
+      }
     }
   }
-  .sub-menu-img img{
-    width: 300px;
-    height: 300px;
+  .sub-menu-img {
+    margin-left: 5%;
+    img {
+      width: 300px;
+      height: 300px;
+    }
   }
 }
