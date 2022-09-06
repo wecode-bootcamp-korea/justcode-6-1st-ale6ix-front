@@ -9,8 +9,9 @@ import Main from "./Main/Main";
 import Search from "./Search/Search";
 import Signup from "./Signup/Signup";
 
-import ProductBottom from "./Product/ProductBottom";
 
+import ProductBottom from "./Product/ProductBottom";
+import SignupComplete from "./Signup/SignupComponents/SignupComplete";
 import ProductBigCategory from "./Product/ProductBigCategory";
 import ProductSmallCategory from "./Product/ProductSmallCategory";
 import ProductDetail from "./Product/ProductDetail";
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/main" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/complete" element={<SignupComplete />} />
         <Route path="/carts" element={<Cart />} />
 
         <Route path="/product-bottom" element={<ProductBottom/>} />
