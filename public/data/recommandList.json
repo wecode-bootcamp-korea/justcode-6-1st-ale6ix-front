@@ -1,0 +1,125 @@
+{
+  "recommendProductList": [
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "보관용기",
+      "detail_code_id": 1,
+      "price": "272000",
+      "id": 5,
+      "product_name": "마티나 빵통 레드",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202108/cfcf3dc85aa919872383e071c42b9c0e.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "보관용기",
+      "detail_code_id": 1,
+      "price": "134000",
+      "id": 13,
+      "product_name": "모빠렐라 치즈통&국자 세트",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202107/112f781ff8d8ded9c0a6dac2390b3c47.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "커피메이커",
+      "detail_code_id": 2,
+      "price": "184000",
+      "id": 22,
+      "product_name": "풀치나 커피메이커 3C 레드 / 인덕션",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202103/27fccc156d54429b8e9e953ba7d4737c.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "커피메이커",
+      "detail_code_id": 2,
+      "price": "248000",
+      "id": 23,
+      "product_name": "풀치나 커피메이커 6C 레드 / 인덕션",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202111/dd6551e19995ecf5d94c974f10532201.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "210000",
+      "id": 36,
+      "product_name": "에도 밀크 포트",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/609d84113faa5916d16c0b80f7d2301a.jpg"
+    },
+    {
+      "group_code_name": "TABLE",
+      "group_code_id": 2,
+      "detail_code_name": "숟가락&포크&나이프",
+      "detail_code_id": 10,
+      "price": "93000",
+      "id": 45,
+      "product_name": "아미치 케이크 서버",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202112/37073fadbbba05f1ad6e9af4821d4015.jpg"
+    },
+    {
+      "group_code_name": "TABLE",
+      "group_code_id": 2,
+      "detail_code_name": "숟가락&포크&나이프",
+      "detail_code_id": 10,
+      "price": "27000",
+      "id": 46,
+      "product_name": "슬릭스푼 블루",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202202/19e59117cfc03f06c8e5b9bbbd013bc2.jpg"
+    },
+    {
+      "group_code_name": "TABLE",
+      "group_code_id": 2,
+      "detail_code_name": "커피&티",
+      "detail_code_id": 14,
+      "price": "102000",
+      "id": 53,
+      "product_name": "카파 텀블러 브라운",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/20200212/d13a914a619223b9c278a13e0e3e4dc3.jpg"
+    },
+    {
+      "group_code_name": "TABLE",
+      "group_code_id": 2,
+      "detail_code_name": "커피&티",
+      "detail_code_id": 14,
+      "price": "102000",
+      "id": 54,
+      "product_name": "카파 텀블러 레드",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/20200212/10c0a47df7abe85db58abf05553b8881.jpg"
+    },
+    {
+      "group_code_name": "BAR & WINES",
+      "group_code_id": 3,
+      "detail_code_name": "오프너&캡",
+      "detail_code_id": 16,
+      "price": "318000",
+      "id": 56,
+      "product_name": "소크라테스 와인오프너",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202205/b1b247414cbc3ba6aed6fb1f7673ea3f.jpg"
+    },
+    {
+      "group_code_name": "BAR & WINES",
+      "group_code_id": 3,
+      "detail_code_name": "커멧&쿨러",
+      "detail_code_id": 17,
+      "price": "566000",
+      "id": 58,
+      "product_name": "에토레 와인쿨러",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202202/f6a360be8422ac92109a0f453393f13b.jpg"
+    },
+    {
+      "group_code_name": "BAR & WINES",
+      "group_code_id": 3,
+      "detail_code_name": "커멧&쿨러",
+      "detail_code_id": 17,
+      "price": "53000",
+      "id": 59,
+      "product_name": "볼리 와인쿨러",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202108/d0d7b28251503b917ad5fa4e18bc3ec6.jpg"
+    }
+  ],
+  "message": "readRecommendProductList"
+}

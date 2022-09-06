@@ -1,0 +1,136 @@
+{
+  "categoryData": [
+    {
+      "LargeCategoryId": 1,
+      "LargeCategoryName": "KITCHEN",
+      "smallCategories": [
+        {
+          "smallCategoryId": 1,
+          "smallCategoryName": "보관용기"
+        },
+        {
+          "smallCategoryId": 2,
+          "smallCategoryName": "커피메이커"
+        },
+        {
+          "smallCategoryId": 3,
+          "smallCategoryName": "주전자"
+        },
+        {
+          "smallCategoryId": 4,
+          "smallCategoryName": "냄비&팬"
+        },
+        {
+          "smallCategoryId": 5,
+          "smallCategoryName": "전자제품"
+        },
+        {
+          "smallCategoryId": 6,
+          "smallCategoryName": "주방소품"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 2,
+      "LargeCategoryName": "TABLE",
+      "smallCategories": [
+        {
+          "smallCategoryId": 7,
+          "smallCategoryName": "과일바구니&바스켓"
+        },
+        {
+          "smallCategoryId": 8,
+          "smallCategoryName": "쟁반&트레이"
+        },
+        {
+          "smallCategoryId": 9,
+          "smallCategoryName": "컵&잔 글라스류"
+        },
+        {
+          "smallCategoryId": 10,
+          "smallCategoryName": "숟가락&포크&나이프"
+        },
+        {
+          "smallCategoryId": 11,
+          "smallCategoryName": "그릇&식기"
+        },
+        {
+          "smallCategoryId": 12,
+          "smallCategoryName": "양념통&그라인더"
+        },
+        {
+          "smallCategoryId": 13,
+          "smallCategoryName": "서빙&악세서리"
+        },
+        {
+          "smallCategoryId": 14,
+          "smallCategoryName": "커피&티"
+        },
+        {
+          "smallCategoryId": 15,
+          "smallCategoryName": "조식 용품"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 3,
+      "LargeCategoryName": "BAR & WINES",
+      "smallCategories": [
+        {
+          "smallCategoryId": 16,
+          "smallCategoryName": "오프너&캡"
+        },
+        {
+          "smallCategoryId": 17,
+          "smallCategoryName": "커멧&쿨러"
+        },
+        {
+          "smallCategoryId": 18,
+          "smallCategoryName": "쉐어커"
+        },
+        {
+          "smallCategoryId": 19,
+          "smallCategoryName": "악세서리"
+        }
+      ]
+    },
+    {
+      "LargeCategoryId": 4,
+      "LargeCategoryName": "HOME",
+      "smallCategories": [
+        {
+          "smallCategoryId": 20,
+          "smallCategoryName": "가구"
+        },
+        {
+          "smallCategoryId": 21,
+          "smallCategoryName": "욕실"
+        },
+        {
+          "smallCategoryId": 22,
+          "smallCategoryName": "디퓨저&방향제"
+        },
+        {
+          "smallCategoryId": 23,
+          "smallCategoryName": "벽시계"
+        },
+        {
+          "smallCategoryId": 24,
+          "smallCategoryName": "오피스"
+        },
+        {
+          "smallCategoryId": 25,
+          "smallCategoryName": "인테리어소품"
+        },
+        {
+          "smallCategoryId": 26,
+          "smallCategoryName": "애완용품"
+        },
+        {
+          "smallCategoryId": 27,
+          "smallCategoryName": "크리스마스용품"
+        }
+      ]
+    }
+  ]
+}

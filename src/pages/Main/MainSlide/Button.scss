@@ -1,0 +1,19 @@
+.arrows{
+  // display: none;
+  .next{
+    position: absolute;
+    top: 40%; left: 80px;
+    font-size: 100px;
+    background-color: rgba($color: #fff, $alpha: 0);
+    border:0;
+    opacity: 0.4;
+  }
+  .prev{
+    position: absolute;
+    top: 40%; right: 80px;
+    font-size: 100px;
+    background-color: rgba($color: #fff, $alpha: 0);
+    border:0;
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "newProductList": [
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주방소품",
+      "detail_code_id": 6,
+      "price": "2400000",
+      "id": 38,
+      "product_name": "쥬시 살리프 오브제",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202204/e630f377fed0c92490bf431ceedcc25c.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "전자제품",
+      "detail_code_id": 5,
+      "price": "371000",
+      "id": 37,
+      "product_name": "전자 체중계",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/201801/792_shop1_976733.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "210000",
+      "id": 36,
+      "product_name": "에도 밀크 포트",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/609d84113faa5916d16c0b80f7d2301a.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "260000",
+      "id": 35,
+      "product_name": "테가미노 에그팬",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/a5c55ddbfd3d1bea9efa77c217abacc8.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "550000",
+      "id": 34,
+      "product_name": "마미 오발 캐서롤 30cm",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/90471f1435fd2e85dbfa8ba50e6fcb71.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "1100000",
+      "id": 33,
+      "product_name": "마미 파스타세트 /콜랜더/냄비",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/b0b4b9770aa2f54457c6eb7383e15809.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "냄비&팬",
+      "detail_code_id": 4,
+      "price": "444000",
+      "id": 32,
+      "product_name": "마미 밀크팬",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202104/609d84113faa5916d16c0b80f7d2301a.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주전자",
+      "detail_code_id": 3,
+      "price": "590000",
+      "id": 31,
+      "product_name": "불불 주전자",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202112/7a945140315d2950cac967ef78ba1b51.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주전자",
+      "detail_code_id": 3,
+      "price": "420000",
+      "id": 30,
+      "product_name": "차 티 주전자",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202107/600268a3982fef3487ae34485057dc52.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주전자",
+      "detail_code_id": 3,
+      "price": "315000",
+      "id": 29,
+      "product_name": "마이클그래이브 티포트 블루",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202105/f8722f707a373de4fc7438df9e43798a.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주전자",
+      "detail_code_id": 3,
+      "price": "1010000",
+      "id": 28,
+      "product_name": "피토 주전자",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202105/f5cac5bd934be3c27d8e397d1d656434.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "주전자",
+      "detail_code_id": 3,
+      "price": "320000",
+      "id": 27,
+      "product_name": "마미 주전자",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202105/bcea04cd7374f96866892538281ab108.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "커피메이커",
+      "detail_code_id": 2,
+      "price": "880000",
+      "id": 26,
+      "product_name": "라코니카 에스프레소 커피메이터 3C 블루",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202111/d7479fc76ffc62e727d95f9525f30ff7.jpg"
+    },
+    {
+      "group_code_name": "KITCHEN",
+      "group_code_id": 1,
+      "detail_code_name": "커피메이커",
+      "detail_code_id": 2,
+      "price": "579000",
+      "id": 25,
+      "product_name": "리차드 사퍼 에스프레소 커피메이커 6C",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202111/8c3e1cab7f125b99769ec2c0e86d55de.jpg"
+    }
+  ],
+  "message": "readNewProductList"
+}
