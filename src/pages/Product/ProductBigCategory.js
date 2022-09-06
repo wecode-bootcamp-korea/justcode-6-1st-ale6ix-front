@@ -7,9 +7,14 @@ import "./Product.scss";
 
 function ProductBigCategory() {
   const [data, setData] = useState([]);
+  const [offset, setOffset] = useState(0);
 
   const params = useParams();
   const bigId = params.bigId;
+
+  function offsetHandler(offsetNum) {
+    setOffset(offsetNum);
+  }
 
   useEffect(() => {
     fetch(

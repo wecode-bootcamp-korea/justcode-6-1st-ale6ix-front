@@ -7,10 +7,15 @@ import "./Product.scss";
 
 function ProductSmallCategory() {
   const [data, setData] = useState([]);
+  const [offset, setOffset] = useState(0);
 
   const params = useParams();
   const bigId = params.bigId;
   const smallId = params.smallId;
+
+  function offsetHandler(offsetNum) {
+    setOffset(offsetNum);
+  }
 
   useEffect(() => {
     fetch(
