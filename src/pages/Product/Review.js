@@ -24,23 +24,10 @@ function Review(){
     })
     .then(res => res.json())
     .then((data)=>{
-       console.log(data);  //ok {reviewData: Array(16)}
+       //console.log(data);  //ok {reviewData: Array(16)}
       setReview(data.reviewData)
     })
   },[newReview])
-
-    // setId(id+1)
-    // const newList = {
-    //   id : id,
-    //   title : titleValue.current.value ,
-    //   // userName : userName,
-    //   content : textValue.current.value,
-    //   createdAt : new Date().toLocaleString()
-    // }
-    // titleValue.current.value = "";
-    // textValue.current.value = ""; 
-    // setReview([...reveiw,newList])
-  
 
 //enter
   const enterEvent = (e)=>{
@@ -75,14 +62,32 @@ function Review(){
       .then(result=>{
         if(result.message == "post created"){
           setNewReview(result.reviewData);
-          console.log('post created')
+          // console.log('post created')
         }
         // console.log(result);
       })
-
+      .catch(error => console.error(error.message));
     }
   }
-    
+  //delete
+  const deleteBtn = ()=>{
+    fetch(`http://localhost:8000/products/detail/1/review?${id}`,{
+      method:"DELETE",
+      headers:{
+        "Content-Type" : "application/json",
+        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
+      },
+    })
+    .then(res => res.json())
+    .then(res=>{
+      if(res.ok){
+        setReview(data.reviewData)
+      }
+    })
+    .catch(error => console.error(error.message));
+  }
+  
+  
   return(
     <div>
       <div className="review-container">
@@ -93,6 +98,7 @@ function Review(){
           className="review-list-container" 
           id={id}
           list={list}
+          deleteBtn={deleteBtn}
           />
         })}
       </div>
@@ -107,11 +113,12 @@ function Review(){
       placeholder="소중한 리뷰 감사합니다.">
 
       </textarea>
-      
+
       <button
       onClick={addReview}
       className="add-btn"
       >저장</button>
+
       </div>
       
     </div>
