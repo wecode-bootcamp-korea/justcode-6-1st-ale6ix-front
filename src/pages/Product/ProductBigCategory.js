@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import ProductCategory from "./ProductCategory";
 import ProductList from "./ProductList";
@@ -6,6 +7,9 @@ import "./Product.scss";
 
 function ProductBigCategory() {
   const [data, setData] = useState([]);
+
+  const params = useParams();
+  const bigId = params.bigId;
 
   useEffect(() => {
     fetch(
