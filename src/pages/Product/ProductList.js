@@ -5,6 +5,10 @@ import "./ProductList.scss";
 
 function ProductList(props) {
   const navigate = useNavigate();
+
+  const clickHandler = (id) => {
+    navigate("/product/detail/" + id);
+  };
   return (
     <>
       <div className="product-list-container">
