@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Login.scss";
-import LoginInput from "./LoginComponents/LoginInput";
 import GoToSignup from "./LoginComponents/GoToSignup";
 
 function Login() {
@@ -9,28 +8,35 @@ function Login() {
   const [loginId, setLoginId] = useState("");
   const [loginPw, setLoginPw] = useState("");
 
-  const goToMain = () => {
-    return navigate("/");
+  const handleId = (e) => {
+    setLoginId(e.target.value);
   };
 
-  const onLoginBtnClick = () => {
-    const errorMessage = "아이디 또는 비밀번호가 일치하지 않습니다.";
+  const handlePw = (e) => {
+    setLoginPw(e.target.value);
+  };
 
-    const body = {
-      account: loginId,
-      password: loginPw,
-    };
-
+  const loginSuccess = (e) => {
+    e.preventDefault();
     fetch("http://localhost:8000/users/login", {
       method: "POST",
       headers: {
-        "content-Type": "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        account: loginId,
+        password: loginPw,
+      }),
     })
       .then((res) => res.json())
       .then((result) => {
-        result.token ? goToMain() : alert(errorMessage);
+        if (result.message === "LOGIN_SUCCESS") {
+          localStorage.setItem("token", result.token);
+          alert(`${loginId}님 환영합니다.`);
+          navigate("/main");
+        } else {
+          alert("로그인에 실패했습니다.");
+        }
       });
   };
 
@@ -39,15 +45,42 @@ function Login() {
       <main className="login-container">
         <h2 className="login-title">LOGIN</h2>
         <form className="login-input-box">
-          <LoginInput
-            idInputValue={setLoginId}
-            pwInputValue={setLoginPw}
-            toMain={goToMain}
-          />
+          <label className="login-id">
+            <span className="login-id-img">
+              <img
+                alt="아이디로고"
+                className="id-icon"
+                src="/images/id-img.png"
+              />
+            </span>
+            <input
+              alt="아이디"
+              className="login-id-input"
+              type="text"
+              value={loginId}
+              onChange={handleId}
+            />
+          </label>
+          <label className="login-pw">
+            <span className="login-pw-img">
+              <img
+                alt="비밀번호로고"
+                className="pw-icon"
+                src="/images/pw-img.png"
+              />
+            </span>
+            <input
+              alt="비밀번호"
+              className="login-pw-input"
+              type="password"
+              value={loginPw}
+              onChange={handlePw}
+            />
+          </label>
           <div className="login-btn-box">
-            <Link to="/" className="login-btn" onClick={onLoginBtnClick}>
+            <button className="login-btn" onClick={loginSuccess}>
               로그인
-            </Link>
+            </button>
           </div>
           <GoToSignup />
         </form>
