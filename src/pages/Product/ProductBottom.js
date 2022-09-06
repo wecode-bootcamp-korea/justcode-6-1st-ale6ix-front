@@ -21,7 +21,10 @@ function ProductBottom(){
        >상품문의</li>
        <li className='border-bottom'></li>
        <li className='border-bottom'></li>
+       <li className='border-bottom'></li>
+       <li className='border-bottom'></li>
       </ul>
+      
       <div className='modal-container'>
         {review == true 
         && <Review className="review-component"/> }

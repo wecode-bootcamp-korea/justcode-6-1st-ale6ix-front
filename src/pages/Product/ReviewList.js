@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './ReviewList.scss';
+import { AiOutlineUser } from 'react-icons/ai'
 
 function ReviewList({list,deleteBtn}){
   const [modal,setModal] = useState(false);
@@ -15,22 +16,26 @@ function ReviewList({list,deleteBtn}){
         <li key={list.id}>
             <div className="review-title"
             onClick={modalEvent}>
-            <p>{list.title} </p>
+            <p className="review-title-area">{list.title} </p>
             <p className="review-date">{list.createdAt}</p>
-            <button
-              key={deleteBtn.id}
-              onClick={() => deleteBtn()}
-              className="add-btn"
-              >삭제</button>
             </div>
             <div className="review-text">
               {modal == true &&
               <dl className="text-container">
-              <dt className="review-user">
-                <span>{list.account}</span>
+              <dt className="review-text-left">
+                <p className="review-user">
+                  <AiOutlineUser style={{marginRight : "5px"}}/>
+                  {list.account}</p>
+                <p className="review-content">{list.content}</p>
               </dt>
-              <dd className="review-content">{list.content}</dd>
+              <dd className="review-text-right">
+              <button 
+              key={deleteBtn.id}
+              onClick={() => deleteBtn()}
+              >삭제</button></dd>
+              
             </dl>
+            
               }
               
             </div>
