@@ -1,7 +1,7 @@
 import React from "react";
 
 function ProductCategory(props) {
-  const { id, group_code_name, detailCode } = props.subMenuList;
+  const { group_code_name, detailCode } = props.subMenuList;
 
   return (
     <div className="category-container">
