@@ -1,6 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 import "./SignupBasicInfo.scss";
-import SignupComplete from './SignupComplete';
 import CertifiedNumber from "./CertifiedNumber";
 import { useNavigate } from "react-router-dom";
 
@@ -8,13 +7,11 @@ const SignupBasicInfo = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     register,
   }));
-  
+
   const navigate = useNavigate();
 
-  
-
   const accountCheck = () => {
-    fetch(`http://localhost:4000/users/signup?account=${signupId}`, {
+    fetch(`http://localhost:8000/users/signup?account=${signupId}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -55,7 +52,7 @@ const SignupBasicInfo = forwardRef((props, ref) => {
   };
 
   const register = () => {
-    fetch("http://localhost:4000/users/signup", {
+    fetch("http://localhost:8000/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +68,7 @@ const SignupBasicInfo = forwardRef((props, ref) => {
       .then((res) => res.json())
       .then((result) => {
         result.message === "userCreated"
-          ? navigate("/login")
+          ? navigate("/signup/complete")
           : alert("회원가입 실패");
       });
   };
