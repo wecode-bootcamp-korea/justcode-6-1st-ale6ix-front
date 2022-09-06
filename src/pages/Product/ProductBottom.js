@@ -23,7 +23,8 @@ function ProductBottom(){
        <li className='border-bottom'></li>
       </ul>
       <div className='modal-container'>
-        {review == true && <Review /> }
+        {review == true 
+        && <Review className="review-component"/> }
         
       </div>
     </div>
