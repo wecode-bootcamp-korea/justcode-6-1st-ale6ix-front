@@ -8,6 +8,10 @@ function ProductCategory(props) {
 
   const navigate = useNavigate();
 
+  const handleClick = (e) => {
+    navigate("/product/" + props.bigId + "/" + e.target.value);
+  };
+
   return (
     <div className="category-container">
       <h2>{group_code_name}</h2>
