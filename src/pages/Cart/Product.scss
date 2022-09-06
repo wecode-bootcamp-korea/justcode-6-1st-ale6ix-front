@@ -42,11 +42,11 @@
 
         .count {
           input {
-            width: 24px;
+            width: 25px;
             height: 22.7px;
             border: 1px solid #d4d8d9;
             border-radius: 3px 0 0 3px;
-            padding-left: 30%;
+            padding-left: 26%;
             &:focus {
               outline: none;
             }
@@ -82,8 +82,9 @@
       justify-content: space-around;
       display: flex;
       .point {
-        width: 11px;
+        width: 10px;
         height: 11px;
+        margin-left: 8px;
       }
       p {
         font-size: 7px;
@@ -105,6 +106,7 @@
         border: 1px solid lightgray;
         margin-bottom: 3px;
         font-size: 8px;
+        cursor: pointer;
       }
     }
   }

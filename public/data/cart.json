@@ -1,0 +1,53 @@
+{
+  "groupProductList": [
+    {
+      "user_order_id": 1,
+      "user_id": 1,
+      "product_id": 1,
+      "quantity": 3,
+      "order_status_id": 1,
+      "id": 1,
+      "price": "95000",
+      "product_name": "서커스 키친박스 1L",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202107/36906963286122ecaf76dd6f1361280a.jpg",
+      "stock": 10
+    },
+    {
+      "user_order_id": 2,
+      "user_id": 1,
+      "product_id": 2,
+      "quantity": 2,
+      "order_status_id": 1,
+      "id": 2,
+      "price": "99000",
+      "product_name": "서커스 키친박스 1.5L",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202107/1feffcf7a0d004cbb02d88968ca37673.jpg",
+      "stock": 5
+    },
+    {
+      "user_order_id": 3,
+      "user_id": 1,
+      "product_id": 3,
+      "quantity": 1,
+      "order_status_id": 1,
+      "id": 3,
+      "price": "144000",
+      "product_name": "서커스 양철보관함 3P 세트 소",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202108/26b6abc012c3d3a82b6e6a5ce4abab6b.jpg",
+      "stock": 2
+    },
+    {
+      "user_order_id": 4,
+      "user_id": 1,
+      "product_id": 4,
+      "quantity": 7,
+      "order_status_id": 1,
+      "id": 4,
+      "price": "4000",
+      "product_name": "서커스 소",
+      "main_image_url": "http://alessi.co.kr/web/product/medium/202108/26b6abc012c3d3a82b6e6a5ce4abab6b.jpg",
+      "stock": 10
+    }
+  ],
+  "message": "success_userOrderCartList"
+}
