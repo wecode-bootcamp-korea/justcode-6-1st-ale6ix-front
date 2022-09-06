@@ -1,14 +1,12 @@
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 import "./SignupBasicInfo.scss";
 import CertifiedNumber from "./CertifiedNumber";
-import { useNavigate } from "react-router-dom";
+import SignupComplete from "./SignupComplete";
 
 const SignupBasicInfo = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     register,
   }));
-
-  const navigate = useNavigate();
 
   const accountCheck = () => {
     fetch(`http://localhost:8000/users/signup?account=${signupId}`, {
@@ -67,9 +65,15 @@ const SignupBasicInfo = forwardRef((props, ref) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        result.message === "userCreated"
-          ? navigate("/signup/complete")
-          : alert("회원가입 실패");
+        result.message === "userCreated" ? (
+          <SignupComplete
+            completeId={signupId}
+            completeName={signupName}
+            completeEmail={signupEmail}
+          />
+        ) : (
+          alert("회원가입 실패")
+        );
       });
   };
 
