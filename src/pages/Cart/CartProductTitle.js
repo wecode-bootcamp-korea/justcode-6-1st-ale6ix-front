@@ -5,19 +5,27 @@ import "./CartProductTitle.scss";
 import Price from "./Price";
 import Product from "./Product";
 
-function CartProductTitle() {
-  const [item, setItem] = useState([]);
-
-  useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data) => setItem(data.cart));
-  }, []);
-
+function CartProductTitle({
+  item,
+  onChangeProps,
+  handleSingleCheck,
+  totalCheckboxHandler,
+  totalChecked,
+  deleteCart,
+  deleteAllCart,
+  checkedDelete,
+  changeQuantity,
+}) {
   return (
     <div className="Cart-product-container">
       <div className="Cart-product-title">
-        <input type="checkbox" />
+        <input
+          onChange={(e) => {
+            totalCheckboxHandler(e.target.checked);
+          }}
+          checked={item.id}
+          type="checkbox"
+        />
         <p className="img">이미지</p>
         <p className="product">상품정보</p>
         <p className="price">판매가</p>
@@ -28,10 +36,29 @@ function CartProductTitle() {
         <p className="price">합계</p>
         <p className="choice">선택</p>
       </div>
-      {item?.map((item) => {
-        return <Product item={item} />;
-      })}
-      <Price />
+      {item.length !== 0 ? (
+        item?.map((product) => {
+          return (
+            <Product
+              key={product.id}
+              item={product}
+              handleSingleCheck={handleSingleCheck}
+              onChangeProps={onChangeProps}
+              totalChecked={totalChecked}
+              deleteCart={deleteCart}
+              changeQuantity={changeQuantity}
+            />
+          );
+        })
+      ) : (
+        <div className="empty-cart">장바구니에 상품이 없습니다.</div>
+      )}
+      <Price
+        item={item}
+        deleteAllCart={deleteAllCart}
+        checkedDelete={checkedDelete}
+        deleteCart={deleteCart}
+      />
     </div>
   );
 }

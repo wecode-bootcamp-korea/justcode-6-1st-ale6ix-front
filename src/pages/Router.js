@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Cart from "./Cart/Cart";
 import Login from "./Login/Login";
 import Main from "./Main/Main";
+import Search from "./Search/Search";
 import Signup from "./Signup/Signup";
 import ProductBigCategory from "./Product/ProductBigCategory";
 import ProductSmallCategory from "./Product/ProductSmallCategory";
