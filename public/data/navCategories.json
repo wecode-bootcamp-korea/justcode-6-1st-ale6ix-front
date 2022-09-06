@@ -2,23 +2,31 @@
   "categoryData": [
     {
       "LargeCategoryId": 1,
-      "LargeCategoryName": "KICHEN",
+      "LargeCategoryName": "KITCHEN",
       "smallCategories": [
         {
           "smallCategoryId": 1,
-          "smallCategoryName": "쇼파"
+          "smallCategoryName": "보관용기"
         },
         {
           "smallCategoryId": 2,
-          "smallCategoryName": "테이블"
+          "smallCategoryName": "커피메이커"
         },
         {
           "smallCategoryId": 3,
-          "smallCategoryName": "커튼"
+          "smallCategoryName": "주전자"
         },
         {
           "smallCategoryId": 4,
-          "smallCategoryName": "조화"
+          "smallCategoryName": "냄비&팬"
+        },
+        {
+          "smallCategoryId": 5,
+          "smallCategoryName": "전자제품"
+        },
+        {
+          "smallCategoryId": 6,
+          "smallCategoryName": "주방소품"
         }
       ]
     },
@@ -27,42 +35,62 @@
       "LargeCategoryName": "TABLE",
       "smallCategories": [
         {
-          "smallCategoryId": 5,
-          "smallCategoryName": "칼/도마"
-        },
-        {
-          "smallCategoryId": 6,
-          "smallCategoryName": "식기도구"
-        },
-        {
           "smallCategoryId": 7,
-          "smallCategoryName": "커피/차"
+          "smallCategoryName": "과일바구니&바스켓"
         },
         {
           "smallCategoryId": 8,
-          "smallCategoryName": "제빵도구"
+          "smallCategoryName": "쟁반&트레이"
+        },
+        {
+          "smallCategoryId": 9,
+          "smallCategoryName": "컵&잔 글라스류"
+        },
+        {
+          "smallCategoryId": 10,
+          "smallCategoryName": "숟가락&포크&나이프"
+        },
+        {
+          "smallCategoryId": 11,
+          "smallCategoryName": "그릇&식기"
+        },
+        {
+          "smallCategoryId": 12,
+          "smallCategoryName": "양념통&그라인더"
+        },
+        {
+          "smallCategoryId": 13,
+          "smallCategoryName": "서빙&악세서리"
+        },
+        {
+          "smallCategoryId": 14,
+          "smallCategoryName": "커피&티"
+        },
+        {
+          "smallCategoryId": 15,
+          "smallCategoryName": "조식 용품"
         }
       ]
     },
     {
       "LargeCategoryId": 3,
-      "LargeCategoryName": "BAR&WINE",
+      "LargeCategoryName": "BAR & WINES",
       "smallCategories": [
         {
-          "smallCategoryId": 9,
-          "smallCategoryName": "거울"
+          "smallCategoryId": 16,
+          "smallCategoryName": "오프너&캡"
         },
         {
-          "smallCategoryId": 10,
-          "smallCategoryName": "세면기"
+          "smallCategoryId": 17,
+          "smallCategoryName": "커멧&쿨러"
         },
         {
-          "smallCategoryId": 11,
-          "smallCategoryName": "샤워기"
+          "smallCategoryId": 18,
+          "smallCategoryName": "쉐어커"
         },
         {
-          "smallCategoryId": 12,
-          "smallCategoryName": "수도꼭지"
+          "smallCategoryId": 19,
+          "smallCategoryName": "악세서리"
         }
       ]
     },
@@ -71,23 +99,38 @@
       "LargeCategoryName": "HOME",
       "smallCategories": [
         {
-          "smallCategoryId": 13,
-          "smallCategoryName": "침대"
+          "smallCategoryId": 20,
+          "smallCategoryName": "가구"
         },
         {
-          "smallCategoryId": 14,
-          "smallCategoryName": "책장"
+          "smallCategoryId": 21,
+          "smallCategoryName": "욕실"
         },
         {
-          "smallCategoryId": 15,
-          "smallCategoryName": "옷장"
+          "smallCategoryId": 22,
+          "smallCategoryName": "디퓨저&방향제"
         },
         {
-          "smallCategoryId": 16,
-          "smallCategoryName": "스탠드조명"
+          "smallCategoryId": 23,
+          "smallCategoryName": "벽시계"
+        },
+        {
+          "smallCategoryId": 24,
+          "smallCategoryName": "오피스"
+        },
+        {
+          "smallCategoryId": 25,
+          "smallCategoryName": "인테리어소품"
+        },
+        {
+          "smallCategoryId": 26,
+          "smallCategoryName": "애완용품"
+        },
+        {
+          "smallCategoryId": 27,
+          "smallCategoryName": "크리스마스용품"
         }
       ]
     }
-  
   ]
 }
