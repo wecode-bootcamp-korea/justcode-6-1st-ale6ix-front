@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./ProductCategory.scss";
+
 function ProductCategory(props) {
   const { group_code_name, detailCode } = props.subMenuList;
 
