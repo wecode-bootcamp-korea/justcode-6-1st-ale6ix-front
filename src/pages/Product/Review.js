@@ -1,15 +1,10 @@
 import { useEffect, useReducer, useRef, useState } from "react";
+import './Review.scss';
+import ReviewList from "./ReviewList";
 
 function Review(){
 
-  const [reveiw,setReview]=useState([
-    {
-      id:1,
-      userName:'miogy',
-      content:'hahaha',
-      createdAt : '2022.08.25'
-    }
-  ])
+  const [reveiw,setReview]=useState([]);
 
   //ref
   const titleValue = useRef();
@@ -20,17 +15,17 @@ function Review(){
 
 
   useEffect(()=>{
-
-    fetch("http://localhost:4000/products/detail/1",{
+    // fetch('/data/reviewList.json')
+    fetch("http://localhost:8000/products/detail/1/review",{
       method:"GET",
       headers:{
         "Content-Type" : "application/json"
       }
     })
     .then(res => res.json())
-    .then((reveiwData)=>{
-      // console.log(reviewData);
-      setReview([...reveiw,reveiwData])
+    .then((data)=>{
+       console.log(data);  //ok {reviewData: Array(16)}
+      setReview(data.reviewData)
     })
   },[newReview])
 
@@ -67,11 +62,11 @@ function Review(){
       }
       // let token = localStorage.getItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0MzkyODYsImV4cCI6MTY2MjQ1MDA4Nn0.2fpuIsqMyECkvivKnyzgkUFCj22SaGI6rX2zhDxtplU") || '' ;
 
-      fetch("http://localhost:4000/products/detail/1/review",{
+      fetch("http://localhost:8000/products/detail/1/review",{
         method:"POST",
         headers:{
           "Content-Type" : "application/json",
-          "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0MzkyODYsImV4cCI6MTY2MjQ1MDA4Nn0.2fpuIsqMyECkvivKnyzgkUFCj22SaGI6rX2zhDxtplU"
+          "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
         },
         body : JSON.stringify(body)
       })
@@ -79,8 +74,7 @@ function Review(){
       .then(res => res.json())
       .then(result=>{
         if(result.message == "post created"){
-          
-          setNewReview();
+          setNewReview(result.reviewData);
           console.log('post created')
         }
         // console.log(result);
@@ -92,37 +86,34 @@ function Review(){
   return(
     <div>
       <div className="review-container">
-        <ul>
-          {newReview &&
-          newReview.map((list)=>{
-            return <li key={list.id} 
-            className="reviewCard">
-            <div className="row">
-              <div>
-              {list.title}
-              </div>
-              <h3 className="userId">{list.account}</h3>
-              <span className="createdTime">
-                {list.createdAt}
-              </span>
-            </div>
-            <p className="contents">{list.content}</p>
-          </li>
-          })}
-        </ul>
+        {reveiw &&
+        reveiw.map((list)=>{
+          // console.log(list);
+          return <ReviewList
+          className="review-list-container" 
+          id={id}
+          list={list}
+          />
+        })}
       </div>
+      <div className="add-review">
       <input type="text" 
-             ref={titleValue} />
-      <input 
+             ref={titleValue} 
+             className="input-title"/>
+      <textarea className="review-textarea" 
       ref={textValue}
       onKeyDown={enterEvent}
-      // onChange={(e)=>{
-      //   setNewReview(e.target.value)
-      // }}
-      type='text' placeholder="소중한 리뷰 감사합니다." />
+      rows="10" cols="50"
+      placeholder="소중한 리뷰 감사합니다.">
+
+      </textarea>
+      
       <button
       onClick={addReview}
+      className="add-btn"
       >저장</button>
+      </div>
+      
     </div>
   )
 
