@@ -57,6 +57,10 @@ function ProductDetail() {
     navigate("/carts");
   };
 
+  const alertHandler = () => {
+    alert("관심상품으로 등록되었습니다");
+  };
+
   return (
     <>
       {product != undefined && (
@@ -115,7 +119,7 @@ function ProductDetail() {
             <div className="info-container-4">
               <button onClick={handleCart}>구매하기</button>
               <button onClick={handleCart}>장바구니</button>
-              <button>관심상품</button>
+              <button onClick={alertHandler}>관심상품</button>
             </div>
           </div>
         </div>
