@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import ProductCategory from "./ProductCategory";
 import ProductList from "./ProductList";
+import "./Product.scss";
 
 function ProductBigCategory() {
   const [data, setData] = useState([]);
