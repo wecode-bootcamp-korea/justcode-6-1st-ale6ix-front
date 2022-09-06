@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./ProductList.scss";
 
 function ProductList(props) {
+  const navigate = useNavigate();
   return (
     <>
       <div className="product-list-container">
