@@ -1,0 +1,123 @@
+.product-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+
+  padding: 10% 15%;
+}
+
+.product-image-container {
+  border: 0.5px solid gainsboro;
+}
+
+.product-detail-img {
+  width: 100%;
+}
+
+.product-info-container {
+  border-top: 2px solid black;
+}
+
+.info-container-1 {
+  span {
+    display: block;
+
+    padding-top: 10%;
+
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+.info-container-2 {
+  margin-top: 5%;
+  border: 0.5px solid gainsboro;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5% 2.5%;
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 15px;
+
+    margin: 10px;
+
+    .count {
+      input {
+        width: 25px;
+        height: 22.7px;
+        border: 1px solid #d4d8d9;
+        border-radius: 3px 0 0 3px;
+        padding-left: 26%;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .count-btn {
+      display: flex;
+      flex-direction: column;
+      button {
+        width: 17px;
+        height: 11.8px;
+        border: none;
+        background-color: #fff;
+        padding: 0;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.info-container-3 {
+  text-align: right;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+  .total-price {
+    font-weight: bold;
+    font-size: large;
+  }
+}
+
+.info-container-4 {
+  button:first-child {
+    display: block;
+
+    background-color: black;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  button:nth-child(2),
+  button:nth-child(3) {
+    margin-top: 2.5%;
+    border: 0.5px solid gainsboro;
+    background-color: white;
+    width: 49%;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  button:nth-child(2) {
+    margin-right: 1%;
+  }
+
+  button:nth-child(3) {
+    margin-left: 1%;
+  }
+}
