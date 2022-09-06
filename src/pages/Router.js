@@ -5,6 +5,7 @@ import Cart from "./Cart/Cart";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Main from "./Main/Main";
+import Search from "./Search/Search";
 import Signup from "./Signup/Signup";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
         <Route path="/main" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/carts" element={<Cart />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );

@@ -10,6 +10,9 @@ function Price({ item, deleteAllCart, checkedDelete, deleteCart }) {
   const totalPrice = price.reduce((a, b) => a + b, 0).toLocaleString("en");
 
   const handlePaymentBtn = () => {
+    if (item.length === 0) {
+      return alert("결제할 상품이 없습니다.");
+    }
     alert(`총 ${item.length}개의 상품을 결제 하시겠습니까?`);
   };
 

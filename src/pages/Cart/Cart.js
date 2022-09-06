@@ -9,7 +9,7 @@ function Cart() {
   const [totalChecked, setTotalChecked] = useState(false);
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjM3ODExMSwiZXhwIjoxNjYyMzg4OTExfQ.N1eX369SL47u-ctl8X3n7Obl1uruzNer3-xP_-_CTLo";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjQ0NTIyNiwiZXhwIjoxNjYyNDU2MDI2fQ.vJvH5BYfqD-lyKeKeAKJqdKo6SPO5g3s5w49Znp1-hQ";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
@@ -52,23 +52,28 @@ function Cart() {
   };
 
   // 변경 버튼 눌렀을때 수량 변경
-  const changeQuantity = (useerId, id, amount) => {
+  const changeQuantity = useCallback(async (useerId, id, amount) => {
     alert(`${amount}개로 변경 하시겠습니까?`);
     const quantity = {
       cart_id: useerId,
       product_id: id,
       quantity: amount,
     };
-    fetch("http://localhost:8000/products/cart", {
-      method: "PATCH",
-      headers: {
-        "content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify(quantity),
-    }).then((res) => res.json());
-    // .then((data) => console.log(data.groupProductList));
-  };
+    try {
+      const response = await fetch("http://localhost:8000/products/cart", {
+        method: "PATCH",
+        headers: {
+          "content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify(quantity),
+      });
+      const data = await response.json();
+
+      // .then((res) => res.json());
+      // .then((data) => console.log(data.groupProductList));
+    } catch {}
+  }, []);
 
   // 체크박스 전체 개체 선택
   const totalCheckboxHandler = (checked) => {
@@ -157,8 +162,9 @@ function Cart() {
         // "content-Type": "application/json",
         authorization: token,
       },
-    });
-    setItem([]);
+    })
+      .then((res) => res.json())
+      .then(() => setItem([]));
   };
 
   // 체크된 상품 삭제하기
