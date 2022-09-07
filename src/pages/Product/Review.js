@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import './Review.scss';
 import ReviewList from "./ReviewList";
@@ -47,33 +47,29 @@ function Review(){
 const [id,setId]=useState(1);
 
 const addReview = ()=>{
-  if(reveiw.length > 0){
+    console.log(titleValue.current.value)
     setId(id+1)
-    const body={
+    const data={
       title : titleValue.current.value,
       content : textValue.current.value
     }
-      // let token = localStorage.getItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0MzkyODYsImV4cCI6MTY2MjQ1MDA4Nn0.2fpuIsqMyECkvivKnyzgkUFCj22SaGI6rX2zhDxtplU") || '' ;
+  
+      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM"
+
 
     fetch(`http://localhost:8000/products/detail/${productId}/review`,{
       method:"POST",
       headers:{
         "Content-Type" : "application/json",
-        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM"
+        "Authorization" : token
       },
-      body : JSON.stringify(body)
+      body : JSON.stringify(data)
     })
   //보내기
     .then(res => res.json())
-    .then(result=>{
-      if(result.message == "post created"){
-        setNewReview(result.reviewData);
-        console.log('post created')
-      }
-        // console.log(result);
+    .then((reviewData)=>{
+      setNewReview(reviewData)
     })
-    .catch(error => console.error(error.message));
-  }
 }
   //delete
   // const deleteBtn = ()=>{
@@ -116,9 +112,7 @@ const addReview = ()=>{
       ref={textValue}
       onKeyDown={enterEvent}
       rows="10" cols="50"
-      placeholder="소중한 리뷰 감사합니다.">
-
-      </textarea>
+      placeholder="소중한 리뷰 감사합니다." />
 
       <button
       onClick={addReview}
