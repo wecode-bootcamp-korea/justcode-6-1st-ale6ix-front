@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import SubNav from "./SubNav";
-import Logout from "../../pages/Logout/Logout";
 
 function Header() {
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState([]);
   const [nav, setNav] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/users/me", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.message === "success_getUser") {
+          setUserInfo(result.user);
+        }
+      });
+  }, [userInfo]);
 
   useEffect(() => {
     fetch("/data/navCategories.json")
@@ -15,44 +31,60 @@ function Header() {
       });
   }, []);
 
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/main");
+  };
+
   return (
     <div className="container">
       <div>
         <ul className="nav-top">
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
-              LOGIN
-            </a>
+            {localStorage.getItem("token") ? (
+              <button onClick={handleLogOut}>LOGOUT</button>
+            ) : (
+              <button onClick={handleLogin}>LOGIN</button>
+            )}
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
+            <Link to="/signup" className="nav-top-font">
               JOIN
-            </a>
+            </Link>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
-              CART <span className="counter">0</span>
-            </a>
+            <Link to="/carts" className="nav-top-font">
+              CART
+              {localStorage.getItem("token") && (
+                <span className="counter">{userInfo.cartCount}</span>
+              )}
+            </Link>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
-              username
-            </a>
+            {localStorage.getItem("token") && (
+              <span className="nav-top-font">{userInfo.account}</span>
+            )}
           </li>
           <li>
-            <button>
-              <a href="#">
+            <button className="search">
+              <Link to="/search">
                 <img
                   src="http://alessi.co.kr/_dj/img/top_r_menu_icon_03_b.png"
                   alt="검색"
                 />
-              </a>
+              </Link>
             </button>
           </li>
         </ul>
       </div>
       <div className="nav-bottom">
-        <h1>ALE6IX</h1>
+        <Link to="/main" className="alesix">
+          ALE6IX
+        </Link>
         <ul className="nav-menu">
           <li>
             <a href="#" className="nav-font">
