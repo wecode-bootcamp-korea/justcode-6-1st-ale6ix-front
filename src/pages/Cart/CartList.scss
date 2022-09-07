@@ -1,7 +1,9 @@
 .Cart-list-container {
-  padding: 0 10%;
+  padding: 0 5.5%;
+
   .bottom-container {
     display: flex;
+
     p {
       width: 150px;
       height: 40px;
@@ -11,6 +13,7 @@
       z-index: 100;
       padding: 13px;
     }
+
     .border-bottom {
       display: inline-block;
       width: 100%;

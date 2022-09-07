@@ -19,7 +19,7 @@ function Magazine() {
       <Title title={title} color={color} />
       <div className="Magazine-list-container">
         {magazine?.map((data) => {
-          return <MagazineImg magazine={data} />;
+          return <MagazineImg key={data.id} magazine={data} />;
         })}
       </div>
     </section>

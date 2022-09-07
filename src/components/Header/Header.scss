@@ -32,7 +32,19 @@
       &:nth-child(4) {
         padding-right: 25px;
       }
+
+      .log-btn {
+        font-size: 11px;
+        letter-spacing: 0.03em;
+        background: none;
+        border: none;
+        color: #999;
+        font-weight: 600;
+        cursor: pointer;
+      }
     }
+
+
 
     .search {
       height: 40px;
