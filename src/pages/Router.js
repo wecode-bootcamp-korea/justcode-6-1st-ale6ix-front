@@ -15,6 +15,7 @@ import SignupComplete from "./Signup/SignupComponents/SignupComplete";
 import ProductBigCategory from "./Product/ProductBigCategory";
 import ProductSmallCategory from "./Product/ProductSmallCategory";
 import ProductDetail from "./Product/ProductDetail";
+import Review from "./Product/Review";
 
 
 function Router() {
@@ -30,6 +31,7 @@ function Router() {
         <Route path="/carts" element={<Cart />} />
 
         <Route path="/product/detail/:productId/review" element={<ProductBottom/>} />
+        <Route path="/product/detail/:productId/reveiwId?review_id=8" element={<Review/>} />
 
         <Route path="/product/:bigId" element={<ProductBigCategory />} />
         <Route
