@@ -8,7 +8,7 @@ function ReviewList({list,deleteBtn}){
     setModal(!modal)
   }
   // console.log(list);
-  
+ 
     
   return (
     <div className="review-list-container">
@@ -31,7 +31,7 @@ function ReviewList({list,deleteBtn}){
               <dd className="review-text-right">
               <button 
               key={deleteBtn.id}
-              onClick={() => deleteBtn()}
+              onClick={() => deleteBtn(list.review_id)}
               >삭제</button></dd>
               
             </dl>

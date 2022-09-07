@@ -9,8 +9,7 @@ function Review(){
   const params = useParams();
   const productId = params.productId;
   // console.log(productId)
-  const location = useLocation();
-  const reviewId = location.reviewId;
+  
   //ref
   const titleValue = useRef();
   const textValue = useRef();
@@ -18,6 +17,7 @@ function Review(){
   
 //add list => get
   const [newReview,setNewReview]=useState([]);
+  const [delData,setDelData]=useState([]);
 
 
   useEffect(()=>{
@@ -32,8 +32,9 @@ function Review(){
     .then((data)=>{
       //console.log(data);  //ok {reviewData: Array(16)}
       setReview(data.reviewData)
+      setDelData(data.reviewData)
     })
-  },[newReview])
+  },[newReview,delData])
 
 //enter
   const enterEvent = (e)=>{
@@ -72,12 +73,14 @@ const addReview = ()=>{
     })
     
 }
-  //delete
-  const deleteBtn = ()=>{
+  //deletes
 
+  const deleteBtn = (id)=>{
+ 
+    // console.log(reveiwId)
     let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUzMzA3MiwiZXhwIjoxNjYyNTQzODcyfQ.-HasqoYNbf0oEAuoTSnJMvLJ_TnUlpTAW07nFtyX_Ng"
-    console.log()
-    fetch(`http://localhost:8000/products/detail/${productId}/review?${reviewId}`,{
+    // console.log()
+    fetch(`http://localhost:8000/products/detail/${productId}/review?review_id=${id}`,{
       method:"DELETE",
       headers:{
         "Content-Type" : "application/json",
@@ -85,9 +88,9 @@ const addReview = ()=>{
       },
     })
     .then(res => res.json())
-    .then(res=>{
+    .then((datalist)=>{
       if(res.ok){
-        setReview()
+        return setDelData(datalist)
       }
     })
   }
