@@ -18,10 +18,7 @@ function SubNav({ largeCateId, sublist }) {
         })}
       </ul>
       <div className="sub-menu-img">
-        <img
-          src="http://alessi.co.kr/_dj/img/category_item_img_1.jpg"
-          alt="img"
-        ></img>
+        <img src="http://alessi.co.kr/_dj/img/LIFESTYLE.jpg" alt="img"></img>
       </div>
     </div>
   );
