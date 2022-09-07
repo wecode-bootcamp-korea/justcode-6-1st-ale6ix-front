@@ -43,14 +43,12 @@ function Section3(){
               <figcaption>
                 <dl>
                   <dt>{itemlist.product_name}</dt>
-                  <dd>{itemlist.price}<span>won</span></dd>
+                  <dd>{Number(itemlist.price).toLocaleString()}<span>won</span></dd>
                 </dl>
               </figcaption>
             </figure>
             </li>
             })}
-            
-         
         </ul>
       </div>
     </section>

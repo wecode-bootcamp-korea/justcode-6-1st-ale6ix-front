@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.scss";
 
+import ProductBottom from './ProductBottom';
+
 function ProductDetail() {
   const [product, setProduct] = useState();
   const [count, setCount] = useState(0);
@@ -124,6 +126,9 @@ function ProductDetail() {
           </div>
         </div>
       )}
+      <div>
+        <ProductBottom />
+      </div>
     </>
   );
 }
