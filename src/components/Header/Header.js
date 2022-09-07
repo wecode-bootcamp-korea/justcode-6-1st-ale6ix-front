@@ -46,9 +46,13 @@ function Header() {
         <ul className="nav-top">
           <li className="nav-top-menu">
             {localStorage.getItem("token") ? (
-              <button onClick={handleLogOut}>LOGOUT</button>
+              <button className="log-btn" onClick={handleLogOut}>
+                LOGOUT
+              </button>
             ) : (
-              <button onClick={handleLogin}>LOGIN</button>
+              <button className="log-btn" onClick={handleLogin}>
+                LOGIN
+              </button>
             )}
           </li>
           <li className="nav-top-menu">
