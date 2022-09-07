@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Review from './Review';
 import './ProductBottom.scss'
-import ProductQna from './ProductQna';
+import Qna from './Qna';
 
 function ProductBottom(){
 
@@ -34,7 +34,7 @@ function ProductBottom(){
         {review == true 
         && <Review className="review-component"/> }
         {qna == true 
-        && <ProductQna className="review-component" />}
+        && <Qna className="review-component" />}
         
       </div>
     </div>

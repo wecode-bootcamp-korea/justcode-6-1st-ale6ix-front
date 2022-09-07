@@ -32,9 +32,9 @@ function Review(){
     .then((data)=>{
       //console.log(data);  //ok {reviewData: Array(16)}
       setReview(data.reviewData)
-      setDelData(data.reviewData)
+      // setDelData(data.reviewData)
     })
-  },[newReview,delData])
+  },[newReview])
 
 //enter
   const enterEvent = (e)=>{
@@ -53,7 +53,7 @@ const addReview = ()=>{
       content : textValue.current.value
     }
   
-      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUzMzA3MiwiZXhwIjoxNjYyNTQzODcyfQ.-HasqoYNbf0oEAuoTSnJMvLJ_TnUlpTAW07nFtyX_Ng"
+      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU0NDU2NSwiZXhwIjoxNjYyNTU1MzY1fQ.j6UODF3OacCVUcwou1spwaWBiiM5Q18Kq7GwUFUffVk"
 
 
     fetch(`http://localhost:8000/products/detail/${productId}/review`,{
@@ -66,19 +66,19 @@ const addReview = ()=>{
     })
   //보내기
     .then(res => res.json())
-    .then((reviewData)=>{
+    .then((data)=>{
       titleValue.current.value = "";
       textValue.current.value = "";
-      setNewReview(reviewData)
+      setNewReview(data.reviewData)
     })
-    
+    console.log(newReview)
 }
   //deletes
 
   const deleteBtn = (id)=>{
  
     // console.log(reveiwId)
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUzMzA3MiwiZXhwIjoxNjYyNTQzODcyfQ.-HasqoYNbf0oEAuoTSnJMvLJ_TnUlpTAW07nFtyX_Ng"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU0NDU2NSwiZXhwIjoxNjYyNTU1MzY1fQ.j6UODF3OacCVUcwou1spwaWBiiM5Q18Kq7GwUFUffVk"
     // console.log()
     fetch(`http://localhost:8000/products/detail/${productId}/review?review_id=${id}`,{
       method:"DELETE",
@@ -87,12 +87,23 @@ const addReview = ()=>{
         "Authorization" : token
       },
     })
-    .then(res => res.json())
-    .then((datalist)=>{
+    .then(res => {
       if(res.ok){
-        return setDelData(datalist)
+        fetch(`http://localhost:8000/products/detail/${productId}/review`,{
+      method:"GET",
+      headers:{
+        "Content-Type" : "application/json"
       }
     })
+    .then(res => res.json())
+    .then((data)=>{
+      //console.log(data);  //ok {reviewData: Array(16)}
+      setReview(data.reviewData)
+      // setDelData(data.reviewData)
+    })
+      }
+    })
+
   }
   
   
