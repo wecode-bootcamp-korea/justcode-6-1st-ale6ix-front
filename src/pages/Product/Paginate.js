@@ -5,6 +5,7 @@ import "./Paginate.scss";
 function Paginate(props) {
   const handlePageClick = (data) => {
     props.offsetHandler(data.selected * 10);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (
