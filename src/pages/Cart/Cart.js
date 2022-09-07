@@ -12,7 +12,7 @@ function Cart() {
   const navigate = useNavigate();
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUxMzU0MSwiZXhwIjoxNjYyNTI0MzQxfQ.NaPf0pYhAVUW9a_TLDL6A_HRlKEpqxZ1twIlh2CiA9o";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
