@@ -25,6 +25,7 @@ function Router() {
         <Route path="/complete" element={<SignupComplete />} />
         <Route path="/carts" element={<Cart />} />
         <Route path="/product/:bigId" element={<ProductBigCategory />} />
+        <Route path="/search" element={<Search />} />
         <Route
           path="/product/:bigId/:smallId"
           element={<ProductSmallCategory />}

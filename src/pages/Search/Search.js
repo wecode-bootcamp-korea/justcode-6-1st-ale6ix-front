@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import "./Search.scss";
 
 function Search() {
   const [message, setMessage] = useState("");
@@ -20,10 +21,15 @@ function Search() {
   };
 
   return (
-    <div>
-      <input value={message} onChange={handleSearch} />
-      <button onClick={handleSearchBtn}>검색</button>
-      <span>총{searchProduct.length}개의 상품이 검색되었습니다.</span>
+    <div className="search-wrap">
+      <div className="search-container">
+        <div className="search-title-box">
+          <h2 className="search-title">SEARCH</h2>
+        </div>
+        <input value={message} onChange={handleSearch} />
+        <button onClick={handleSearchBtn}>검색</button>
+        <span>총{searchProduct.length}개의 상품이 검색되었습니다.</span>
+      </div>
     </div>
   );
 }

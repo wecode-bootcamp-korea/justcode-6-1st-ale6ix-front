@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 import SubNav from "./SubNav";
 
@@ -20,14 +20,14 @@ function Header() {
       <div>
         <ul className="nav-top">
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
+            <Link to="/login" className="nav-top-font">
               LOGIN
-            </a>
+            </Link>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
+            <Link to="/signup" className="nav-top-font">
               JOIN
-            </a>
+            </Link>
           </li>
           <li className="nav-top-menu">
             <a href="#" className="nav-top-font">
