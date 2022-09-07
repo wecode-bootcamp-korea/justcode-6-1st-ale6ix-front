@@ -9,7 +9,6 @@ function ProductCategory(props) {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
-    // props.offsetHandler(0);
     navigate("/product/" + props.bigId + "/" + e.target.value);
   };
 

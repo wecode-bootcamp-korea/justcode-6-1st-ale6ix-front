@@ -34,7 +34,6 @@ function ProductSmallCategory() {
         <ProductCategory
           bigId={bigId}
           smallId={smallId}
-          offsetHandler={offsetHandler}
           subMenuList={data.productList.ByGroupcode}
         />
       )}

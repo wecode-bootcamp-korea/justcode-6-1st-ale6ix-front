@@ -31,7 +31,6 @@ function ProductBigCategory() {
     <div className="product-container-wrapper">
       {data.length != 0 && (
         <ProductCategory
-          offsetHandler={offsetHandler}
           bigId={bigId}
           subMenuList={data.productList.ByGroupcode}
         />
