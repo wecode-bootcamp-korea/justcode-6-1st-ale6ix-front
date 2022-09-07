@@ -29,9 +29,9 @@ function Qna(){
   const addList = ()=>{
     const body={
       title : titleValid.current.value,
-      title : textValid.current.value
+      content : textValid.current.value
     }
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU0NDU2NSwiZXhwIjoxNjYyNTU1MzY1fQ.j6UODF3OacCVUcwou1spwaWBiiM5Q18Kq7GwUFUffVk"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
 
     fetch(`http://localhost:8000/products/detail/${productId}/question`,{
       method: "POST",
@@ -48,6 +48,32 @@ function Qna(){
       setNewQna(qnalist.questionData)
     })
   }
+  //delete
+  const addDelete = (id)=>{
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
+
+    fetch(`http://localhost:8000/products/detail/${productId}/question?question_id=${id}`,{
+      method:"DELETE",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":token
+      },
+    })
+    .then(res=>{
+      if(res.ok){
+        fetch(`http://localhost:8000/products/detail/${productId}/question`,{
+      method:"GET",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    .then(res => res.json())
+    .then((list)=>{
+      setQna(list.questionData)
+    })
+      }
+    })
+  }
 
   return(
     <div>
@@ -55,15 +81,20 @@ function Qna(){
         {qna &&
         qna.map((qnaData)=>{
           return <QnaList qnaData={qnaData}
+          addDelete={addDelete}
           className="qna-list-container"/>
         })}
       </div>
       <div className="add-container">
         <input type="text" ref={titleValid}
-        className="title-area" />
+        className="title-area" 
+        placeholder={`제품번호 : ${productId}`}
+        />
         <textarea ref={textValid}
         rows="10" cols="50"
-        placeholder="문의를 남겨주세요" />
+        placeholder="문의를 남겨주세요" 
+        className="qna-textarea"
+        />
 
         <button onClick={addList}
         className="add-btn">

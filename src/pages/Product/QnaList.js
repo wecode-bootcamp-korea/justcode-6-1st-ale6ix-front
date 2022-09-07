@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './QnaList.scss';
+import { AiOutlineUser } from 'react-icons/ai'
 
-function QnaList({qnaData}){
-  const [modal,setModal]=useState(false);
+function QnaList({qnaData,addDelete}){
+  const [qnaModal,setQnaModal]=useState(false);
   const modalBtn = ()=>{
-    setModal(!modal)
+    setQnaModal(!qnaModal)
   }
   return(
     <div className="qna-list">
@@ -12,11 +13,11 @@ function QnaList({qnaData}){
       <li key={qnaData.id}>
         <div className="qna-title"
         onClick={modalBtn}>
-          <p>{qnaData.title}</p>
-          <p>{qnaData.createdAt}</p>
+          <p className="qna-title-area">{qnaData.title}</p>
+          <p className="qna-date">{qnaData.createdAt}</p>
           </div>
           <div className="qna-text">
-              {modal == true &&
+              {qnaModal == true &&
               <dl className="text-container">
               <dt className="qna-text-left">
                 <p className="qna-user">
@@ -26,8 +27,9 @@ function QnaList({qnaData}){
               </dt>
               <dd className="qna-text-right">
               <button 
-              // key={deleteBtn.id}
-              // onClick={() => deleteBtn(qnaData.question_id)}
+              className="qna-text-right button"
+              key={addDelete.id}
+              onClick={() => addDelete(qnaData.id)}
               >삭제</button></dd>
             </dl>
               }

@@ -1,0 +1,38 @@
+.qna-container{
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.add-container{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  .title-area{
+    display: block;
+    width: 600px;
+    padding: 6px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid #ececec;
+  }
+  .qna-textarea{
+    display: block;
+    width: 600px;
+    padding: 6px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: 1px solid #ececec;
+    &::placeholder{
+      padding-left: 10px;
+      color: #999;
+      font-weight: 300;
+    }
+  }
+  button{
+    width: 50px; height: 30px;
+    padding: 5px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    color: #333;
+  }
+}
