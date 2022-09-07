@@ -48,9 +48,9 @@ function Search() {
         </div>
         <span>총{searchProduct.length}개의 상품이 검색되었습니다.</span>
       </div>
-      <div className="search-product-list-container">
+      <div className="search">
         {searchProduct?.map((product) => {
-          return <SearchList product={product} />;
+          return <SearchList key={product.id} product={product} />;
         })}
       </div>
     </div>
