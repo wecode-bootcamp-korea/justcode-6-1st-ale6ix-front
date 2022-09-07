@@ -9,7 +9,7 @@ function Cart() {
   const [totalChecked, setTotalChecked] = useState(false);
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjQ1NjYwMSwiZXhwIjoxNjYyNDY3NDAxfQ.Y_IKm1NRw5ZjkR8rV7qgKtIntZPATPbhelFyJDrFEg8";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUxMzU0MSwiZXhwIjoxNjYyNTI0MzQxfQ.NaPf0pYhAVUW9a_TLDL6A_HRlKEpqxZ1twIlh2CiA9o";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {

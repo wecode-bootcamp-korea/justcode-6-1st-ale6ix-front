@@ -42,7 +42,7 @@ function Product({
 
   return (
     <>
-      <div className="product-container">
+      <div className="cart-product-container">
         <div className="product-list">
           <input
             onChange={(e) => {
