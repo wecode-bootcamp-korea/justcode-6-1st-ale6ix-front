@@ -5,7 +5,7 @@ function Logout({ userInfo, switchLog }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.removeItem("token")) {
+    if (localStorage.getItem("token")) {
       navigate("/main");
       userInfo("");
       switchLog("LOGIN");

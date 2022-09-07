@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from "react";
-<<<<<<< HEAD
-
-import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
-=======
-import { NavLink } from "react-router-dom";
->>>>>>> main
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import SubNav from "./SubNav";
-import Logout from "../../pages/Logout/Logout";
 
 function Header() {
   const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState([]);
   const [nav, setNav] = useState([]);
-  const [onLogin, setOnLogin] = useState(false);
-  const [log, setLog] = useState("LOGIN");
-  const [userInfo, setUserInfo] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:8000/users/me", {
@@ -26,9 +18,7 @@ function Header() {
       .then((res) => res.json())
       .then((result) => {
         if (result.message === "success_getUser") {
-          setOnLogin(true);
-          setUserInfo(result.user.account);
-        } else {
+          setUserInfo(result.user);
         }
       });
   }, []);
@@ -41,12 +31,25 @@ function Header() {
       });
   }, []);
 
+  const handleLogin = () => {
+    navigate("/login");
+  };
+
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/main");
+  };
+
   return (
     <div className="container">
       <div>
         <ul className="nav-top">
           <li className="nav-top-menu">
-            <button className="nav-top-font"></button>
+            {localStorage.getItem("token") ? (
+              <button onClick={handleLogOut}>LOGOUT</button>
+            ) : (
+              <button onClick={handleLogin}>LOGIN</button>
+            )}
           </li>
           <li className="nav-top-menu">
             <Link to="/signup" className="nav-top-font">
@@ -54,21 +57,26 @@ function Header() {
             </Link>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
-              CART <span className="counter">0</span>
-            </a>
+            <Link to="/carts" className="nav-top-font">
+              CART
+              {localStorage.getItem("token") && (
+                <span className="counter">{userInfo.cartCount}</span>
+              )}
+            </Link>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font"></a>
+            {localStorage.getItem("token") && (
+              <span className="nav-top-font">{userInfo.account}</span>
+            )}
           </li>
           <li>
-            <button>
-              <a href="#">
+            <button className="search">
+              <Link to="/search">
                 <img
                   src="http://alessi.co.kr/_dj/img/top_r_menu_icon_03_b.png"
                   alt="검색"
                 />
-              </a>
+              </Link>
             </button>
           </li>
         </ul>
