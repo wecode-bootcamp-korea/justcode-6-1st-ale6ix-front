@@ -4,7 +4,6 @@ import "./SearchList.scss";
 
 function SearchList({ product }) {
   const navigate = useNavigate();
-  console.log(product);
   const clickHandler = (id) => {
     navigate("/product/detail/" + id);
   };
