@@ -9,12 +9,14 @@ function Search() {
 
   // 검색 했을때 데이터요청
   const handleSearchBtn = () => {
-    fetch(`http://localhost:8000/products/search?keyword=${message}`, {
-      method: "GET",
-      headers: { "content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => setSearchProduct(data.productSearchList));
+    if (message) {
+      fetch(`http://localhost:8000/products/search?keyword=${message}`, {
+        method: "GET",
+        headers: { "content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => setSearchProduct(data.productSearchList));
+    }
   };
 
   const handleSearch = (e) => {
@@ -22,7 +24,6 @@ function Search() {
   };
 
   const enterSearch = (e) => {
-    console.log(e.key);
     if (e.key === "Enter") {
       setMessage(e.target.value);
       handleSearchBtn();
