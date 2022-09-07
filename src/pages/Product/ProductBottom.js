@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Review from './Review';
 import './ProductBottom.scss'
 import Qna from './Qna';
+import { useLinkClickHandler } from 'react-router-dom';
 
 function ProductBottom(){
 
@@ -14,15 +15,23 @@ function ProductBottom(){
     setQna(!qna)
   }
 
+  const [tab,setTab]=useState(0);
+  const onclickHandle = (id)=>{
+    setTab({tab:id})
+  }
+  const obj = {
+    0: <Review />,
+    1: <Qna />
+  }
   return(
     <div className='bottom-container'>
       <ul className='bottom-box'>
        <li className='border-bottom'></li>
        <li className='border border-active'
-       onClick={reviewBtn}
+       onClick={()=> onclickHandle(0)}
        >상품리뷰</li> 
        <li className='border border-active'
-       onClick={qnaBtn}
+       onClick={()=> onclickHandle(1)}
        >상품문의</li>
        <li className='border-bottom'></li>
        <li className='border-bottom'></li>
