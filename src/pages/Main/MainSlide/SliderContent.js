@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './SliderContent.scss'
 
 function SliderContent({activeIndex,imgSlider}){
   return(
     <section>
+      <Link to="/product">
       {imgSlider.map((slide,index)=>(
         <div key={index} 
         className={index === activeIndex
@@ -14,6 +16,7 @@ function SliderContent({activeIndex,imgSlider}){
           <p className="slide-text">{slide.text}</p>
         </div>
       ))}
+      </Link>
     </section>
   )
 }

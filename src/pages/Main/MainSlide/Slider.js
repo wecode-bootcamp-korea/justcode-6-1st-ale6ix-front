@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SliderContent from "./SliderContent";
-import imgSlider from "./imgSlider";
 import Buttons from "./Buttons";
 import Dots from "./Dots";
 import './Slider.scss';
@@ -49,3 +48,32 @@ function Slider() {
   )
 }
 export default Slider;
+
+const imgSlider =  [
+  {
+    title:"ALE6IX",
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2103-1.gif",
+  },
+  {
+    title:"",
+    urls: "	http://alessi.co.kr/_dj/img/mainbanner/2209-2.jpg",
+    text:""
+  },
+  {
+    title:"",
+    urls: "http://alessi.co.kr/_dj/img/mainbanner/2209-4.jpg",
+  },
+  {
+    title:"",
+    urls: "http://alessi.co.kr/_dj/img/mainbanner/2202-1.jpg",
+    text:""
+  },
+  {
+    title:"",
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2105-1.jpg",
+  },
+  {
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2101-5.jpg"
+  }
+  
+  ];

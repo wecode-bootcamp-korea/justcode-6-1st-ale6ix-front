@@ -49,8 +49,6 @@ function Section3(){
             </figure>
             </li>
             })}
-            
-         
         </ul>
       </div>
     </section>
