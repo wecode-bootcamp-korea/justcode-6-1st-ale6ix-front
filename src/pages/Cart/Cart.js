@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Cart.scss";
 import CartHeading from "./CartHeading";
 import CartList from "./CartList";
@@ -8,8 +9,10 @@ function Cart() {
   const [item, setItem] = useState([]);
   const [totalChecked, setTotalChecked] = useState(false);
 
+  const navigate = useNavigate();
+
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjQ1NjYwMSwiZXhwIjoxNjYyNDY3NDAxfQ.Y_IKm1NRw5ZjkR8rV7qgKtIntZPATPbhelFyJDrFEg8";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
@@ -21,18 +24,27 @@ function Cart() {
     });
 
     const data = await response.json();
-    const list = data.groupProductList.map((el) => {
-      return {
-        id: el.user_order_id,
-        productId: el.product_id,
-        amount: +el.quantity,
-        price: +el.price,
-        productImg: el.main_image_url,
-        productTitle: el.product_name,
-        stock: +el.stock,
-      };
-    });
-    setItem(list);
+    console.log(data);
+    if (data.message === "success_userOrderCartList") {
+      const list = data.groupProductList.map((el) => {
+        return {
+          id: el.user_order_id,
+          productId: el.product_id,
+          amount: +el.quantity,
+          price: +el.price,
+          productImg: el.main_image_url,
+          productTitle: el.product_name,
+          stock: +el.stock,
+        };
+      });
+      setItem(list);
+    } else if (
+      data.message === "TOKEN_EXPIRED" ||
+      data.message === "TOKEN_MUST_BE_PROVIDED"
+    ) {
+      alert("유효하지 않은 정보입니다.");
+      navigate("/login");
+    }
   }, []);
 
   // 수량 +- 구현 로직

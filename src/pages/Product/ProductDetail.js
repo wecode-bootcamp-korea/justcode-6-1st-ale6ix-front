@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.scss";
 
 function ProductDetail() {
   const [product, setProduct] = useState();
   const [count, setCount] = useState(0);
-  const [price, setPrice] = useState();
+  // const [price, setPrice] = useState();
 
   const params = useParams();
   const productId = params.productId;
+
+  const navigate = useNavigate();
 
   // 수량 인풋
   const handleInputHandler = (e) => {
     setCount(e.target.value);
   };
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
 
   // +,- 버튼
   const handleUpBtn = () => {
@@ -27,22 +32,19 @@ function ProductDetail() {
     setCount((prev) => prev - 1);
   };
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjQ1NjYwMSwiZXhwIjoxNjYyNDY3NDAxfQ.Y_IKm1NRw5ZjkR8rV7qgKtIntZPATPbhelFyJDrFEg8";
-
   // 실제 통신에 필요한 패치
   useEffect(() => {
     fetch(`http://localhost:8000/products/detail/${productId}`)
       .then((res) => res.json())
       .then((data) => {
-        setProduct(data);
+        setProduct(data.productDetail);
       });
   }, []);
 
   // 구매하기,장바구니 post요청
   const handleCart = () => {
     alert("장바구니로 이동하시겠습니까?");
-    console.log(count);
+
     fetch("http://localhost:8000/products/cart", {
       method: "POST",
       headers: {
@@ -67,22 +69,20 @@ function ProductDetail() {
         <div className="product-detail-container">
           <div className="product-image-container">
             <img
-              src={product.productDetail.mainImageUrl}
+              src={product.mainImageUrl}
               alt=""
               className="product-detail-img"
             />
           </div>
           <div className="product-info-container">
             <div className="info-container-1">
-              <span> {"제품명 : " + product.productDetail.productName}</span>
+              <span> {"제품명 : " + product.productName}</span>
               <span>
-                {"가격 : " +
-                  Number(product.productDetail.price).toLocaleString() +
-                  " won"}
+                {"가격 : " + Number(product.price).toLocaleString() + " won"}
               </span>
             </div>
             <div className="info-container-2">
-              <span>{product.productDetail.productName}</span>
+              <span>{product.productName}</span>
               <div className="button-container">
                 <div className="count">
                   <input
@@ -111,7 +111,7 @@ function ProductDetail() {
               <p>
                 TOTAL :{" "}
                 <span className="total-price">
-                  {(product.productDetail.price * count).toLocaleString()} won
+                  {(product.price * count).toLocaleString()} won
                 </span>
                 <span> ({count}개)</span>
               </p>

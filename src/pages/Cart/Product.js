@@ -42,7 +42,7 @@ function Product({
 
   return (
     <>
-      <div className="product-container">
+      <div className="cart-product-container">
         <div className="product-list">
           <input
             onChange={(e) => {
@@ -54,7 +54,7 @@ function Product({
           />
           <img src={item.productImg} />
           <p className="product">{item.productTitle}</p>
-          <p className="price">{item.price.toLocaleString("en")} won</p>
+          <p className="price">{item.price.toLocaleString()} won</p>
           <div className="display-flex">
             <div className="button-container">
               <div className="count">
