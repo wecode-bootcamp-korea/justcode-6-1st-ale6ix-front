@@ -26,7 +26,7 @@ function Price({ item, deleteAllCart, checkedDelete, deleteCart }) {
           <span>상품구매금액</span>
           <strong>{totalPrice}</strong>
           <span>+ 배송비 0 (무료) = 합계 :</span>
-          <strong>{totalPrice}</strong>
+          <strong>{totalPrice}won</strong>
         </div>
       </div>
       <div className="choice-button">
