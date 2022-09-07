@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
+<<<<<<< HEAD
 
 import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
+=======
+import { NavLink } from "react-router-dom";
+>>>>>>> main
 import "./Header.scss";
 import SubNav from "./SubNav";
+import Logout from "../../pages/Logout/Logout";
 
 function Header() {
   const navigate = useNavigate();
