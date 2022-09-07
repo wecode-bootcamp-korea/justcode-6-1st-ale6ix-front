@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import ProductCategory from "./ProductCategory";
 import ProductList from "./ProductList";
-import Paginate from "./Paginate"
+import Paginate from "./Paginate";
 import "./Product.scss";
 
 function ProductBigCategory() {
@@ -31,6 +31,7 @@ function ProductBigCategory() {
     <div className="product-container-wrapper">
       {data.length != 0 && (
         <ProductCategory
+          offsetHandler={offsetHandler}
           bigId={bigId}
           subMenuList={data.productList.ByGroupcode}
         />

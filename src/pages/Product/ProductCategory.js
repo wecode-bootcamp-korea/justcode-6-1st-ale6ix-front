@@ -9,6 +9,7 @@ function ProductCategory(props) {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
+    // props.offsetHandler(0);
     navigate("/product/" + props.bigId + "/" + e.target.value);
   };
 
@@ -18,8 +19,17 @@ function ProductCategory(props) {
       <ul>
         {detailCode.map((category) => {
           return (
-            <li key={category.detailCodeId}>
-              <button onClick={handleClick} value={category.detailCodeId}>
+            <li
+              key={category.detailCodeId}
+              className={
+                props.smallId == category.detailCodeId ? "active-category" : ""
+              }
+            >
+              <button
+                onClick={handleClick}
+                value={category.detailCodeId}
+                className="category-button"
+              >
                 {category.detailCodeName}
               </button>
             </li>
