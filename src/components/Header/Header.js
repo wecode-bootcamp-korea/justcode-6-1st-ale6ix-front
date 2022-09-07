@@ -102,11 +102,8 @@ function Header() {
           </li>
           {nav.map((navlist) => {
             return (
-              <NavLink
-                to={"/product/" + navlist.LargeCategoryId}
-                key={navlist.LargeCategoryId}
-              >
-                <li className="data-nav">
+              <li key={navlist.LargeCategoryId} className="data-nav">
+                <NavLink to={"/product/" + navlist.LargeCategoryId}>
                   {navlist.LargeCategoryName}
                   <div className="sub-nav-pop">
                     <SubNav
@@ -114,8 +111,8 @@ function Header() {
                       sublist={navlist.smallCategories}
                     />
                   </div>
-                </li>
-              </NavLink>
+                </NavLink>
+              </li>
             );
           })}
         </ul>
