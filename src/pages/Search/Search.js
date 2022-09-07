@@ -13,7 +13,7 @@ function Search() {
       fetch(`http://localhost:8000/products/search?keyword=${message}`, {
         method: "GET",
         headers: { "content-Type": "application/json" },
-      })
+      })햣
         .then((res) => res.json())
         .then((data) => setSearchProduct(data.productSearchList));
     }
