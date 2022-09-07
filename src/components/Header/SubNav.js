@@ -7,12 +7,13 @@ function SubNav({ largeCateId, sublist }) {
       <ul className="sub-menu">
         {sublist.map((subNav) => {
           return (
-            <NavLink
-              to={"/product/" + largeCateId + "/" + subNav.smallCategoryId}
-              key={subNav.smallCategoryId}
-            >
-              <li>{subNav.smallCategoryName}</li>
-            </NavLink>
+            <li key={subNav.smallCategoryId}>
+              <NavLink
+                to={"/product/" + largeCateId + "/" + subNav.smallCategoryId}
+              >
+                {subNav.smallCategoryName}
+              </NavLink>
+            </li>
           );
         })}
       </ul>
