@@ -18,8 +18,17 @@ function ProductCategory(props) {
       <ul>
         {detailCode.map((category) => {
           return (
-            <li key={category.detailCodeId}>
-              <button onClick={handleClick} value={category.detailCodeId}>
+            <li
+              key={category.detailCodeId}
+              className={
+                props.smallId == category.detailCodeId ? "active-category" : ""
+              }
+            >
+              <button
+                onClick={handleClick}
+                value={category.detailCodeId}
+                className="category-button"
+              >
                 {category.detailCodeName}
               </button>
             </li>

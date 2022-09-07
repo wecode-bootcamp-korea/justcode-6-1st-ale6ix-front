@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.scss";
 
+import ProductBottom from './ProductBottom';
+
 function ProductDetail() {
   const [product, setProduct] = useState();
   const [count, setCount] = useState(0);
@@ -16,9 +18,6 @@ function ProductDetail() {
   const handleInputHandler = (e) => {
     setCount(e.target.value);
   };
-
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
 
   // +,- 버튼
   const handleUpBtn = () => {
@@ -43,12 +42,15 @@ function ProductDetail() {
 
   // 구매하기,장바구니 post요청
   const handleCart = () => {
+    if (count === 0) {
+      return alert("상품 수량을 선택해 주십시오.");
+    }
     alert("장바구니로 이동하시겠습니까?");
 
     fetch("http://localhost:8000/products/cart", {
       method: "POST",
       headers: {
-        Authorization: token,
+        Authorization: localStorage.getItem("token"),
         "content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -124,6 +126,9 @@ function ProductDetail() {
           </div>
         </div>
       )}
+      <div>
+        <ProductBottom />
+      </div>
     </>
   );
 }
