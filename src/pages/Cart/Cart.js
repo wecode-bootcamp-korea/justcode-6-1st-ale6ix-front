@@ -24,7 +24,7 @@ function Cart() {
     });
 
     const data = await response.json();
-    console.log(data);
+
     if (data.message === "success_userOrderCartList") {
       const list = data.groupProductList.map((el) => {
         return {
