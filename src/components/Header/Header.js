@@ -1,11 +1,39 @@
 import React, { useEffect, useState } from "react";
 
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import SubNav from "./SubNav";
 
 function Header() {
+  const navigate = useNavigate();
   const [nav, setNav] = useState([]);
+  const [onLogin, setOnLogin] = useState(false);
+  const [log, setLog] = useState("LOGIN");
+  const [userInfo, setUserInfo] = useState("");
+
+  const loginLogout = () => {
+    log === "LOGIN" ? navigate("/login") : navigate("/main");
+  };
+
+  useEffect(() => {
+    fetch("http://localhost:8000/users/me", {
+      method: "GET",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.message === "success_getUser") {
+          setOnLogin(true);
+          setUserInfo(result.user.account);
+          setLog("LOGOUT");
+        } else {
+          onLogin;
+          Navigate("/login");
+        }
+      });
+  }, []);
 
   useEffect(() => {
     fetch("/data/navCategories.json")
@@ -20,8 +48,8 @@ function Header() {
       <div>
         <ul className="nav-top">
           <li className="nav-top-menu">
-            <Link to="/login" className="nav-top-font">
-              LOGIN
+            <Link to="/login" className="nav-top-font" onClick={loginLogout}>
+              {onLogin && log}
             </Link>
           </li>
           <li className="nav-top-menu">
@@ -36,7 +64,7 @@ function Header() {
           </li>
           <li className="nav-top-menu">
             <a href="#" className="nav-top-font">
-              username
+              {onLogin && userInfo}
             </a>
           </li>
           <li>
