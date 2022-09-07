@@ -35,10 +35,10 @@ function Product({
   }, [item.amount]);
 
   //개별 전체 가격
-  const price = (item.amount * item.price).toLocaleString("en");
+  const price = (item.amount * item.price).toLocaleString();
 
   // 적립금
-  const reserve = (item.price * 0.03).toLocaleString("en");
+  const reserve = (item.price * 0.03).toLocaleString();
 
   return (
     <>

@@ -7,7 +7,7 @@ function Price({ item, deleteAllCart, checkedDelete, deleteCart }) {
     return el.amount * el.price;
   });
 
-  const totalPrice = price.reduce((a, b) => a + b, 0).toLocaleString("en");
+  const totalPrice = price.reduce((a, b) => a + b, 0).toLocaleString();
 
   const handlePaymentBtn = () => {
     if (item.length === 0) {
