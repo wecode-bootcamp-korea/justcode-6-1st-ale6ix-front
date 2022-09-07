@@ -21,7 +21,7 @@ function Header() {
           setUserInfo(result.user);
         }
       });
-  }, []);
+  }, [userInfo]);
 
   useEffect(() => {
     fetch("/data/navCategories.json")
