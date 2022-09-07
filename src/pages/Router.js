@@ -34,6 +34,7 @@ function Router() {
           path="/product/detail/:productId"
           element={<ProductDetail />}
         />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Aside />
       <Footer />

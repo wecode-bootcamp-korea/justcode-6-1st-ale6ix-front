@@ -11,15 +11,15 @@ function Cart() {
 
   const navigate = useNavigate();
 
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
+  // const token =
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM";
 
   // 장바구니 데이터 get
   const getFetchItem = useCallback(async () => {
     const response = await fetch("http://localhost:8000/products/cart", {
       method: "GET",
       headers: {
-        Authorization: token,
+        Authorization: localStorage.getItem("token"),
       },
     });
 
@@ -73,13 +73,11 @@ function Cart() {
       method: "PATCH",
       headers: {
         "content-Type": "application/json",
-        Authorization: token,
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify(quantity),
     });
-
-    // .then((res) => res.json());
-    // .then((data) => console.log(data.groupProductList));
+    // .then((res) => console.log(res))
   }, []);
 
   // 체크박스 전체 개체 선택
@@ -130,7 +128,7 @@ function Cart() {
       method: "DELETE",
       headers: {
         "content-Type": "application/json",
-        Authorization: token,
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify(data),
     });
@@ -139,7 +137,7 @@ function Cart() {
         method: "GET",
         headers: {
           "content-Type": "application/json",
-          Authorization: token,
+          Authorization: localStorage.getItem("token"),
         },
       });
       const data = await response1.json();
@@ -166,7 +164,7 @@ function Cart() {
       method: "DELETE",
       headers: {
         // "content-Type": "application/json",
-        authorization: token,
+        Authorization: localStorage.getItem("token"),
       },
     })
       .then((res) => res.json())
@@ -184,7 +182,7 @@ function Cart() {
       method: "DELETE",
       headers: {
         "content-Type": "application/json",
-        Authorization: token,
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify({
         data: checkProduct.map((list) => {
@@ -197,7 +195,7 @@ function Cart() {
           method: "GET",
           headers: {
             "content-Type": "application/json",
-            Authorization: token,
+            Authorization: localStorage.getItem("token"),
           },
         })
           .then((res) => res.json())
