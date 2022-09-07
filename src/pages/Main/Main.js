@@ -19,9 +19,7 @@ function Main() {
       <div className="main-section">
         <MainSection1 />
         <MainSection2 />
-       
         <Section3 />
-       
       </div>
       <MainBanner1 />
       <div >

@@ -33,6 +33,7 @@ function ProductSmallCategory() {
       {data.length != 0 && (
         <ProductCategory
           bigId={bigId}
+          smallId={smallId}
           subMenuList={data.productList.ByGroupcode}
         />
       )}

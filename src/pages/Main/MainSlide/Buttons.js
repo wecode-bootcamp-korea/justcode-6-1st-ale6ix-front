@@ -3,16 +3,17 @@ import './Button.scss'
 
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-function Button({prevSlide,nextSlide}){
+function Buttons({prevSlide,nextSlide}){
+  
   return(
     <div className="arrows">
       <span className="prev"
         onClick={prevSlide}>
-          <FiChevronRight /></span>
+          <FiChevronLeft /></span>
       <span className="next"
         onClick={nextSlide}>
-        <FiChevronLeft /></span>
+        <FiChevronRight /></span>
     </div>
   )
 }
-export default Button;
+export default Buttons;

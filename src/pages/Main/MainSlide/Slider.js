@@ -1,37 +1,43 @@
 import React, { useEffect, useState } from "react";
 import SliderContent from "./SliderContent";
-import imgSlider from "./imgSlider";
-import Button from "./Button";
+import Buttons from "./Buttons";
 import Dots from "./Dots";
 import './Slider.scss';
 
-function Slider(props) {
-
-  const len = imgSlider.length -1;
+function Slider() {
 
   const [activeIndex,setActiveIndex] = useState(0);
-
+//  console.log(activeIndex);
   useEffect(()=>{
     const interval = setInterval(()=>{
-      setActiveIndex(activeIndex === len 
-        ? 0
+      setActiveIndex(activeIndex === imgSlider.length -1 
+        ? 0 
         : activeIndex + 1);
     },3000);
     return () => clearInterval(interval);
   },[activeIndex]);
 
+  const prevSlide= () => {
+    // console.log('click')
+    setActiveIndex(activeIndex < 1 ? imgSlider.length- 1 : activeIndex -1)
+  }
+  const nextSlide= () => {
+    setActiveIndex(activeIndex === imgSlider.length-1 ? 0 : activeIndex + 1)
+  }
+// console.log(prevSlide)
+// console.log(nextSlide)
+  
 
   return(
     <div className="slider-container">
       <SliderContent 
       activeIndex={activeIndex} 
       imgSlider={imgSlider}/>
-      <Button 
-      prevSlide= {() => 
-        setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)} />
-      <Button 
-      nextSlide={() => 
-        setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)} />
+      <Buttons
+      className="arrows"
+      prevSlide={prevSlide}
+      nextSlide={nextSlide}
+      />
       <Dots 
       activeIndex={activeIndex} 
       imgSlider={imgSlider}
@@ -42,3 +48,32 @@ function Slider(props) {
   )
 }
 export default Slider;
+
+const imgSlider =  [
+  {
+    title:"ALE6IX",
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2103-1.gif",
+  },
+  {
+    title:"",
+    urls: "	http://alessi.co.kr/_dj/img/mainbanner/2209-2.jpg",
+    text:""
+  },
+  {
+    title:"",
+    urls: "http://alessi.co.kr/_dj/img/mainbanner/2209-4.jpg",
+  },
+  {
+    title:"",
+    urls: "http://alessi.co.kr/_dj/img/mainbanner/2202-1.jpg",
+    text:""
+  },
+  {
+    title:"",
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2105-1.jpg",
+  },
+  {
+    urls:"http://alessi.co.kr/_dj/img/mainbanner/2101-5.jpg"
+  }
+  
+  ];
