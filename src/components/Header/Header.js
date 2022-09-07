@@ -11,10 +11,6 @@ function Header() {
   const [log, setLog] = useState("LOGIN");
   const [userInfo, setUserInfo] = useState("");
 
-  const loginLogout = () => {
-    log === "LOGIN" ? navigate("/login") : navigate("/main");
-  };
-
   useEffect(() => {
     fetch("http://localhost:8000/users/me", {
       method: "GET",
@@ -27,10 +23,7 @@ function Header() {
         if (result.message === "success_getUser") {
           setOnLogin(true);
           setUserInfo(result.user.account);
-          setLog("LOGOUT");
         } else {
-          onLogin;
-          Navigate("/login");
         }
       });
   }, []);
@@ -48,9 +41,7 @@ function Header() {
       <div>
         <ul className="nav-top">
           <li className="nav-top-menu">
-            <Link to="/login" className="nav-top-font" onClick={loginLogout}>
-              {onLogin && log}
-            </Link>
+            <button className="nav-top-font"></button>
           </li>
           <li className="nav-top-menu">
             <Link to="/signup" className="nav-top-font">
@@ -63,9 +54,7 @@ function Header() {
             </a>
           </li>
           <li className="nav-top-menu">
-            <a href="#" className="nav-top-font">
-              {onLogin && userInfo}
-            </a>
+            <a href="#" className="nav-top-font"></a>
           </li>
           <li>
             <button>
@@ -80,7 +69,9 @@ function Header() {
         </ul>
       </div>
       <div className="nav-bottom">
-        <h1>ALE6IX</h1>
+        <Link to="/main" className="alesix">
+          ALE6IX
+        </Link>
         <ul className="nav-menu">
           <li>
             <a href="#" className="nav-font">
