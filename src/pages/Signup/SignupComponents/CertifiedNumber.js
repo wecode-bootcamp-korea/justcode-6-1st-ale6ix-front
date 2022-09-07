@@ -1,7 +1,21 @@
-import React from 'react';
-import './CertifiedNumber.scss';
+import React, { useState } from "react";
+import "./CertifiedNumber.scss";
 
 function CertifiedNumber() {
+  const [complete, setComplete] = useState(false);
+  const [certify, setCertify] = useState();
+
+  const handleNum = (e) => {
+    const number = e.target.value;
+    setCertify(number);
+  };
+
+  const handleComplete = () => {
+    if (toString(certify).length > 3) {
+      setComplete(true);
+    }
+  };
+
   return (
     <div>
       <p className="certified-content">
@@ -14,12 +28,25 @@ function CertifiedNumber() {
         <span className="width">인증번호</span>
       </div>
       <div className="certified-number">
-        <input alt="인증번호" className="number-input" type="text" />
-        <span className="certified-time">1:12</span>
+        <input
+          alt="인증번호"
+          className="number-input"
+          type="text"
+          onChange={handleNum}
+        />
       </div>
-      <button alt="확인" className="ok-btn" type="submit">
+      <button
+        alt="확인"
+        className="ok-btn"
+        type="submit"
+        value={complete}
+        onClick={handleComplete}
+      >
         확인
       </button>
+      {complete === true && (
+        <div className="complete">인증이 완료되었습니다.</div>
+      )}
     </div>
   );
 }
