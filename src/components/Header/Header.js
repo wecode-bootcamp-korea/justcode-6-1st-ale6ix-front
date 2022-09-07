@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import SubNav from "./SubNav";
+import Logout from "../../pages/Logout/Logout";
 
 function Header() {
   const [nav, setNav] = useState([]);
