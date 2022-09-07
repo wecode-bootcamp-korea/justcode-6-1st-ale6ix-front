@@ -31,11 +31,8 @@ function ProductBottom(){
       </ul>
       
       <div className='modal-container'>
-        {review == true 
-        && <Review className="review-component"/> }
-        {qna == true 
-        && <Qna className="review-component" />}
-        
+        {review == true &&
+        <Review className="review-component"/> }
       </div>
     </div>
   )

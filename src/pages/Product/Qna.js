@@ -1,6 +1,6 @@
 function Qna(){
   return(
-    <div></div>
+    <div>문의</div>
   )
 }
 export default Qna;
