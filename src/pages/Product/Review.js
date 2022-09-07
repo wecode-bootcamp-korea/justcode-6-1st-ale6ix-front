@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import './Review.scss';
 import ReviewList from "./ReviewList";
 
@@ -8,7 +8,9 @@ function Review(){
   const [reveiw,setReview]=useState([]);
   const params = useParams();
   const productId = params.productId;
-
+  // console.log(productId)
+  const location = useLocation();
+  const reviewId = location.reviewId;
   //ref
   const titleValue = useRef();
   const textValue = useRef();
@@ -42,19 +44,15 @@ function Review(){
   
 //add review => post
 
-
-
-const [id,setId]=useState(1);
-
 const addReview = ()=>{
     console.log(titleValue.current.value)
-    setId(id+1)
+
     const data={
       title : titleValue.current.value,
       content : textValue.current.value
     }
   
-      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM"
+      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUzMzA3MiwiZXhwIjoxNjYyNTQzODcyfQ.-HasqoYNbf0oEAuoTSnJMvLJ_TnUlpTAW07nFtyX_Ng"
 
 
     fetch(`http://localhost:8000/products/detail/${productId}/review`,{
@@ -68,26 +66,31 @@ const addReview = ()=>{
   //보내기
     .then(res => res.json())
     .then((reviewData)=>{
+      titleValue.current.value = "";
+      textValue.current.value = "";
       setNewReview(reviewData)
     })
+    
 }
   //delete
-  // const deleteBtn = ()=>{
-  //   fetch(`http://localhost:8000/products/detail/1/review?${id}`,{
-  //     method:"DELETE",
-  //     headers:{
-  //       "Content-Type" : "application/json",
-  //       "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
-  //     },
-  //   })
-  //   .then(res => res.json())
-  //   .then(res=>{
-  //     if(res.ok){
-  //       setReview(data.reviewData)
-  //     }
-  //   })
-  //   .catch(error => console.error(error.message));
-  // }
+  const deleteBtn = ()=>{
+
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUzMzA3MiwiZXhwIjoxNjYyNTQzODcyfQ.-HasqoYNbf0oEAuoTSnJMvLJ_TnUlpTAW07nFtyX_Ng"
+    console.log()
+    fetch(`http://localhost:8000/products/detail/${productId}/review?${reviewId}`,{
+      method:"DELETE",
+      headers:{
+        "Content-Type" : "application/json",
+        "Authorization" : token
+      },
+    })
+    .then(res => res.json())
+    .then(res=>{
+      if(res.ok){
+        setReview()
+      }
+    })
+  }
   
   
   return(
@@ -98,9 +101,9 @@ const addReview = ()=>{
           // console.log(list);
           return <ReviewList
           className="review-list-container" 
-          id={id}
+          // id={id}
           list={list}
-          // deleteBtn={deleteBtn}
+          deleteBtn={deleteBtn}
           />
         })}
       </div>
