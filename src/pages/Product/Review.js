@@ -1,22 +1,26 @@
 import { useEffect, useReducer, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import './Review.scss';
 import ReviewList from "./ReviewList";
 
 function Review(){
 
   const [reveiw,setReview]=useState([]);
+  const params = useParams();
+  const productId = params.productId;
 
   //ref
   const titleValue = useRef();
   const textValue = useRef();
 
+  
 //add list => get
   const [newReview,setNewReview]=useState([]);
 
 
   useEffect(()=>{
     // fetch('/data/reviewList.json')
-    fetch("http://localhost:8000/products/detail/1/review",{
+    fetch(`http://localhost:8000/products/detail/${productId}/review`,{
       method:"GET",
       headers:{
         "Content-Type" : "application/json"
@@ -24,7 +28,7 @@ function Review(){
     })
     .then(res => res.json())
     .then((data)=>{
-       //console.log(data);  //ok {reviewData: Array(16)}
+      //console.log(data);  //ok {reviewData: Array(16)}
       setReview(data.reviewData)
     })
   },[newReview])
@@ -38,54 +42,56 @@ function Review(){
   
 //add review => post
 
-  const [id,setId]=useState(1);
 
-  const addReview = ()=>{
-    if(reveiw.length > 0){
-      setId(id+1)
-      const body={
-        title : titleValue.current.value,
-        content : textValue.current.value
-      }
+
+const [id,setId]=useState(1);
+
+const addReview = ()=>{
+  if(reveiw.length > 0){
+    setId(id+1)
+    const body={
+      title : titleValue.current.value,
+      content : textValue.current.value
+    }
       // let token = localStorage.getItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0MzkyODYsImV4cCI6MTY2MjQ1MDA4Nn0.2fpuIsqMyECkvivKnyzgkUFCj22SaGI6rX2zhDxtplU") || '' ;
 
-      fetch("http://localhost:8000/products/detail/1/review",{
-        method:"POST",
-        headers:{
-          "Content-Type" : "application/json",
-          "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
-        },
-        body : JSON.stringify(body)
-      })
-      //보내기
-      .then(res => res.json())
-      .then(result=>{
-        if(result.message == "post created"){
-          setNewReview(result.reviewData);
-          // console.log('post created')
-        }
-        // console.log(result);
-      })
-      .catch(error => console.error(error.message));
-    }
-  }
-  //delete
-  const deleteBtn = ()=>{
-    fetch(`http://localhost:8000/products/detail/1/review?${id}`,{
-      method:"DELETE",
+    fetch(`http://localhost:8000/products/detail/${productId}/review`,{
+      method:"POST",
       headers:{
         "Content-Type" : "application/json",
-        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
+        "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjUyMjIzMCwiZXhwIjoxNjYyNTMzMDMwfQ.BLMoMJrFqoo-93kt0RRWXYZpeKGx2lcg2Hjs5rztquM"
       },
+      body : JSON.stringify(body)
     })
+  //보내기
     .then(res => res.json())
-    .then(res=>{
-      if(res.ok){
-        setReview(data.reviewData)
+    .then(result=>{
+      if(result.message == "post created"){
+        setNewReview(result.reviewData);
+        console.log('post created')
       }
+        // console.log(result);
     })
     .catch(error => console.error(error.message));
   }
+}
+  //delete
+  // const deleteBtn = ()=>{
+  //   fetch(`http://localhost:8000/products/detail/1/review?${id}`,{
+  //     method:"DELETE",
+  //     headers:{
+  //       "Content-Type" : "application/json",
+  //       "Authorization" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjM2LCJpYXQiOjE2NjI0NTQ4MjMsImV4cCI6MTY2MjQ2NTYyM30.Rhj4B_HdMjApA-dDZH5IqBl5NYedvZ35qaEKYxvEB1A"
+  //     },
+  //   })
+  //   .then(res => res.json())
+  //   .then(res=>{
+  //     if(res.ok){
+  //       setReview(data.reviewData)
+  //     }
+  //   })
+  //   .catch(error => console.error(error.message));
+  // }
   
   
   return(
@@ -98,7 +104,7 @@ function Review(){
           className="review-list-container" 
           id={id}
           list={list}
-          deleteBtn={deleteBtn}
+          // deleteBtn={deleteBtn}
           />
         })}
       </div>

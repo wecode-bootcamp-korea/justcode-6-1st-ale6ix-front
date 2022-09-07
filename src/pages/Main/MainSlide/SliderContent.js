@@ -5,7 +5,7 @@ import './SliderContent.scss'
 function SliderContent({activeIndex,imgSlider}){
   return(
     <section>
-      <Link to="/product">
+      <Link id="ProductBigCategory" to="/product/4">
       {imgSlider.map((slide,index)=>(
         <div key={index} 
         className={index === activeIndex

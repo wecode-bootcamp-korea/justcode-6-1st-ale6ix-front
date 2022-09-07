@@ -29,7 +29,7 @@ function Router() {
         <Route path="/complete" element={<SignupComplete />} />
         <Route path="/carts" element={<Cart />} />
 
-        <Route path="/product-bottom" element={<ProductBottom/>} />
+        <Route path="/product/detail/:productId/review" element={<ProductBottom/>} />
 
         <Route path="/product/:bigId" element={<ProductBigCategory />} />
         <Route

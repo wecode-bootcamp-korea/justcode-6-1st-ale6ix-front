@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ReviewList.scss';
 import { AiOutlineUser } from 'react-icons/ai'
 
-function ReviewList({list,deleteBtn}){
+function ReviewList({list}){
   const [modal,setModal] = useState(false);
   const modalEvent = ()=>{
     setModal(!modal)
@@ -30,8 +30,8 @@ function ReviewList({list,deleteBtn}){
               </dt>
               <dd className="review-text-right">
               <button 
-              key={deleteBtn.id}
-              onClick={() => deleteBtn()}
+              // key={deleteBtn.id}
+              // onClick={() => deleteBtn()}
               >삭제</button></dd>
               
             </dl>
