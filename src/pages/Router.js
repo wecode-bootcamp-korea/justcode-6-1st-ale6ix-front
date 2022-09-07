@@ -34,6 +34,7 @@ function Router() {
         <Route path="/product/detail/:productId/reveiwId?review_id=8" element={<Review/>} />
 
         <Route path="/product/:bigId" element={<ProductBigCategory />} />
+        <Route path="/search" element={<Search />} />
         <Route
           path="/product/:bigId/:smallId"
           element={<ProductSmallCategory />}

@@ -1,6 +1,7 @@
 .container {
   width: 100%;
   border-bottom: 1px solid #ececec;
+
   .nav-top {
     height: 40px;
     padding-right: 80px;
@@ -8,10 +9,12 @@
     justify-content: flex-end;
     align-items: center;
     border-bottom: 1px solid #ececec;
+
     .nav-top-menu {
       font-size: 11px;
       padding-left: 25px;
       letter-spacing: 0.03em;
+
       .counter {
         display: inline-block;
         font-size: 9px;
@@ -20,29 +23,35 @@
         background-color: #222;
         color: #fff;
       }
+
       .nav-top-font {
         color: #999;
         font-weight: 600;
       }
+
       &:nth-child(4) {
         padding-right: 25px;
       }
     }
-    button {
+
+    .search {
       height: 40px;
       border: 1px solid #ececec;
       background-color: #fff;
+
       img {
         padding: 0 14px 0;
       }
     }
   }
+
   .nav-bottom {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     padding: 0 5%;
-    h1 {
+
+    .alesix {
       width: 20%;
       font-size: 40px;
       font-weight: 900;
@@ -50,12 +59,14 @@
       padding: 20px 0 15px 5%;
       // background-color: #999;
     }
+
     .nav-menu {
       width: 80%;
       padding-right: 150px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       // background-color: #999;
       .nav-font {
         font-size: 15px;
@@ -64,6 +75,7 @@
         color: #222;
         box-sizing: border-box;
       }
+
       .data-nav {
         color: #222;
         padding: 10px 25px;
@@ -71,9 +83,11 @@
         font-size: 15px;
         font-weight: 600;
         box-sizing: border-box;
+
         &:hover .sub-nav-pop {
           display: block;
         }
+
         .sub-nav-pop {
           display: none;
           position: absolute;
