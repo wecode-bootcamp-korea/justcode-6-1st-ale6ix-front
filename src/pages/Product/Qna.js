@@ -31,8 +31,7 @@ function Qna(){
       title : titleValid.current.value,
       content : textValid.current.value
     }
-    // let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
-
+  
     fetch(`http://localhost:8000/products/detail/${productId}/question`,{
       method: "POST",
       headers:{
@@ -50,7 +49,6 @@ function Qna(){
   }
   //delete
   const addDelete = (id)=>{
-    // let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
 
     fetch(`http://localhost:8000/products/detail/${productId}/question?question_id=${id}`,{
       method:"DELETE",
