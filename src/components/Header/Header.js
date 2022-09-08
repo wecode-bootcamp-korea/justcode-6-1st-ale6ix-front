@@ -5,7 +5,7 @@ import SubNav from "./SubNav";
 
 function Header() {
   const navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState();
+  const [userInfo, setUserInfo] = useState([]);
   const [nav, setNav] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Header() {
       .then((res) => res.json())
       .then((result) => {
         if (result.message === "success_getUser") {
-          setUserInfo(result.user.account);
+          setUserInfo(result.user);
         }
       });
   }, []);
