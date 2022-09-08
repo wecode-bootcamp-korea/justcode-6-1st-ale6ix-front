@@ -5,7 +5,7 @@ import SubNav from "./SubNav";
 
 function Header() {
   const navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState();
   const [nav, setNav] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Header() {
       .then((res) => res.json())
       .then((result) => {
         if (result.message === "success_getUser") {
-          setUserInfo(result.user);
+          setUserInfo(result.user.account);
         }
       });
   }, []);
@@ -63,9 +63,6 @@ function Header() {
           <li className="nav-top-menu">
             <Link to="/carts" className="nav-top-font">
               CART
-              {localStorage.getItem("token") && (
-                <span className="counter">{userInfo.cartCount}</span>
-              )}
             </Link>
           </li>
           <li className="nav-top-menu">
