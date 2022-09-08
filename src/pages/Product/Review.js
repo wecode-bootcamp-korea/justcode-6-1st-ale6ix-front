@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './Review.scss';
 import ReviewList from "./ReviewList";
 
@@ -17,7 +17,7 @@ function Review(){
   
 //add list => get
   const [newReview,setNewReview]=useState([]);
-  const [delData,setDelData]=useState([]);
+  // const [delData,setDelData]=useState([]);
 
 
   useEffect(()=>{
@@ -36,24 +36,18 @@ function Review(){
     })
   },[newReview])
 
-//enter
-  const enterEvent = (e)=>{
-    if(e.key === 'Enter'){ 
-      addReview();
-    }
-  }
   
 //add review => post
 
 const addReview = ()=>{
-    console.log(titleValue.current.value)
+    // console.log(titleValue.current.value)
 
     const data={
       title : titleValue.current.value,
       content : textValue.current.value
     }
   
-      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU0NDU2NSwiZXhwIjoxNjYyNTU1MzY1fQ.j6UODF3OacCVUcwou1spwaWBiiM5Q18Kq7GwUFUffVk"
+      let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
 
 
     fetch(`http://localhost:8000/products/detail/${productId}/review`,{
@@ -71,14 +65,14 @@ const addReview = ()=>{
       textValue.current.value = "";
       setNewReview(data.reviewData)
     })
-    console.log(newReview)
+    // console.log(newReview)
 }
   //deletes
 
   const deleteBtn = (id)=>{
  
     // console.log(reveiwId)
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU0NDU2NSwiZXhwIjoxNjYyNTU1MzY1fQ.j6UODF3OacCVUcwou1spwaWBiiM5Q18Kq7GwUFUffVk"
+    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MjU2MDEyMCwiZXhwIjoxNjYyNTcwOTIwfQ.-OJ3gY6HvAy3Kx7fDu08yby9Pfv4qk33lMhIA5R-dMo"
     // console.log()
     fetch(`http://localhost:8000/products/detail/${productId}/review?review_id=${id}`,{
       method:"DELETE",
@@ -127,7 +121,6 @@ const addReview = ()=>{
              className="input-title"/>
       <textarea className="review-textarea" 
       ref={textValue}
-      onKeyDown={enterEvent}
       rows="10" cols="50"
       placeholder="소중한 리뷰 감사합니다." />
 
