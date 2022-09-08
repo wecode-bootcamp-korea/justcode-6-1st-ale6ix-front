@@ -67,7 +67,7 @@ function Header() {
           </li>
           <li className="nav-top-menu">
             {localStorage.getItem("token") && (
-              <span className="nav-top-font">{userInfo}</span>
+              <span className="nav-top-font">{userInfo.account}</span>
             )}
           </li>
           <li>
