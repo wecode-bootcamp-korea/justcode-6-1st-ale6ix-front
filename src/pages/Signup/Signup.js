@@ -76,12 +76,14 @@ const Signup = () => {
       });
   };
 
+  const random = Math.floor(Math.random() * (9999 - 1000) + 1000);
+
   const runBtn = () => {
     const useAlert = () => {
-      alert("인증번호는 2321 입니다.");
+      alert(`인증번호는 ${random} 입니다.`);
     };
     if (signupPhone.length > 10) {
-      return setBtnOn(true), setTimeout(useAlert, 1000);
+      return setBtnOn(true), setTimeout(useAlert, 800);
     } else {
       return setBtnOn(false);
     }
