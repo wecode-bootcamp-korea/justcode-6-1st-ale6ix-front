@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.scss";
 
-import ProductBottom from './ProductBottom';
+import ProductBottom from "./ProductBottom";
 
 function ProductDetail() {
   const [product, setProduct] = useState();
@@ -45,7 +45,7 @@ function ProductDetail() {
     if (count === 0) {
       return alert("상품 수량을 선택해 주십시오.");
     }
-    alert("장바구니로 이동하시겠습니까?");
+    alert("장바구니에 상품이 담겼습니다.");
 
     fetch("http://localhost:8000/products/cart", {
       method: "POST",
@@ -58,7 +58,7 @@ function ProductDetail() {
         quantity: count,
       }),
     }).then((res) => res.json());
-    navigate("/carts");
+    // navigate("/carts");
   };
 
   const alertHandler = () => {
