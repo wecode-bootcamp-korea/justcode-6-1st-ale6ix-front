@@ -48,8 +48,6 @@
 
 <br>
 
-*아래 Reference 부분은 README.md에 꼭 포함되어야 하는 내용입니다*
-
 ## Reference
 
 - 이 프로젝트는 [알레시](http://alessi.co.kr) 사이트를 참조하여 학습목적으로 만들었습니다.
