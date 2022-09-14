@@ -10,7 +10,7 @@
 
 - 개발기간 : 2022/8/29 ~ 2022/9/8
 - 개발 인원 : 프론트엔드 4명, 백엔드 2명
-- [백엔드 github 링크]()
+- [백엔드 github 링크](https://github.com/wecode-bootcamp-korea/justcode-6-1st-ale6ix-back)
 
 ### 프로젝트 선정이유
 
@@ -19,7 +19,7 @@
 
 ### 데모 영상(이미지 클릭)
 
-*유투브 영상 링크나 캡쳐 이미지 넣어주세요.*
+[![home](https://velog.velcdn.com/images/ch00ng10000/post/3ff906f7-d6ea-43a6-92f1-fc37b06e3eae/image.png)](https://youtu.be/X2f3YSx6h0Q)
 
 <br>
 
