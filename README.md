@@ -67,6 +67,10 @@
 
 <br>
 
+## 팀원 github주소
+
+[서지원/FE](https://github.com/tjwldnjs123)
+
 ## Reference
 
 - 이 프로젝트는 [알레시](http://alessi.co.kr) 사이트를 참조하여 학습목적으로 만들었습니다.
