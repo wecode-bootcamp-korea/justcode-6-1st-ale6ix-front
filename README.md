@@ -1,6 +1,6 @@
 # ALE6IX PROJECT
 
-## oo 프로젝트 Front-end/Back-end 소개
+## 프로젝트 소개
 
 - 해외 유명 디자이너 브랜드 ALESSI (http://alessi.co.kr) 를 클론 코딩 하였습니다.
 - 프로젝트 내의 짧은 기간동안 세션 복습과 새로운 기능을 도전해 보고자 디자인은 클론코딩 하였고 기능을 구현하는 데에 중점을 두었습니다.
@@ -90,6 +90,12 @@ https://user-images.githubusercontent.com/100896832/190058209-81c8bdc1-f5f7-4ec4
 - NAV Bar & Footer 레이아웃, 내비게이션 바 mock-up 기능구현
 - 상품문의, 후기 레이아웃 기능구현 및 api통신
 
+#### 이기완/FE
+- 제품 페이지 레이아웃, 기능구현 및 통신
+- 제품 상세 페이지 레이아웃, 기능구현 및 통신
+- React Router 이용 - Nav bar / 제품 상세 동적 라우팅 구현
+- React paginate 이용 - 제품 페이지 페이지네이션 
+
  ---
 
 <br>
@@ -101,6 +107,8 @@ https://user-images.githubusercontent.com/100896832/190058209-81c8bdc1-f5f7-4ec4
 [서지원/FE](https://github.com/tjwldnjs123)
 <br>
 [양미옥/FE](https://github.com/miogy)
+<br>
+[이기완/FE](https://github.com/lkw1996)
 
 ## Reference
 
