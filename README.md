@@ -36,11 +36,13 @@
 ### 구현 기능👇
 
 ### 회원가입
+https://user-images.githubusercontent.com/103557910/190311848-7b40b3c3-ef0b-416d-9f9d-aa3987227d34.mp4
 - 아이디 중복 검사
 - 휴대폰 인증번호받기 구현(휴대전화 10자리 이상 때만 '인증번호받기' 버튼 활성화)
 - 이용약관 체크박스 구현
 - 회원가입 완료 페이지에 DB에 등록된 유저의 정보(ID, NAME, EMAIL) 확인 section 구현
 ### 로그인
+https://user-images.githubusercontent.com/103557910/190311806-a61f4ec2-0e9d-49c1-86be-c0e61c43c99a.mp4
 - 회원여부 확인
 - 로그인 성공 시 유저의 TOKEN 로컬스토리지에 저장
 - 로그인 상태에서 nav header에 유저의 ID 나타나게 구현
