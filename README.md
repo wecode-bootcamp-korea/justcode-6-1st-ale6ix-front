@@ -54,23 +54,26 @@ https://user-images.githubusercontent.com/103557910/190311806-a61f4ec2-0e9d-49c1
 - 데이터 받아서 섹션 제품 구현
 ### 제품 페이지
 
-https://user-images.githubusercontent.com/100896832/190037169-28a7dff9-cf77-4e42-8583-b76d1ef0eb66.mp4
+
 
 ### 제품 상세페이지
+https://user-images.githubusercontent.com/100896832/190037169-28a7dff9-cf77-4e42-8583-b76d1ef0eb66.mp4
 - 수량(+,-)버튼 구현, 상품수량이 상품재고보다 많아지면 재고 알림창 구현
 - POST 요청 : 수량,제품번호 post 통신
 ### nav,footer
 
-https://user-images.githubusercontent.com/100896832/190058209-81c8bdc1-f5f7-4ec4-b3c1-a13d225d83fd.mp4
 
 ### 검색창
+https://user-images.githubusercontent.com/100896832/190058209-81c8bdc1-f5f7-4ec4-b3c1-a13d225d83fd.mp4
+
 - GET : 서버로부터 query문 사용하여 값을 가져옴
 - GO!버튼 클릭 or Enter 검색한 상품들이 나오게 구현
 
-[https://user-images.githubusercontent.com/100896832/190034745-3bc71213-3d35-449f-b8d6-559ff5bb8991.mp4](https://user-images.githubusercontent.com/100896832/190036250-5f0e6159-baae-4493-baab-3821ba085697.mp4
-)
+
 
 ### 장바구니
+[https://user-images.githubusercontent.com/100896832/190034745-3bc71213-3d35-449f-b8d6-559ff5bb8991.mp4](https://user-images.githubusercontent.com/100896832/190036250-5f0e6159-baae-4493-baab-3821ba085697.mp4
+)
 - 조건부 렌더링으로 상품이 없을때 '장바구니 가 비어있습니다' 문구 구현
 - GET : 장바구니에 담긴 상품들 화면에 렌더링
 - PATCH : 장바구니 상품 수량변경 -> 유저 아이디,상품 아이디,변경된 수량을 담아서 요청 
