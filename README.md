@@ -28,9 +28,8 @@
 ### 적용 기술
 
 > - Front-End : React.js, sass, slick, react-modal
-> - Back-End : Python, Django web framework, Beautifulsoup, Selenium, Bcrypt, My SQL
-> - Common : KAKAO social login, AWS(EC2,RDS), RESTful API
-
+> - Back-End :  node.js, express, jwt, Bcrypt, My SQL
+> - Common : RESTful API, git, github
 
 
 ### 구현 기능👇
