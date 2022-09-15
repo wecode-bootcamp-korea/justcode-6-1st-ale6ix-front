@@ -94,7 +94,7 @@ https://user-images.githubusercontent.com/100896832/190058209-81c8bdc1-f5f7-4ec4
 - 제품 페이지 레이아웃, 기능구현 및 통신
 - 제품 상세 페이지 레이아웃, 기능구현 및 통신
 - React Router 이용 - Nav bar / 제품 상세 동적 라우팅 구현
-- React paginate 이용 - 제품 페이지 페이지네이션 
+- React paginate 이용 - 제품 페이지 내 페이지네이션 기능 구현
 
  ---
 
