@@ -7,7 +7,13 @@ function Section3(){
   const [productData,setProductData] = useState([]);
 
   useEffect(()=>{
-    fetch('/data/recommandList.json')
+    // curl --location --request GET 'localhost:8000/products/recommendList'
+    fetch('https://localhost:8000/products/recommendList',{
+      method:"GET",
+      headers:{
+        "Content-Type" : "application/json"
+      }
+    })
     .then((res)=>res.json())
     .then((data)=>{
       setProductData(data.recommendProductList)

@@ -7,12 +7,11 @@ function ProductBottom(){
 
   const [review,setReview]=useState(false);
   const reviewBtn = ()=>{
-    setReview(!review)
+    setReview(true)
   }
-  // const [qna,setQna]=useState(false);
-  // const qnaBtn = () =>{
-  //   setQna(!qna)
-  // }
+  const qnaBtn = ()=>{
+    setReview(false)
+  }
 
   return(
     <div className='bottom-container'>
@@ -22,7 +21,7 @@ function ProductBottom(){
        onClick={reviewBtn}
        >상품리뷰</li> 
        <li className='border border-active'
-       onClick={reviewBtn}
+       onClick={qnaBtn}
        >상품문의</li>
        <li className='border-bottom'></li>
        <li className='border-bottom'></li>
@@ -31,7 +30,7 @@ function ProductBottom(){
       </ul>
       
       <div className='modal-container'>
-        {review ?
+        {review === true ?
         <Review /> : <Qna />
         }
       </div>
