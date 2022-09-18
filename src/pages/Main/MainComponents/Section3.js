@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Section3.scss';
-
 
 function Section3(){
 
@@ -56,3 +56,4 @@ function Section3(){
   )
 }
 export default Section3;
+  

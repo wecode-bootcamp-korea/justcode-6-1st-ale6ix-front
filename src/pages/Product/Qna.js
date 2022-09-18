@@ -86,7 +86,7 @@ function Qna(){
       <div className="add-container">
         <input type="text" ref={titleValid}
         className="title-area" 
-        placeholder={`제품번호 : ${productId}`}
+        placeholder="상품명 :"
         />
         <textarea ref={textValid}
         rows="10" cols="50"
