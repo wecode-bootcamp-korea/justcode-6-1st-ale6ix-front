@@ -1,19 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Section3.scss';
-
 
 function Section3(){
 
   const [productData,setProductData] = useState([]);
 
   useEffect(()=>{
-    // curl --location --request GET 'localhost:8000/products/recommendList'
-    fetch('https://localhost:8000/products/recommendList',{
-      method:"GET",
-      headers:{
-        "Content-Type" : "application/json"
-      }
-    })
+    fetch('/data/recommandList.json')
     .then((res)=>res.json())
     .then((data)=>{
       setProductData(data.recommendProductList)
@@ -62,3 +56,4 @@ function Section3(){
   )
 }
 export default Section3;
+  
