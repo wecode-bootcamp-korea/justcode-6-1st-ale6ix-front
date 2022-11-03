@@ -7,7 +7,6 @@ import ProductBottom from "./ProductBottom";
 function ProductDetail() {
   const [product, setProduct] = useState();
   const [count, setCount] = useState(0);
-  // const [price, setPrice] = useState();
 
   const params = useParams();
   const productId = params.productId;
@@ -58,7 +57,6 @@ function ProductDetail() {
         quantity: count,
       }),
     }).then((res) => res.json());
-    // navigate("/carts");
   };
 
   const alertHandler = () => {
@@ -111,7 +109,7 @@ function ProductDetail() {
             </div>
             <div className="info-container-3">
               <p>
-                TOTAL :{" "}
+                TOTAL :
                 <span className="total-price">
                   {(product.price * count).toLocaleString()} won
                 </span>

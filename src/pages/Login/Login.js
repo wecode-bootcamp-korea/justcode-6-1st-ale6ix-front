@@ -31,7 +31,7 @@ function Login() {
       .then((res) => res.json())
       .then((result) => {
         if (result.message === "LOGIN_SUCCESS") {
-          localStorage.setItem("token", result.token);
+          localStorage.setItem("token", JSON.stringify(result.token));
           alert(`${loginId}님 환영합니다.`);
           navigate("/main");
         } else {

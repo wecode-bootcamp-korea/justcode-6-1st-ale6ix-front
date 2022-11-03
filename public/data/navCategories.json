@@ -4,10 +4,7 @@
       "LargeCategoryId": 1,
       "LargeCategoryName": "KITCHEN",
       "smallCategories": [
-        {
-          "smallCategoryId": 1,
-          "smallCategoryName": "보관용기"
-        },
+        { "smallCategoryId": 1, "smallCategoryName": "보관용기" },
         {
           "smallCategoryId": 2,
           "smallCategoryName": "커피메이커"
